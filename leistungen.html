@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leistungen – AVTEL Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c1824;--ink2:#142336;
+  --blue:#1a6fc4;--blue2:#2381e0;--blue-dim:rgba(26,111,196,.11);
+  --white:#fff;--off:#f4f7fb;--off2:#eaeff7;
+  --muted:#64748b;--border:#dde4f0;
+  --r:10px;--r2:16px;
+  --max:1100px;--pad:clamp(20px,5vw,64px);
+  --navy:#0b1f3a;
+  --navy2:#102646;
+  --accent:#1a6fc4;
+  --accent2:#2381e0;
+  --orange:#e8620a;
+  --white:#fff;
+  --gray50:#f7f9fc;
+  --gray100:#eef1f6;
+  --gray200:#d8deea;
+  --gray400:#8a97ae;
+  --gray600:#4a5568;
+  --gray800:#20252e;
+  --text:#1a2233;
+  --r:10px;
+  --r2:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Inter',serif;line-height:1.22;font-weight:400}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+.wrap{max-width:100%;margin:0 auto;padding:0 var(--pad)}
+
+/* ── LANG SWITCHER ── */
+.lang-switch{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch-full{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch:hover{
+  background:var(--accent2);
+  border-color:var(--accent2);
+  color:#fff;
+}
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(11,31,58,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:90px;
+}
+.logo{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.15rem;color:#fff;
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-icon{
+  width:80px;height:80px;
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{
+  color:var(--gray200);font-size:1.3rem;font-weight:500;
+  transition:color .2s;padding:4px 0;
+}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{
+  background:var(--accent);color:#fff !important;
+  padding:8px 18px;border-radius:8px;font-weight:600;
+  transition:background .2s;
+}
+.nav-links .nav-cta:hover{background:var(--accent2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-nav-controls{display:none;gap:12px;align-items:center}
+
+/* mobile nav */
+@media(max-width:900px){
+  .nav-links{
+    display:none;position:fixed;top:90px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:stretch;
+    padding:16px 5% 24px;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;font-size:1.25rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .lang-switch-full{visibility: collapse;}
+  .nav-links .nav-cta{text-align:center;margin-top:8px;border-bottom:none}
+  .hamburger{display:flex}
+  .mobile-nav-controls{display:flex}
+}
+
+/* PAGE HERO */
+.page-hero{background:var(--ink);padding:72px var(--pad) 64px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 90% 30%,rgba(26,111,196,.2) 0%,transparent 65%),radial-gradient(ellipse 30% 50% at 5% 80%,rgba(26,111,196,.08) 0%,transparent 60%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1;max-width:100%;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6db3f7;margin-bottom:18px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#6db3f7;animation:dot 2s infinite}
+@keyframes dot{0%,100%{opacity:1}50%{opacity:.3}}
+.page-hero h1{font-size:clamp(1.5rem,4vw,3.3rem);color:#fff;margin-bottom:20px;max-width:100%}
+.page-hero p{font-size:1.05rem;color:var(--gray200);max-width:80%;line-height:1.8;margin-bottom:32px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tag{font-size:1rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(109,179,247,.12);border:1px solid rgba(109,179,247,.25);color:#6db3f7}
+
+/* SHARED SECTION */
+.section{padding:80px var(--pad)}
+.section-label{font-size:1rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(1.6rem,3vw,3.3rem);color:var(--ink);margin-bottom:16px}
+.section-lead{font-size:1.2rem;color:var(--muted);max-width:90%;line-height:1.85}
+
+/* SECTION 1 */
+.s1{background:var(--white)}
+.s1-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:48px}
+@media(max-width:720px){.s1-grid{grid-template-columns:1fr;gap:24px}}
+.s1-block{background:var(--off);border:1px solid var(--border);border-radius:var(--r2);padding:28px}
+.s1-block-label{font-size:1.3rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.s1-block p{font-size:1.1rem;color:var(--muted);line-height:1.82;margin-bottom:10px}
+.s1-block p:last-child{margin-bottom:0}
+.s1-highlight{background:var(--ink);border-radius:var(--r2);padding:28px;grid-column:1/-1;display:flex;align-items:flex-start;gap:20px}
+.s1-highlight-icon{flex-shrink:0;width:44px;height:44px;background:rgba(26,111,196,.2);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.s1-highlight-icon svg{width:20px;height:20px;stroke:#6db3f7;fill:none;stroke-width:1.8;stroke-linecap:round}
+.s1-highlight p{font-size:1.2rem;color:rgba(255,255,255,.7);line-height:1.8;margin:0}
+.s1-highlight strong{color:#fff}
+
+/* SECTION 2 ZIGZAG */
+.s2{background:var(--off);padding:80px var(--pad)}
+.s2-inner{max-width:100%;margin:0 auto;padding:0 var(--pad)}
+.zz-wrap{position:relative;display:flex;flex-direction:column;gap:0;padding:36px 0 20px}
+.zz-row{position:relative;display:flex;min-height:210px;align-items:flex-start}
+.zz-row.left{justify-content:flex-start}
+.zz-row.right{justify-content:flex-end}
+.zz-card{
+  width:48%;
+  background:var(--white);border-radius:var(--r2);
+  padding:26px 24px;border:1px solid var(--border);
+  box-shadow:0 2px 12px rgba(12,24,36,.05);
+  position:relative;z-index:2;
+  transition:transform .22s,box-shadow .22s,border-color .2s;
+}
+.zz-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(12,24,36,.09);border-color:rgba(26,111,196,.3)}
+.zz-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.zz-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700}
+.zz-card h3{font-size:1.5rem;color:var(--ink);font-weight:700}
+.zz-card p{font-size:1.2rem;color:var(--muted)}
+
+/* SVG arrow overlay */
+.zz-arrow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.zz-path{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.zz-arrowhead{fill:var(--blue)}
+
+@media(max-width:720px){
+  .zz-row{min-height:auto;margin-bottom:14px}
+  .zz-card{width:100%}
+  .zz-arrow{display:none}
+}
+
+/* SECTION 3 */
+.s3{background:var(--white)}
+.s3-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+@media(max-width:720px){.s3-grid{grid-template-columns:1fr;gap:24px}}
+.s3-list{display:flex;flex-direction:column;gap:14px}
+.s3-item{display:flex;gap:14px;align-items:flex-start;background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+.s3-dot{flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:.55em}
+.s3-item p{font-size:1.2rem;color:var(--muted);line-height:1.7}
+.s3-aside{background:var(--ink);border-radius:var(--r2);padding:32px;display:flex;flex-direction:column;gap:20px}
+.s3-aside-title{font-size:1.5rem;color:#fff;margin-bottom:2px}
+.s3-aside p{font-size:1.2rem;color:rgba(255,255,255,.55);line-height:1.75}
+.s3-sep{height:1px;background:rgba(255,255,255,.08)}
+.s3-chip{display:inline-flex;align-items:center;gap:6px;font-size:1rem;font-weight:600;color:#6db3f7;background:rgba(109,179,247,.1);border:1px solid rgba(109,179,247,.2);padding:4px 12px;border-radius:100px}
+.s3-blist{display:flex;flex-direction:column;gap:12px}
+.s3-bitem{display:flex;gap:10px;align-items:flex-start}
+.s3-bdot{flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#6db3f7;margin-top:.6em}
+.s3-bitem p{font-size:1.3rem;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* SECTION 4 */
+.s4{background:var(--off)}
+.s4-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:48px}
+.s4-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:26px 22px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s}
+.s4-card:hover{border-color:var(--blue)}
+.s4-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-dim);display:flex;align-items:center;justify-content:center}
+.s4-icon svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:1.9;stroke-linecap:round}
+.s4-card h3{font-size:1.3rem;color:var(--ink);font-family:'DM Serif Display',serif}
+.s4-card p{font-size:1.2rem;color:var(--muted);line-height:1.72}
+
+/* CTA */
+.cta-strip{background:var(--blue);padding:52px var(--pad);text-align:center}
+.cta-strip h2{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;margin-bottom:14px}
+.cta-strip p{font-size:1rem;color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 28px;line-height:1.8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
+.cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-logo{font-size:.97rem;color:#fff}
+.footer-logo em{color:#6db3f7;font-style:normal}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:18px}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html#hero" onclick="scrollTo(0,0)">
+    <div class="logo-icon">
+      <img src="avtel-systems-white.png">
+    </div>
+    <!--AVTEL <span>Systems</span>-->
+  </a>
+
+  <div class="mobile-nav-controls">
+    <button type="button" id="langToggle" class="lang-switch" onclick="toggleLang()">EN</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
+    <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
+    <li><a href="index.html#projects" onclick="closeMenu()" data-lang="de" class="active">Projekterfahrung</a><a href="index.html#projects" onclick="closeMenu()" data-lang="en">Projects</a></li>
+    <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
+    <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
+    <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
+    <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button></li>
+    <li><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="de" class="active">Kontakt</a><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Leistungen</div>
+    <h1>Funkmessungen und Bewertung von BOS-Objektfunkanlagen</h1>
+    <p>Fundierte Messungen und technische Bewertung als Grundlage für Planung, Umsetzung und Nachweis gemäß DIN 14024.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">TETRA 380–400 MHz</span>
+      <span class="hero-tag">DIN 14024</span>
+      <span class="hero-tag">TMO / DMO</span>
+      <span class="hero-tag">iBwave</span>
+      <span class="hero-tag">BDBOS</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="s1 section reveal">
+  <div class="wrap">
+    <div class="section-label">Grundlage</div>
+    <h2 class="section-title">1. Aufgabe einer BOS-Objektfunkanlage</h2>
+    <p class="section-lead">Eine digitale BOS-Objektfunkanlage gewährleistet die zuverlässige Funkversorgung (TETRA 380–400 MHz) innerhalb von Gebäuden, wenn die Freiflächenversorgung keine vollständige und stabile Kommunikation ermöglicht.</p>
+    <div class="s1-grid">
+      <div class="s1-block">
+        <div class="s1-block-label">Verpflichtung</div>
+        <p>Ist keine Vollversorgung gegeben, ist die Installation einer eigenen BOS-Objektfunkanlage erforderlich.</p>
+        <p>Der Objektbetreiber ist hierzu verpflichtet, sofern dies durch Bauordnung, Feuerwehr oder Brandschutzkonzept gefordert wird.</p>
+      </div>
+      <div class="s1-block">
+        <div class="s1-block-label">Normgrundlage</div>
+        <p>Messungen und Planungen erfolgen unter Berücksichtigung der Anforderungen nach <strong>DIN 14024</strong>.</p>
+        <p>Die Ergebnisse bilden eine belastbare Grundlage für alle weiteren Projektschritte – von der Planung bis zur Abnahme.</p>
+      </div>
+      <div class="s1-highlight">
+        <div class="s1-highlight-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <p><strong>Funkfeldmessungen</strong> bilden die Grundlage für eine fundierte Entscheidung sowie für die weitere Planung und Umsetzung – unter Berücksichtigung der Anforderungen nach DIN 14024.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — ZIGZAG -->
+<section class="s2 reveal">
+  <div class="s2-inner">
+    <div class="section-label">Messablauf</div>
+    <h2 class="section-title">2. Ablauf der Messungen</h2>
+    <p class="section-lead" style="margin-bottom:0">Die Durchführung der Funkmessungen erfolgt in mehreren aufeinander abgestimmten Schritten.</p>
+
+    <div class="zz-wrap" id="zzWrap">
+
+      <!-- ROW 1 — LEFT -->
+      <div class="zz-row left" id="zzr1">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">1</div>
+            <h3>Voranalyse der Bestands- und Planungsunterlagen</h3>
+          </div>
+          <p>Strukturierte Analyse der vom Auftraggeber bereitgestellten Unterlagen (Baupläne, Brandschutzkonzept, Bestandsdokumentation, vorhandene Funk- oder Antennenanlagen). Ziel: technische Vorbereitung der Messkampagne und Definition geeigneter Messpunkte.</p>
+        </div>
+        <svg class="zz-arrow" id="zza1" viewBox="0 0 1000 220" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp1"/>
+          <polygon class="zz-arrowhead" id="zzh1"/>
+        </svg>
+      </div>
+
+      <!-- ROW 2 — RIGHT -->
+      <div class="zz-row right" id="zzr2">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">2</div>
+            <h3>Erforderlichkeitsmessung</h3>
+          </div>
+          <p>Prüfung, ob zuverlässige BOS-Kommunikation im Gebäude ohne zusätzliche Anlage möglich ist. Beinhaltet Versorgungsmessung (TMO) und Durchdringungsprüfung (DMO – FIZ-Szenario). Ergebnis: klare Entscheidungsgrundlage.</p>
+        </div>
+        <svg class="zz-arrow" id="zza2" viewBox="0 0 1000 220" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp2"/>
+          <polygon class="zz-arrowhead" id="zzh2"/>
+        </svg>
+      </div>
+
+      <!-- ROW 3 — LEFT -->
+      <div class="zz-row left" id="zzr3">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">3</div>
+            <h3>Planungs- und Projektmessungen</h3>
+          </div>
+          <p>Erhebung detaillierter Messdaten für Planung und Anmeldung: Umfeldmessung, Panorama-Messung gemäß BDBOS inkl. Fotodokumentation, Gebäudemessung mit Plan-Eintrag. Durchführung nach DIN 14024.</p>
+        </div>
+        <svg class="zz-arrow" id="zza3" viewBox="0 0 1000 220" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp3"/>
+          <polygon class="zz-arrowhead" id="zzh3"/>
+        </svg>
+      </div>
+
+      <!-- ROW 4 — RIGHT -->
+      <div class="zz-row right" id="zzr4">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">4</div>
+            <h3>Messungen im Bestand (analog → digital)</h3>
+          </div>
+          <p>Technische Bewertung vorhandener Kabel- und Antennenstrukturen: HF-Einspeisemessung, Schleifendämpfung, DTF / RTL, Entkopplung. Zielgerichtete Planung der Umstellung auf TETRA.</p>
+        </div>
+        <svg class="zz-arrow" id="zza4" viewBox="0 0 1000 220" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp4"/>
+          <polygon class="zz-arrowhead" id="zzh4"/>
+        </svg>
+      </div>
+
+      <!-- ROW 5 — LEFT -->
+      <div class="zz-row left" id="zzr5">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">5</div>
+            <h3>Abnahmemessung</h3>
+          </div>
+          <p>Nachweis der flächendeckenden und zuverlässigen Funkversorgung nach Installation der Anlage. TMO- und DMO-Messung gemäß DIN 14024 mit vollständiger Messdokumentation.</p>
+        </div>
+        <svg class="zz-arrow" id="zza5" viewBox="0 0 1000 220" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp5"/>
+          <polygon class="zz-arrowhead" id="zzh5"/>
+        </svg>
+      </div>
+
+      <!-- ROW 6 — RIGHT — no arrow -->
+      <div class="zz-row right" id="zzr6">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">6</div>
+            <h3>Dach- und Außenversorgungsmessung</h3>
+          </div>
+          <p>Dachmessungen zur Bewertung der Außensignalversorgung (TMO). Ermittlung des optimalen Antennenstandorts unter Berücksichtigung von Feldstärke, Signalqualität, Störeinflüssen, Ausbreitungsbedingungen und baulichen Gegebenheiten.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="s3 section reveal">
+  <div class="wrap">
+    <div class="section-label">Dokumentation</div>
+    <h2 class="section-title">3. Messdurchführung und Ergebnis</h2>
+    <p class="section-lead">Alle Messungen werden mit spezialisiertem und kalibriertem Funkmessgerät durchgeführt.</p>
+    <div class="s3-grid">
+      <div>
+        <p style="font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:14px">Messbericht enthält</p>
+        <div class="s3-list">
+          <div class="s3-item"><div class="s3-dot"></div><p>Beschreibung des Objekts und der Messmethodik</p></div>
+          <div class="s3-item"><div class="s3-dot"></div><p>Tabellarische und grafische Auswertung</p></div>
+          <div class="s3-item"><div class="s3-dot"></div><p>Eintrag der Messwerte in Grundrisspläne</p></div>
+          <div class="s3-item"><div class="s3-dot"></div><p>Fotodokumentation (falls erforderlich)</p></div>
+          <div class="s3-item"><div class="s3-dot"></div><p>Technische Bewertung sowie klare und umsetzbare Empfehlung</p></div>
+        </div>
+      </div>
+      <div class="s3-aside">
+        <div>
+          <div class="s3-aside-title">Technische Lösungen</div>
+          <p>Die Messergebnisse bilden die Grundlage für die Entwicklung technischer Lösungen gemäß DIN 14024:</p>
+        </div>
+        <div class="s3-sep"></div>
+        <div class="s3-blist">
+          <div class="s3-bitem"><div class="s3-bdot"></div><p>Auswahl der Systemarchitektur</p></div>
+          <div class="s3-bitem"><div class="s3-bdot"></div><p>Dimensionierung der benötigten Komponenten</p></div>
+          <div class="s3-bitem"><div class="s3-bdot"></div><p>Festlegung der Installationsstandorte</p></div>
+          <div class="s3-bitem"><div class="s3-bdot"></div><p>Planung der Kabeltrassen unter Berücksichtigung von Dämpfungsverlusten, baulichen Gegebenheiten und normativen Anforderungen</p></div>
+        </div>
+        <div class="s3-sep"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="s3-chip">DIN 14024</span>
+          <span class="s3-chip">BDBOS</span>
+          <span class="s3-chip">TMO / DMO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="s4 section reveal">
+  <div class="wrap">
+    <div class="section-label">Abrechnung</div>
+    <h2 class="section-title">4. Kosten und Abrechnung</h2>
+    <p class="section-lead">Die Kosten werden individuell und projektbezogen kalkuliert. Maßgeblich sind insbesondere:</p>
+    <div class="s4-grid">
+      <div class="s4-card">
+        <div class="s4-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Objektgröße</h3>
+        <p>Gesamtfläche und Anzahl der zu messenden Bereiche und Stockwerke.</p>
+      </div>
+      <div class="s4-card">
+        <div class="s4-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg></div>
+        <h3>Bauliche Komplexität</h3>
+        <p>Gebäudestruktur, Materialien und besondere bauliche Gegebenheiten.</p>
+      </div>
+      <div class="s4-card">
+        <div class="s4-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Messumfang</h3>
+        <p>Art und Anzahl der erforderlichen Messungen (Erforderlichkeit, Planung, Abnahme).</p>
+      </div>
+      <div class="s4-card">
+        <div class="s4-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <h3>Lage des Objekts</h3>
+        <p>Anfahrt und Einsatzgebiet in Bayern – kurzfristige Termine möglich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Anfrage senden</h2>
+  <p>Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Ich melde mich kurzfristig bei Ihnen zurück.</p>
+  <a href="index.html#contact" class="cta-btn">👉 Kontakt aufnehmen</a>
+</section>
+
+<footer>
+  <div class="footer-logo">AVTEL <em>Systems</em></div>
+  <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+  <div class="footer-links"><a href="index.html#">Impressum</a><a href="index.html#">Datenschutz</a></div>
+</footer>
+
+<script>
+    /* ── LANGUAGE ── */
+let currentLang = 'de';
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === l);
+    el.style.display = el.dataset.lang === l ? '' : 'none';
+  });
+  const toggle = document.getElementById('langToggle');
+  if (toggle) {
+    toggle.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+  const togglefull = document.getElementById('langToggleFull');
+  if (togglefull) {
+    togglefull.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+}
+function toggleLang() {
+  setLang(currentLang === 'de' ? 'en' : 'de');
+}
+// init
+setLang('de');
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('navLinks').classList.remove('open');
+}
+/* ── NAV ── */
+let lang='de';
+function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
+function toggleMenu(){document.getElementById('navList').classList.toggle('open')}
+function closeMenu(){document.getElementById('navList').classList.remove('open')}
+
+/* ── REVEAL ── */
+const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ══════════════════════════════════════════════════════════════════
+   ZIGZAG ARROWS
+   ─────────────────────────────────────────────────────────────────
+   Strategy:
+   • Each row's <svg class="zz-arrow"> covers the full row box.
+   • We compute the L-shaped path in the SVG's own coordinate space
+     (viewBox="0 0 1000 220", preserveAspectRatio=none).
+   • For LEFT rows : path goes  right-edge-of-card → H right-anchor → V bottom
+   • For RIGHT rows: path goes  left-edge-of-card  → H left-anchor  → V bottom
+   • We measure getTotalLength() on the path so dashoffset is exact.
+   • The arrowhead polygon opacity transitions with delay = path-duration
+     → triangle appears the instant the line finishes → perfectly synced.
+══════════════════════════════════════════════════════════════════ */
+(function(){
+  const DUR = 0.65; // path draw duration (s)
+
+  // Card occupies 48% of row width.
+  // In viewBox x-space (0..1000):
+  //   LEFT  card right edge ≈ 480,  horizontal arm goes to x=720
+  //   RIGHT card left edge  ≈ 520,  horizontal arm goes to x=280
+  // Vertical goes from card vertical-center (y≈110) to bottom (y=220).
+  // Arrowhead: equilateral triangle, tip at (xTip, 220), base 22px up.
+
+  const configs = [
+    { row:'zzr1', path:'zzp1', head:'zzh1', side:'left',  xStart:480, xArm:720 },
+    { row:'zzr2', path:'zzp2', head:'zzh2', side:'right', xStart:520, xArm:280 },
+    { row:'zzr3', path:'zzp3', head:'zzh3', side:'left',  xStart:480, xArm:720 },
+    { row:'zzr4', path:'zzp4', head:'zzh4', side:'right', xStart:520, xArm:280 },
+    { row:'zzr5', path:'zzp5', head:'zzh5', side:'left',  xStart:480, xArm:720 },
+  ];
+
+  configs.forEach(cfg => {
+    const rowEl  = document.getElementById(cfg.row);
+    const pathEl = document.getElementById(cfg.path);
+    const headEl = document.getElementById(cfg.head);
+    if (!rowEl || !pathEl || !headEl) return;
+
+    // Build the L-path: start at (xStart, 110) → H xArm → V 220
+    const d = `M${cfg.xStart},110 H${cfg.xArm} V220`;
+    pathEl.setAttribute('d', d);
+
+    // Arrowhead: tip at xArm,220 — pointing downward
+    const tx = cfg.xArm;
+    headEl.setAttribute('points', `${tx},220 ${tx-14},196 ${tx+14},196`);
+
+    // Measure exact length → set dasharray + initial dashoffset = length
+    const len = Math.ceil(pathEl.getTotalLength()) + 4;
+    pathEl.style.strokeDasharray  = len;
+    pathEl.style.strokeDashoffset = len;
+    // Transition for path
+    pathEl.style.transition = `stroke-dashoffset ${DUR}s cubic-bezier(.4,0,.2,1)`;
+    // Head starts invisible; transition fires after path is done (delay = DUR)
+    headEl.style.opacity    = '0';
+    headEl.style.transition = `opacity 0.01s step-end ${DUR}s`;
+
+    // IntersectionObserver fires animation when row enters viewport
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        pathEl.style.strokeDashoffset = '0';  // draw path
+        headEl.style.opacity = '1';            // head appears after delay
+        obs.unobserve(rowEl);
+      });
+    }, { threshold: 0.45 });
+
+    obs.observe(rowEl);
+  });
+
+})();
+</script>
+</body>
+</html>
