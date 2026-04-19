@@ -267,28 +267,57 @@ nav{
 .section-sub{font-size:1rem;color:var(--gray400);max-width:560px;line-height:1.8}
 
 /* ── SERVICES ── */
-.services{background:var(--gray50);padding:90px 5%}
-.services-header{margin-bottom:50px}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
+.services{background:linear-gradient(135deg, var(--gray50) 0%, rgba(247,249,252,0.8) 100%);padding:90px 5%;position:relative;overflow:hidden}
+.services::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(26,111,196,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');opacity:0.5;z-index:0}
+.services-header{margin-bottom:60px;position:relative;z-index:1;text-align:center}
+.services-content{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.service-section{margin-bottom:30px;padding:40px;background:linear-gradient(145deg, var(--white) 0%, rgba(255,255,255,0.95) 100%);border-radius:16px;border:1px solid rgba(26,111,196,0.1);box-shadow:0 8px 32px rgba(11,31,58,0.08);transition:transform 0.3s ease, box-shadow 0.3s ease;position:relative;overflow:hidden}
+.service-section::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);border-radius:2px 0 0 2px}
+.service-section:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(11,31,58,0.12)}
+.service-section h3{font-size:1.4rem;color:var(--navy);margin-bottom:20px;font-weight:700;position:relative;padding-left:20px}
+.service-section h3::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--accent);border-radius:50%}
+.service-section h4{font-size:1.15rem;color:var(--navy);margin:28px 0 16px 0;font-weight:600;border-left:3px solid var(--accent);padding-left:16px;background:linear-gradient(90deg, rgba(26,111,196,0.05) 0%, transparent 100%)}
+.service-section p{margin-bottom:16px;color:var(--text);line-height:1.75;font-size:1.05rem}
+.service-section ul{margin:16px 0;padding-left:24px;list-style:none}
+.service-section li{margin-bottom:8px;color:var(--text);position:relative;font-size:1.02rem;line-height:1.6}
+.service-section li::before{content:'▸';position:absolute;left:-20px;color:var(--accent);font-weight:bold}
+.measurement-steps-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;margin-top:30px;
 }
-.srv-card{
-  background:var(--white);border-radius:var(--r2);
-  padding:30px 26px;border:1px solid var(--gray200);
-  transition:transform .22s,box-shadow .22s;
+.measurement-step-card{
+  background:linear-gradient(145deg, var(--white) 0%, rgba(247,249,252,0.8) 100%);
+  border:1px solid rgba(26,111,196,0.15);
+  border-radius:12px;padding:24px;
+  position:relative;
+  transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow:0 2px 8px rgba(11,31,58,0.06);
 }
-.srv-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(11,31,58,.09)}
-.srv-icon{
-  width:50px;height:50px;border-radius:12px;
-  background:rgba(26,111,196,.1);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:18px;
+.measurement-step-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(11,31,58,0.12);
+  border-color:var(--accent);
 }
-.srv-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.srv-card h3{font-size:1rem;color:var(--navy);margin-bottom:10px}
-.srv-card p{font-size:.88rem;color:var(--gray600);line-height:1.75}
+.measurement-step-card h4{
+  font-size:1.1rem;color:var(--navy);
+  margin-bottom:12px;font-weight:600;
+}
+.measurement-step-card p{
+  font-size:0.95rem;color:var(--text);
+  line-height:1.6;margin-bottom:8px;
+}
+.measurement-step-card ul{
+  margin:12px 0;padding-left:16px;
+  list-style:none;
+}
+.measurement-step-card li{
+  margin-bottom:4px;color:var(--text);
+  font-size:0.9rem;position:relative;
+}
+.measurement-step-card li::before{
+  content:'•';position:absolute;left:-16px;
+  color:var(--accent);font-weight:bold;
+}
 
 
 
@@ -644,53 +673,163 @@ footer{
   <div class="services-header">
     <div class="section-eyebrow" data-lang="de" class="active">Leistungen</div>
     <div class="section-eyebrow" data-lang="en">Services</div>
-    <h2 class="section-title" data-lang="de" class="active">Leistungen im Überblick</h2>
-    <h2 class="section-title" data-lang="en">Services at a glance</h2>
+    <h2 class="section-title" data-lang="de" class="active">Funkmessungen und Bewertung von BOS-Objektfunkanlagen</h2>
+    <h2 class="section-title" data-lang="en">Radio Measurements and Assessment of BOS In-Building Radio Systems</h2>
   </div>
-  <div class="services-grid">
 
-    <!-- Card 1 -->
-    <div class="srv-card">
-      <div class="srv-icon">
-        <svg viewBox="0 0 24 24"><path d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-      </div>
-      <h3 data-lang="de" class="active">Funkfeldmessungen</h3>
-      <h3 data-lang="en">Radio Field Measurements</h3>
-      <p data-lang="de" class="active">Durchführung von Funkfeldmessungen in Gebäuden, einschließlich Erforderlichkeitsmessung, Gebäudemessung und Abnahmemessung (TMO/DMO) als Grundlage für Planung und Nachrüstung.</p>
-      <p data-lang="en">Carrying out radio field measurements in buildings, including necessity measurement, building measurement and acceptance measurement (TMO/DMO) as a basis for planning and retrofitting.</p>
+  <div class="services-content">
+    <div class="service-section">
+      <h3 data-lang="de" class="active">Aufgabe einer BOS-Objektfunkanlage</h3>
+      <h3 data-lang="en">1. Task of a BOS In-Building Radio System</h3>
+      <p data-lang="de" class="active">Eine digitale BOS-Objektfunkanlage gewährleistet die zuverlässige Funkversorgung (TETRA 380–400 MHz) innerhalb von Gebäuden, wenn die Freiflächenversorgung keine vollständige und stabile Kommunikation ermöglicht.</p>
+      <p data-lang="en">A digital BOS in-building radio system ensures reliable radio coverage (TETRA 380–400 MHz) within buildings when outdoor coverage does not provide complete and stable communication.</p>
+      <p data-lang="de" class="active">Ist keine Vollversorgung gegeben, ist die Installation einer eigenen BOS-Objektfunkanlage erforderlich.</p>
+      <p data-lang="en">If no full coverage is available, the installation of a dedicated BOS in-building radio system is required.</p>
+      <p data-lang="de" class="active">Der Objektbetreiber ist hierzu verpflichtet, sofern dies durch Bauordnung, Feuerwehr oder Brandschutzkonzept gefordert wird.</p>
+      <p data-lang="en">The building operator is obliged to do this if required by building regulations, fire department or fire protection concept.</p>
+      <p data-lang="de" class="active">Funkfeldmessungen bilden die Grundlage für eine fundierte Entscheidung sowie für die weitere Planung und Umsetzung – unter Berücksichtigung der Anforderungen nach DIN 14024.</p>
+      <p data-lang="en">Radio field measurements form the basis for a well-founded decision as well as for further planning and implementation – taking into account the requirements according to DIN 14024.</p>
     </div>
 
-    <!-- Card 2 -->
-    <div class="srv-card">
-      <div class="srv-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <div class="service-section">
+      <h3 data-lang="de" class="active">Ablauf der Messungen</h3>
+      <h3 data-lang="en">2. Measurement Process</h3>
+      <p data-lang="de" class="active">Die Durchführung der Funkmessungen erfolgt in mehreren aufeinander abgestimmten Schritten:</p>
+      <p data-lang="en">The radio measurements are carried out in several coordinated steps:</p>
+
+      <div class="measurement-steps-grid">
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Voranalyse der Bestands- und Planungsunterlagen</h4>
+          <h4 data-lang="en">Pre-analysis of existing and planning documents</h4>
+          <p data-lang="de" class="active">Strukturierte Analyse der vom Auftraggeber bereitgestellten Unterlagen (Baupläne, Brandschutzkonzept, Bestandsdokumentation, vorhandene Funk- oder Antennenanlagen).</p>
+          <p data-lang="en">Structured analysis of documents provided by the client (construction plans, fire protection concept, existing documentation, existing radio or antenna systems).</p>
+          <p data-lang="de" class="active">Technische Vorbereitung der Messkampagne, Identifikation möglicher Schwachstellen und Definition geeigneter Messpunkte.</p>
+          <p data-lang="en">Technical preparation of the measurement campaign, identification of possible weak points and definition of suitable measurement points.</p>
+        </div>
+
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Erforderlichkeitsmessung</h4>
+          <h4 data-lang="en">Necessity measurement</h4>
+          <p data-lang="de" class="active">Prüfung, ob eine zuverlässige BOS-Kommunikation im Gebäude ohne zusätzliche Anlage möglich ist.</p>
+          <p data-lang="en">Checking whether reliable BOS communication is possible in the building without additional systems.</p>
+          <ul>
+            <li data-lang="de" class="active">Versorgungsmessung (TMO)</li>
+            <li data-lang="en">Coverage measurement (TMO)</li>
+            <li data-lang="de" class="active">Durchdringungsprüfung (DMO – FIZ-Szenario)</li>
+            <li data-lang="en">Penetration test (DMO – FIZ scenario)</li>
+          </ul>
+          <p data-lang="de" class="active">Klare Entscheidungsgrundlage über die Notwendigkeit einer BOS-Objektfunkanlage.</p>
+          <p data-lang="en">Clear decision basis regarding the necessity of a BOS in-building radio system.</p>
+        </div>
+
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Planungs- und Projektmessungen</h4>
+          <h4 data-lang="en">Planning and project measurements</h4>
+          <p data-lang="de" class="active">Erhebung detaillierter Messdaten als Grundlage für Planung und Anmeldung.</p>
+          <p data-lang="en">Collection of detailed measurement data as a basis for planning and registration.</p>
+          <ul>
+            <li data-lang="de" class="active">Umfeldmessung</li>
+            <li data-lang="en">Environment measurement</li>
+            <li data-lang="de" class="active">Panorama-Messung gemäß BDBOS</li>
+            <li data-lang="en">Panorama measurement according to BDBOS</li>
+            <li data-lang="de" class="active">Gebäudemessung mit Plan-Eintrag</li>
+            <li data-lang="en">Building measurement with plan entry</li>
+          </ul>
+          <p data-lang="de" class="active">Durchführung unter Berücksichtigung relevanter Vorgaben (DIN 14024).</p>
+          <p data-lang="en">Implementation taking into account relevant specifications (DIN 14024).</p>
+        </div>
+
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Messungen im Bestand (analog → digital)</h4>
+          <h4 data-lang="en">Measurements in existing systems (analog → digital)</h4>
+          <p data-lang="de" class="active">Technische Bewertung vorhandener Kabel- und Antennenstrukturen.</p>
+          <p data-lang="en">Technical assessment of existing cable and antenna structures.</p>
+          <ul>
+            <li data-lang="de" class="active">HF-Einspeisemessung</li>
+            <li data-lang="en">HF feed measurement</li>
+            <li data-lang="de" class="active">Schleifendämpfung</li>
+            <li data-lang="en">Loop attenuation</li>
+            <li data-lang="de" class="active">DTF / RTL</li>
+            <li data-lang="en">DTF / RTL</li>
+            <li data-lang="de" class="active">Entkopplung</li>
+            <li data-lang="en">Decoupling</li>
+          </ul>
+          <p data-lang="de" class="active">Fundierte Bewertung bestehender Systeme und Planung der Umstellung auf TETRA.</p>
+          <p data-lang="en">Well-founded assessment of existing systems and planning of the conversion to TETRA.</p>
+        </div>
+
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Abnahmemessung</h4>
+          <h4 data-lang="en">Acceptance measurement</h4>
+          <p data-lang="de" class="active">Nachweis der flächendeckenden und zuverlässigen Funkversorgung nach Installation der Anlage.</p>
+          <p data-lang="en">Proof of comprehensive and reliable radio coverage after installation of the system.</p>
+        </div>
+
+        <div class="measurement-step-card">
+          <h4 data-lang="de" class="active">Dach- und Außenversorgungsmessung</h4>
+          <h4 data-lang="en">Roof and outdoor coverage measurement</h4>
+          <p data-lang="de" class="active">Dachmessungen zur Bewertung der Außensignalversorgung (TMO).</p>
+          <p data-lang="en">Roof measurements to assess outdoor signal coverage (TMO).</p>
+          <p data-lang="de" class="active">Optimale Antennenstandortbestimmung unter Berücksichtigung von Feldstärke, Störeinflüssen, Ausbreitungsbedingungen und baulichen Gegebenheiten.</p>
+          <p data-lang="en">Optimal antenna location determination taking into account field strength, interference, propagation conditions and structural conditions.</p>
+          <p data-lang="de" class="active">Festlegung von Antennentyp, Montageort und geeigneten Befestigungssystemen.</p>
+          <p data-lang="en">Determination of antenna type, mounting location and suitable fastening systems.</p>
+        </div>
       </div>
-      <h3 data-lang="de" class="active">BOS-Gebäudefunk Planung</h3>
-      <h3 data-lang="en">BOS In-Building Radio Planning</h3>
-      <p data-lang="de" class="active">Planung von Inhouse-Funklösungen für BOS-Anwendungen (TETRA) unter Berücksichtigung baulicher Gegebenheiten und technischer Anforderungen. Simulation und Auslegung der Funkversorgung mit spezialisierter Planungssoftware (z. B. iBwave) als Grundlage für eine zuverlässige und normgerechte Umsetzung.</p>
-      <p data-lang="en">Planning of in-house radio solutions for BOS applications (TETRA) taking into account structural conditions and technical requirements. Simulation and design of radio coverage with specialised planning software (e.g. iBwave) as the basis for reliable, standards-compliant implementation.</p>
     </div>
 
-    <!-- Card 3 -->
-    <div class="srv-card">
-      <div class="srv-icon">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </div>
-      <h3 data-lang="de" class="active">Technische Analyse</h3>
-      <h3 data-lang="en">Technical Analysis</h3>
-      <p data-lang="de" class="active">Bewertung bestehender Funk- und Antennensysteme als Grundlage für die Umstellung von analogen auf digitale BOS-Funklösungen (TETRA). Analyse und Entwicklung geeigneter technischer Lösungen unter Berücksichtigung der bestehenden Infrastruktur.</p>
-      <p data-lang="en">Assessment of existing radio and antenna systems as a basis for the transition from analogue to digital BOS radio solutions (TETRA). Analysis and development of suitable technical solutions taking the existing infrastructure into account.</p>
+    <div class="service-section">
+      <h3 data-lang="de" class="active">Messdurchführung und Ergebnis</h3>
+      <h3 data-lang="en">3. Measurement execution and results</h3>
+      <p data-lang="de" class="active">Alle Messungen werden mit spezialisiertem und kalibriertem Funkmessgerät durchgeführt.</p>
+      <p data-lang="en">All measurements are carried out with specialized and calibrated radio measurement equipment.</p>
+      <p data-lang="de" class="active">Die Ergebnisse werden in einem strukturierten und nachvollziehbaren Messbericht dokumentiert. Dieser enthält:</p>
+      <p data-lang="en">The results are documented in a structured and traceable measurement report. This contains:</p>
+      <ul>
+        <li data-lang="de" class="active">– Beschreibung des Objekts und der Messmethodik</li>
+        <li data-lang="en">– Description of the object and measurement methodology</li>
+        <li data-lang="de" class="active">– tabellarische und grafische Auswertung</li>
+        <li data-lang="en">– tabular and graphical evaluation</li>
+        <li data-lang="de" class="active">– Eintrag der Messwerte in Grundrisspläne</li>
+        <li data-lang="en">– Entry of measured values in floor plans</li>
+        <li data-lang="de" class="active">– Fotodokumentation (falls erforderlich)</li>
+        <li data-lang="en">– Photo documentation (if required)</li>
+        <li data-lang="de" class="active">– technische Bewertung sowie klare und umsetzbare Empfehlung</li>
+        <li data-lang="en">– technical assessment and clear, implementable recommendations</li>
+      </ul>
+      <p data-lang="de" class="active">Die Messergebnisse bilden eine belastbare Grundlage für die Planung, Dimensionierung und Umsetzung der BOS-Objektfunkanlage – gemäß den Anforderungen nach DIN 14024.</p>
+      <p data-lang="en">The measurement results form a solid basis for the planning, dimensioning and implementation of the BOS in-building radio system – in accordance with the requirements according to DIN 14024.</p>
+      <p data-lang="de" class="active">Auf dieser Grundlage werden technische Lösungen entwickelt, einschließlich:</p>
+      <p data-lang="en">Based on this, technical solutions are developed, including:</p>
+      <ul>
+        <li data-lang="de" class="active">– Auswahl der Systemarchitektur</li>
+        <li data-lang="en">– Selection of system architecture</li>
+        <li data-lang="de" class="active">– Dimensionierung der benötigten Komponenten</li>
+        <li data-lang="en">– Dimensioning of required components</li>
+        <li data-lang="de" class="active">– Festlegung der Installationsstandorte</li>
+        <li data-lang="en">– Determination of installation locations</li>
+        <li data-lang="de" class="active">– Planung und Optimierung der Kabeltrassen unter Berücksichtigung von Dämpfungsverlusten, baulichen Gegebenheiten und normativen Anforderungen</li>
+        <li data-lang="en">– Planning and optimization of cable routes taking into account attenuation losses, structural conditions and normative requirements</li>
+      </ul>
     </div>
 
-    <!-- Card 4 -->
-    <div class="srv-card">
-      <div class="srv-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <h3 data-lang="de" class="active">Projektunterstützung</h3>
-      <h3 data-lang="en">Project Support</h3>
-      <p data-lang="de" class="active">Technische Unterstützung während des Projekts, einschließlich Durchführung von Messungen, Erstellung von Messberichten und Projektdokumentation. Mitwirkung bei Abstimmung mit Behörden und Berücksichtigung der Anforderungen von BDBOS.</p>
-      <p data-lang="en">Technical support during the project, including carrying out measurements, creating measurement reports and project documentation. Participation in coordination with authorities and consideration of BDBOS requirements.</p>
+    <div class="service-section">
+      <h3 data-lang="de" class="active">Kosten und Abrechnung</h3>
+      <h3 data-lang="en">4. Costs and billing</h3>
+      <p data-lang="de" class="active">Die Kosten der Mess- und Prüfdienstleistungen werden individuell und projektbezogen kalkuliert.</p>
+      <p data-lang="en">The costs of measurement and testing services are calculated individually and on a project basis.</p>
+      <p data-lang="de" class="active">Maßgeblich sind insbesondere:</p>
+      <p data-lang="en">The decisive factors are in particular:</p>
+      <ul>
+        <li data-lang="de" class="active">– Objektgröße</li>
+        <li data-lang="en">– Object size</li>
+        <li data-lang="de" class="active">– bauliche Komplexität</li>
+        <li data-lang="en">– structural complexity</li>
+        <li data-lang="de" class="active">– erforderlicher Messumfang</li>
+        <li data-lang="en">– required measurement scope</li>
+        <li data-lang="de" class="active">– Lage des Objekts</li>
+        <li data-lang="en">– Location of the object</li>
+      </ul>
     </div>
   </div>
 </section>
