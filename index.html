@@ -8,6 +8,12 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  --ink:#0c1824;--ink2:#142336;
+  --blue:#1a6fc4;--blue2:#2381e0;--blue-dim:rgba(26,111,196,.11);
+  --white:#fff;--off:#f4f7fb;--off2:#eaeff7;
+  --muted:#64748b;--border:#dde4f0;
+  --r:10px;--r2:16px;
+  --max:1100px;--pad:clamp(20px,5vw,64px);
   --navy:#0b1f3a;
   --navy2:#102646;
   --accent:#1a6fc4;
@@ -24,11 +30,13 @@
   --r:10px;
   --r2:16px;
 }
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7}
-h1,h2,h3,h4{font-family:'Inter',sans-serif;line-height:1.2}
-img{display:block;max-width:100%}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Inter',serif;line-height:1.22;font-weight:400}
 a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+.wrap{max-width:100%;margin:0 auto}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
@@ -88,6 +96,7 @@ nav{
   background:var(--accent);color:#fff !important;
   padding:8px 18px;border-radius:8px;font-weight:600;
   transition:background .2s;
+  max-height: 40px;
 }
 .nav-links .nav-cta:hover{background:var(--accent2)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
@@ -113,7 +122,7 @@ nav{
 .hero{
   background:var(--navy);
   min-height:90vh;
-  display:flex;align-items:center;
+  display:flex;align-items:center;justify-content:space-between;
   padding:90px 5% 80px;
   position:relative;overflow:hidden;
 }
@@ -185,8 +194,7 @@ nav{
 
 /* abstract antenna SVG illustration */
 .hero-visual{
-  position:absolute;right:4%;top:50%;transform:translateY(-50%);
-  width:min(420px,40vw);opacity:.18;pointer-events:none;
+  width:min(420px,40vw);opacity:1;pointer-events:none;width:600px;height:400px;
 }
 @media(max-width:900px){.hero-visual{display:none}}
 @media(max-width:900px){
@@ -487,11 +495,6 @@ footer{
 .scroll-section{opacity:0;transform:translateY(24px);transition:opacity .55s,transform .55s;border-top:1px solid rgba(26,111,196,0.1);}
 .scroll-section.visible{opacity:1;transform:none}
 
-/* ── TRANSLATION HIDDEN ── */
-[data-lang]{display:none}
-[data-lang].active{display:block}
-[data-lang-inline]{display:none}
-[data-lang-inline].active{display:inline}
 </style>
 </head>
 <body>
@@ -529,31 +532,6 @@ footer{
      HERO
 ══════════════════════════════════════ -->
 <section class="hero" id="hero">
-  <!-- abstract antenna illustration -->
-  <svg class="hero-visual" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="210" cy="210" r="180" stroke="white" stroke-width="1" fill="none" opacity=".4"/>
-    <circle cx="210" cy="210" r="120" stroke="white" stroke-width="1" fill="none" opacity=".35"/>
-    <circle cx="210" cy="210" r="60" stroke="white" stroke-width="1" fill="none" opacity=".3"/>
-    <line x1="210" y1="30" x2="210" y2="390" stroke="white" stroke-width=".8" opacity=".25"/>
-    <line x1="30" y1="210" x2="390" y2="210" stroke="white" stroke-width=".8" opacity=".25"/>
-    <!-- antenna tower -->
-    <line x1="210" y1="390" x2="210" y2="180" stroke="white" stroke-width="3" stroke-linecap="round"/>
-    <line x1="190" y1="280" x2="230" y2="280" stroke="white" stroke-width="2"/>
-    <line x1="195" y1="310" x2="225" y2="310" stroke="white" stroke-width="2"/>
-    <line x1="200" y1="340" x2="220" y2="340" stroke="white" stroke-width="2"/>
-    <circle cx="210" cy="175" r="8" fill="white" opacity=".7"/>
-    <!-- signal arcs -->
-    <path d="M170 175 A57 57 0 0 1 250 175" stroke="white" stroke-width="1.5" fill="none" opacity=".5"/>
-    <path d="M145 155 A90 90 0 0 1 275 155" stroke="white" stroke-width="1.5" fill="none" opacity=".35"/>
-    <path d="M120 135 A120 120 0 0 1 300 135" stroke="white" stroke-width="1.5" fill="none" opacity=".22"/>
-    <!-- dots -->
-    <circle cx="100" cy="210" r="4" fill="white" opacity=".5"/>
-    <circle cx="320" cy="210" r="4" fill="white" opacity=".5"/>
-    <circle cx="210" cy="100" r="4" fill="white" opacity=".5"/>
-    <circle cx="155" cy="155" r="3" fill="white" opacity=".4"/>
-    <circle cx="265" cy="155" r="3" fill="white" opacity=".4"/>
-  </svg>
-
   <div class="hero-inner">
     <div class="hero-badge">
       <span data-lang="de" class="active">BOS-Gebäudefunk · Bayern</span>
@@ -582,6 +560,8 @@ footer{
       <span data-lang="en">Based in Bavaria · short-notice appointments</span>
     </div>
   </div>
+
+  <img src="antenna.png" class="hero-visual" alt="Abstract antenna illustration">
 </section>
 
 <!-- ══════════════════════════════════════
@@ -1094,26 +1074,12 @@ footer{
     <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
   </div>
   <div class="footer-links">
-    <a href="#impressum" data-lang="de" class="active">Impressum</a>
-    <a href="#impressum" data-lang="en">Legal notice</a>
-    <a href="#datenschutz" data-lang="de" class="active">Datenschutz</a>
-    <a href="#datenschutz" data-lang="en">Privacy policy</a>
+    <a href="impressum.html" data-lang="de" class="active">Impressum</a>
+    <a href="impressum.html" data-lang="en">Legal notice</a>
+    <a href="policy.html" data-lang="de" class="active">Datenschutz</a>
+    <a href="policy.html" data-lang="en">Privacy policy</a>
   </div>
 </footer>
-
-<!-- IMPRESSUM (placeholder) -->
-<section id="impressum" style="padding:60px 5%;background:var(--gray50);display:none">
-  <h2 style="font-family:'Syne',sans-serif;color:var(--navy);margin-bottom:16px">Impressum</h2>
-  <p style="color:var(--gray600);font-size:.93rem">Aleksei Shcherbakov · AVTEL Systems<br>
-  [Adresse]<br>
-  E-Mail: myemail@gmail.com<br>
-  <em>Vollständiges Impressum folgt.</em></p>
-</section>
-
-<section id="datenschutz" style="padding:60px 5%;background:var(--white);display:none">
-  <h2 style="font-family:'Syne',sans-serif;color:var(--navy);margin-bottom:16px">Datenschutzerklärung</h2>
-  <p style="color:var(--gray600);font-size:.93rem"><em>Datenschutzerklärung folgt.</em></p>
-</section>
 
 <script>
 /* ── LANGUAGE ── */

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leistungen – AVTEL Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c1824;--ink2:#142336;
+  --blue:#1a6fc4;--blue2:#2381e0;--blue-dim:rgba(26,111,196,.11);
+  --white:#fff;--off:#f4f7fb;--off2:#eaeff7;
+  --muted:#64748b;--border:#dde4f0;
+  --r:10px;--r2:16px;
+  --max:1100px;--pad:clamp(20px,5vw,64px);
+  --navy:#0b1f3a;
+  --navy2:#102646;
+  --accent:#1a6fc4;
+  --accent2:#2381e0;
+  --orange:#e8620a;
+  --white:#fff;
+  --gray50:#f7f9fc;
+  --gray100:#eef1f6;
+  --gray200:#d8deea;
+  --gray400:#8a97ae;
+  --gray600:#4a5568;
+  --gray800:#20252e;
+  --text:#1a2233;
+  --r:10px;
+  --r2:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Inter',serif;line-height:1.22;font-weight:400}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+.wrap{max-width:100%;margin:0 auto}
+
+/* ── LANG SWITCHER ── */
+.lang-switch{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch-full{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch:hover{
+  background:var(--accent2);
+  border-color:var(--accent2);
+  color:#fff;
+}
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(11,31,58,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:90px;
+}
+.logo{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.15rem;color:#fff;
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-icon{
+  width:80px;height:80px;
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{
+  color:var(--gray200);font-size:1.3rem;font-weight:500;
+  transition:color .2s;padding:4px 0;
+}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{
+  background:var(--accent);color:#fff !important;
+  padding:8px 18px;border-radius:8px;font-weight:600;
+  transition:background .2s;
+  max-height: 10px;
+}
+.nav-links .nav-cta:hover{background:var(--accent2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-nav-controls{display:none;gap:12px;align-items:center}
+
+/* mobile nav */
+@media(max-width:900px){
+  .nav-links{
+    display:none;position:fixed;top:90px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:stretch;
+    padding:16px 5% 24px;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;font-size:1.25rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .lang-switch-full{visibility: collapse;}
+  .nav-links .nav-cta{text-align:center;margin-top:8px;border-bottom:none}
+  .hamburger{display:flex}
+  .mobile-nav-controls{display:flex}
+}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #222;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* CTA */
+.cta-strip{background:var(--blue);padding:52px var(--pad);text-align:center}
+.cta-strip h2{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;margin-bottom:14px}
+.cta-strip p{font-size:1rem;color:rgba(255,255,255,.78);max-width:40%;margin:0 auto 28px;line-height:1.8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
+.cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-logo{font-size:.97rem;color:#fff}
+.footer-logo em{color:#6db3f7;font-style:normal}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:18px}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+    </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html#hero" onclick="scrollTo(0,0)">
+    <div class="logo-icon">
+      <img src="avtel-systems-white.png">
+    </div>
+    <!--AVTEL <span>Systems</span>-->
+  </a>
+
+  <div class="mobile-nav-controls">
+    <button type="button" id="langToggle" class="lang-switch" onclick="toggleLang()">EN</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
+    <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
+    <li><a href="index.html#projects" onclick="closeMenu()" data-lang="de" class="active">Projekterfahrung</a><a href="index.html#projects" onclick="closeMenu()" data-lang="en">Projects</a></li>
+    <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
+    <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
+    <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
+    <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button></li>
+    <li><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="de" class="active">Kontakt</a><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>
+        <strong>AVTEL Systems</strong><br>
+        [Straße und Hausnummer]<br>
+        [PLZ, Ort]<br>
+        Deutschland
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+        Telefon: [Telefon einfügen]<br>
+        E-Mail: [E-Mail einfügen]
+    </p>
+
+    <h2>Vertreten durch</h2>
+    <p>
+        Geschäftsführer: [Name einfügen]
+    </p>
+
+    <h2>Registereintrag</h2>
+    <p>
+        Eintragung im Handelsregister.<br>
+        Registergericht: [Ort]<br>
+        Registernummer: [HRB Nummer]
+    </p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+        [USt-ID einfügen]
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <p>
+        [Name einfügen]<br>
+        [Adresse wie oben]
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+        Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+        Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+        bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+    </p>
+
+    <h2>EU-Streitschlichtung</h2>
+    <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        https://ec.europa.eu/consumers/odr/
+    </p>
+
+    <h2>Verbraucherstreitbeilegung</h2>
+    <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+</div>
+
+    <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div>
+    <div class="footer-logo">AVTEL <span>Systems</span></div>
+    <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html" data-lang="de" class="active">Impressum</a>
+    <a href="impressum.html" data-lang="en">Legal notice</a>
+    <a href="policy.html" data-lang="de" class="active">Datenschutz</a>
+    <a href="policy.html" data-lang="en">Privacy policy</a>
+  </div>
+</footer>
+<script>
+    /* ── LANGUAGE ── */
+let currentLang = 'de';
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === l);
+    el.style.display = el.dataset.lang === l ? '' : 'none';
+  });
+  const toggle = document.getElementById('langToggle');
+  if (toggle) {
+    toggle.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+  const togglefull = document.getElementById('langToggleFull');
+  if (togglefull) {
+    togglefull.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+}
+function toggleLang() {
+  setLang(currentLang === 'de' ? 'en' : 'de');
+}
+// init
+setLang('de');
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('navLinks').classList.remove('open');
+}
+/* ── NAV ── */
+let lang='de';
+function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
+function toggleMenu(){document.getElementById('navList').classList.toggle('open')}
+function closeMenu(){document.getElementById('navList').classList.remove('open')}
+
+/* ── REVEAL ── */
+const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+</script>
+</body>
+</html>

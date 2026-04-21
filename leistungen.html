@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leistungen – AVTEL Systems</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -36,7 +36,7 @@ h1,h2,h3,h4{font-family:'Inter',serif;line-height:1.22;font-weight:400}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 img{display:block;max-width:100%}
-.wrap{max-width:100%;margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:100%;margin:0 auto}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
@@ -96,6 +96,7 @@ nav{
   background:var(--accent);color:#fff !important;
   padding:8px 18px;border-radius:8px;font-weight:600;
   transition:background .2s;
+  max-height: 10px;
 }
 .nav-links .nav-cta:hover{background:var(--accent2)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
@@ -118,10 +119,10 @@ nav{
 }
 
 /* PAGE HERO */
-.page-hero{background:var(--ink);padding:72px var(--pad) 64px;position:relative;overflow:hidden}
+.page-hero{background:var(--ink);padding:90px 5% 80px;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 90% 30%,rgba(26,111,196,.2) 0%,transparent 65%),radial-gradient(ellipse 30% 50% at 5% 80%,rgba(26,111,196,.08) 0%,transparent 60%);pointer-events:none}
 .page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
-.page-hero-inner{position:relative;z-index:1;max-width:100%;margin:0 auto;padding:0 var(--pad)}
+.page-hero-inner{position:relative;z-index:1;max-width:100%;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6db3f7;margin-bottom:18px}
 .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#6db3f7;animation:dot 2s infinite}
 @keyframes dot{0%,100%{opacity:1}50%{opacity:.3}}
@@ -131,7 +132,7 @@ nav{
 .hero-tag{font-size:1rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(109,179,247,.12);border:1px solid rgba(109,179,247,.25);color:#6db3f7}
 
 /* SHARED SECTION */
-.section{padding:80px var(--pad)}
+.section{padding:90px 5% 80px}
 .section-label{font-size:1rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
 .section-title{font-size:clamp(1.6rem,3vw,3.3rem);color:var(--ink);margin-bottom:16px}
 .section-lead{font-size:1.2rem;color:var(--muted);max-width:90%;line-height:1.85}
@@ -151,8 +152,8 @@ nav{
 .s1-highlight strong{color:#fff}
 
 /* SECTION 2 ZIGZAG */
-.s2{background:var(--off);padding:80px var(--pad)}
-.s2-inner{max-width:100%;margin:0 auto;padding:0 var(--pad)}
+.s2{background:var(--off);padding:90px 5% 80px}
+.s2-inner{max-width:100%;margin:0 auto}
 .zz-wrap{position:relative;display:flex;flex-direction:column;gap:0;padding:36px 0 20px}
 .zz-row{position:relative;display:flex;min-height:210px;align-items:flex-start}
 .zz-row.left{justify-content:flex-start}
@@ -213,7 +214,7 @@ nav{
 /* CTA */
 .cta-strip{background:var(--blue);padding:52px var(--pad);text-align:center}
 .cta-strip h2{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;margin-bottom:14px}
-.cta-strip p{font-size:1rem;color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 28px;line-height:1.8}
+.cta-strip p{font-size:1rem;color:rgba(255,255,255,.78);max-width:40%;margin:0 auto 28px;line-height:1.8}
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
 .cta-btn:hover{opacity:.92;transform:translateY(-1px)}
 
@@ -365,7 +366,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
             <div class="zz-num">4</div>
             <h3>Messungen im Bestand (analog → digital)</h3>
           </div>
-          <p>Technische Bewertung vorhandener Kabel- und Antennenstrukturen: HF-Einspeisemessung, Schleifendämpfung, DTF / RTL, Entkopplung. Zielgerichtete Planung der Umstellung auf TETRA.</p>
+          <p>Technische Bewertung vorhandener Kabel- und Antennenstrukturen: HF-Einspeisemessung, Schleifendämpfung, DTF / RTL, Entkopplung. Diese Analyse ermöglicht eine fundierte Bewertung bestehender Systeme sowie eine zielgerichtete Planung der Umstellung auf digitale BOS-Funklösungen (TETRA).</p>
         </div>
         <svg class="zz-arrow" id="zza4" viewBox="0 0 1000 220" preserveAspectRatio="none">
           <path class="zz-path" id="zzp4"/>
@@ -396,6 +397,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
             <h3>Dach- und Außenversorgungsmessung</h3>
           </div>
           <p>Dachmessungen zur Bewertung der Außensignalversorgung (TMO). Ermittlung des optimalen Antennenstandorts unter Berücksichtigung von Feldstärke, Signalqualität, Störeinflüssen, Ausbreitungsbedingungen und baulichen Gegebenheiten.</p>
+          <p>Festlegung von Antennentyp, Richtcharakteristik, Montageort und Ausrichtung. Bestimmung geeigneter Befestigungs- und Montagesysteme unter Berücksichtigung statischer Anforderungen, Leitungsführung, Blitzschutz und Potentialausgleich.</p>
         </div>
       </div>
 
@@ -409,6 +411,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="section-label">Dokumentation</div>
     <h2 class="section-title">3. Messdurchführung und Ergebnis</h2>
     <p class="section-lead">Alle Messungen werden mit spezialisiertem und kalibriertem Funkmessgerät durchgeführt.</p>
+    <p class="section-lead">ADie Ergebnisse werden in einem strukturierten und nachvollziehbaren Messbericht dokumentiert.</p>
     <div class="s3-grid">
       <div>
         <p style="font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:14px">Messbericht enthält</p>
@@ -423,7 +426,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="s3-aside">
         <div>
           <div class="s3-aside-title">Technische Lösungen</div>
-          <p>Die Messergebnisse bilden die Grundlage für die Entwicklung technischer Lösungen gemäß DIN 14024:</p>
+          <p>Die Messergebnisse bilden eine belastbare Grundlage für die Planung, Dimensionierung und Umsetzung der BOS-Objektfunkanlage – gemäß den Anforderungen nach DIN 14024.</p>
         </div>
         <div class="s3-sep"></div>
         <div class="s3-blist">
@@ -448,7 +451,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
   <div class="wrap">
     <div class="section-label">Abrechnung</div>
     <h2 class="section-title">4. Kosten und Abrechnung</h2>
-    <p class="section-lead">Die Kosten werden individuell und projektbezogen kalkuliert. Maßgeblich sind insbesondere:</p>
+    <p class="section-lead">Die Kosten der Mess- und Prüfdienstleistungen werden individuell und projektbezogen kalkuliert. Maßgeblich sind insbesondere:</p>
     <div class="s4-grid">
       <div class="s4-card">
         <div class="s4-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
@@ -476,16 +479,25 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 
 <section class="cta-strip">
   <h2>Anfrage senden</h2>
-  <p>Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Ich melde mich kurzfristig bei Ihnen zurück.</p>
-  <a href="index.html#contact" class="cta-btn">👉 Kontakt aufnehmen</a>
+  <p>Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Senden Sie eine Anfrage – ich melde mich kurzfristig bei Ihnen zurück.</p>
+  <a href="index.html#contact" class="cta-btn">👉 Anfrage senden</a>
 </section>
 
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo">AVTEL <em>Systems</em></div>
-  <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
-  <div class="footer-links"><a href="index.html#">Impressum</a><a href="index.html#">Datenschutz</a></div>
+  <div>
+    <div class="footer-logo">AVTEL <span>Systems</span></div>
+    <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html" data-lang="de" class="active">Impressum</a>
+    <a href="impressum.html" data-lang="en">Legal notice</a>
+    <a href="policy.html" data-lang="de" class="active">Datenschutz</a>
+    <a href="policy.html" data-lang="en">Privacy policy</a>
+  </div>
 </footer>
-
 <script>
     /* ── LANGUAGE ── */
 let currentLang = 'de';
