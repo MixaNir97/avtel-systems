@@ -578,7 +578,7 @@ document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
     if (!rowEl || !pathEl || !headEl) return;
 
     // Build the L-path: start at (xStart, 110) → H xArm → V 220
-    const d = `M${cfg.xStart},110 H${cfg.xArm} V220`;
+    const d = `M${cfg.xStart},110 H${cfg.xArm} V215`;
     pathEl.setAttribute('d', d);
 
     // Arrowhead: tip at xArm,220 — pointing downward

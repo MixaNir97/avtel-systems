@@ -121,7 +121,7 @@ nav{
 /* ── HERO ── */
 .hero{
   background:var(--navy);
-  min-height:90vh;
+  min-height:92.5vh;
   display:flex;align-items:center;justify-content:space-between;
   padding:90px 5% 80px;
   position:relative;overflow:hidden;
@@ -194,7 +194,7 @@ nav{
 
 /* abstract antenna SVG illustration */
 .hero-visual{
-  width:min(420px,40vw);opacity:1;pointer-events:none;width:600px;height:400px;
+  width:min(420px,40vw);opacity:1;pointer-events:none;width:700px;height:400px;
 }
 @media(max-width:900px){.hero-visual{display:none}}
 @media(max-width:900px){
@@ -216,12 +216,10 @@ nav{
   .hero-sub{
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--navy2);
   }
 
   .hero-btns{
     gap: 10px;
-    color: var(--navy2);
   }
 }
 
@@ -242,11 +240,18 @@ nav{
 .about-text p:last-child{margin-bottom:0}
 .about-photo{
   border-radius:var(--r2);overflow:hidden;
-  aspect-ratio:4/3;
   background:linear-gradient(135deg,#d0e4f7 0%,#e8f0fb 100%);
   display:flex;align-items:center;justify-content:center;
   position:relative;
   border:1px solid var(--gray200);
+  width: fit-content;
+  justify-self: center;
+}
+.about-photo img{
+  width:auto;
+  height:auto;
+  max-height: 800px;
+  display:block;
 }
 .about-photo svg{width:55%;height:55%;opacity:.35}
 .photo-placeholder{
@@ -561,7 +566,7 @@ footer{
     </div>
   </div>
 
-  <img src="antenna.png" class="hero-visual" alt="Abstract antenna illustration">
+  <img src="antenna_new.png" class="hero-visual" alt="Abstract antenna illustration">
 </section>
 
 <!-- ══════════════════════════════════════
@@ -586,21 +591,8 @@ footer{
     <p data-lang="en">Backed by over 27 years of practical experience in radio and communications engineering.</p>
   </div>
   <div class="about-photo">
-    <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- person silhouette holding device -->
-      <circle cx="80" cy="52" r="24" fill="#1a6fc4" opacity=".3"/>
-      <rect x="60" y="78" width="40" height="50" rx="6" fill="#1a6fc4" opacity=".2"/>
-      <!-- handheld device -->
-      <rect x="96" y="85" width="22" height="36" rx="4" fill="#1a6fc4" opacity=".45" stroke="#1a6fc4" stroke-width="1.5"/>
-      <line x1="99" y1="93" x2="115" y2="93" stroke="#6db3f7" stroke-width="1.2"/>
-      <line x1="99" y1="98" x2="115" y2="98" stroke="#6db3f7" stroke-width="1.2" opacity=".6"/>
-      <line x1="99" y1="103" x2="110" y2="103" stroke="#6db3f7" stroke-width="1.2" opacity=".4"/>
-      <circle cx="107" cy="113" r="3" fill="#6db3f7" opacity=".6"/>
-    </svg>
-    <div class="photo-placeholder">
-      <span data-lang="de" class="active">Foto wird hinzugefügt</span>
-      <span data-lang="en">Photo to be added</span>
-    </div>
+    <img src="me_with_tool.jpg" class="about-photo-img" alt="Abstract antenna illustration">
+    
   </div>
 </section>
 
