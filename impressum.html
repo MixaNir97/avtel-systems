@@ -161,14 +161,18 @@ nav{
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
 .cta-btn:hover{opacity:.92;transform:translateY(-1px)}
 
-/* FOOTER */
-footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.footer-logo{font-size:.97rem;color:#fff}
-.footer-logo em{color:#6db3f7;font-style:normal}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
-.footer-links{display:flex;gap:18px}
-.footer-links a{font-size:.8rem;color:rgba(255,255,255,.35);transition:color .2s}
+/* ── FOOTER ── */
+footer{
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,.07);
+  padding:36px 5%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-logo span{color:#8e8e8e}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:1rem;color:var(--gray400);transition:color .2s}
 .footer-links a:hover{color:#fff}
+.footer-copy{font-size:1rem;color:var(--gray400)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
@@ -195,7 +199,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
     <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
-    <li><a href="index.html#projects" onclick="closeMenu()" data-lang="de" class="active">Projekterfahrung</a><a href="index.html#projects" onclick="closeMenu()" data-lang="en">Projects</a></li>
+    <li><a href="projektablauf.html" onclick="closeMenu()" data-lang="de" class="active">Projektablauf</a><a href="projektablauf.html" onclick="closeMenu()" data-lang="en">Project Workflow</a></li>
     <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
     <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
     <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
@@ -210,67 +214,60 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 
     <h2>Angaben gemäß § 5 TMG</h2>
     <p>
-        <strong>AVTEL Systems</strong><br>
-        [Straße und Hausnummer]<br>
-        [PLZ, Ort]<br>
-        Deutschland
+        <strong>Aleksei Shcherbakov - AVTEL Systems</strong><br>
+        Marianne-Hoppe-Str. 24<br>
+        81249, München<br>
+        Deutschland<br>
     </p>
 
     <h2>Kontakt</h2>
     <p>
-        Telefon: [Telefon einfügen]<br>
-        E-Mail: [E-Mail einfügen]
-    </p>
-
-    <h2>Vertreten durch</h2>
-    <p>
-        Geschäftsführer: [Name einfügen]
-    </p>
-
-    <h2>Registereintrag</h2>
-    <p>
-        Eintragung im Handelsregister.<br>
-        Registergericht: [Ort]<br>
-        Registernummer: [HRB Nummer]
+        E-Mail: aleksei.shcherbakov@avtel-systems.de<br>
+        Telefon: +491777726649
     </p>
 
     <h2>Umsatzsteuer-ID</h2>
     <p>
         Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-        [USt-ID einfügen]
+        DE460765956
+    </p>
+
+    <h2>Steuernummer</h2>
+    <p>
+        Steuernummer: 146/193/34885
     </p>
 
     <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
     <p>
-        [Name einfügen]<br>
-        [Adresse wie oben]
+        Aleksei Shcherbakov<br>
+        Marianne-Hoppe-Str. 24<br>
+        81249, München<br>
+        Deutschland<br>
     </p>
 
     <h2>Haftung für Inhalte</h2>
     <p>
-        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
-        Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
-        nach den allgemeinen Gesetzen verantwortlich.
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
     </p>
 
     <h2>Haftung für Links</h2>
     <p>
-        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
-        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+        Deshalb können wir für diese fremden Inhalte keine Gewähr übernehmen.
+        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.
     </p>
 
     <h2>Urheberrecht</h2>
     <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
-        Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
-        bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        Die Inhalte dieser Website unterliegen dem deutschen Urheberrecht.
+        Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.
     </p>
 
     <h2>EU-Streitschlichtung</h2>
     <p>
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
         https://ec.europa.eu/consumers/odr/
     </p>
 

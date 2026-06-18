@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leistungen – AVTEL Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c1824;--ink2:#142336;
+  --blue:#1a6fc4;--blue2:#2381e0;--blue-dim:rgba(26,111,196,.11);
+  --white:#fff;--off:#f4f7fb;--off2:#eaeff7;
+  --muted:#64748b;--border:#dde4f0;
+  --r:10px;--r2:16px;
+  --pad:clamp(20px,5vw,64px);
+  --navy:#0b1f3a;
+  --navy2:#102646;
+  --accent:#1a6fc4;
+  --accent2:#2381e0;
+  --orange:#e8620a;
+  --white:#fff;
+  --gray50:#f7f9fc;
+  --gray100:#eef1f6;
+  --gray200:#d8deea;
+  --gray400:#8a97ae;
+  --gray600:#4a5568;
+  --gray800:#20252e;
+  --text:#1a2233;
+  --r:10px;
+  --r2:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Inter',serif;line-height:1.22;font-weight:400}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+.wrap{max-width:100%;margin:0 auto}
+
+/* ── LANG SWITCHER ── */
+.lang-switch{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch-full{
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch:hover{
+  background:var(--accent2);
+  border-color:var(--accent2);
+  color:#fff;
+}
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(11,31,58,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:90px;
+}
+.logo{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.15rem;color:#fff;
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-icon{
+  width:80px;height:80px;
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{
+  color:var(--gray200);font-size:1.3rem;font-weight:500;
+  transition:color .2s;padding:4px 0;
+}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{
+  background:var(--accent);color:#fff !important;
+  padding:8px 18px;border-radius:8px;font-weight:600;
+  transition:background .2s;
+  max-height: 10px;
+}
+.nav-links .nav-cta:hover{background:var(--accent2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-nav-controls{display:none;gap:12px;align-items:center}
+
+/* mobile nav */
+@media(max-width:900px){
+  .nav-links{
+    display:none;position:fixed;top:90px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:stretch;
+    padding:16px 5% 24px;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;font-size:1.25rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .lang-switch-full{visibility: collapse;}
+  .nav-links .nav-cta{text-align:center;margin-top:8px;border-bottom:none}
+  .hamburger{display:flex}
+  .mobile-nav-controls{display:flex}
+}
+
+/* PAGE HERO */
+.page-hero{background:var(--ink);padding:90px 5% 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 90% 30%,rgba(26,111,196,.2) 0%,transparent 65%),radial-gradient(ellipse 30% 50% at 5% 80%,rgba(26,111,196,.08) 0%,transparent 60%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1;max-width:100%;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6db3f7;margin-bottom:18px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#6db3f7;animation:dot 2s infinite}
+@keyframes dot{0%,100%{opacity:1}50%{opacity:.3}}
+.page-hero h1{font-size:clamp(1.5rem,4vw,3.3rem);color:#fff;margin-bottom:20px;max-width:100%}
+.page-hero p{font-size:1.05rem;color:var(--gray200);max-width:80%;line-height:1.8;margin-bottom:32px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tag{font-size:1rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(109,179,247,.12);border:1px solid rgba(109,179,247,.25);color:#6db3f7}
+
+/* SHARED SECTION */
+.section{padding:90px 5% 80px}
+.section-label{font-size:1rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(1.6rem,3vw,3.3rem);color:var(--ink);margin-bottom:16px}
+.section-lead{font-size:1.2rem;color:var(--muted);max-width:90%;line-height:1.85}
+
+/* ── OVERVIEW PHASE STRIP ───────────────────────────────── */
+.phase-overview{background:var(--white);padding:90px 5% 80px}
+.phase-overview-inner{margin:0 auto}
+.phase-overview h2{color:var(--ink);font-size:clamp(1.6rem,3vw,3.3rem);margin-bottom:10px}
+.phase-overview .sub{color:var(--gray600);font-size:1.2rem;margin-bottom:48px;line-height:1.8}
+.phase-strip{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  position:relative;
+}
+@media(max-width:860px){
+  .phase-strip{grid-template-columns:repeat(3,1fr);gap:2px}
+}
+@media(max-width:520px){
+  .phase-strip{grid-template-columns:repeat(2,1fr)}
+}
+.phase-step{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;position:relative;padding:0 6px;
+}
+/* connecting line between steps */
+.phase-step:not(:last-child)::after{
+  content:'';position:absolute;
+  top:20px;left:calc(50% + 20px);right:calc(-50% + 20px);
+  height:2px;background:var(--border);
+  z-index:0;
+}
+@media(max-width:860px){.phase-step:not(:last-child)::after{display:none}}
+.phase-circle{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(26,111,196,.2);border:1.5px solid rgba(26,111,196,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;
+  color:#6db3f7;z-index:1;flex-shrink:0;margin-bottom:12px;
+  transition:background .25s,border-color .25s;
+}
+.phase-step.active .phase-circle{
+  background:var(--blue);border-color:var(--blue);color:#fff;
+}
+.phase-step-label{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.4;max-width:150px}
+.phase-step.active .phase-step-label{color:var(--gray600)}
+
+/* ── ZIGZAG (reused from leistungen) ───────────────────── */
+.zz-section{background:var(--off);padding:90px 5% 80px}
+.zz-inner{margin:0 auto}
+.zz-wrap{position:relative;display:flex;flex-direction:column;gap:0;padding:36px 0 20px}
+.zz-row{position:relative;display:flex;min-height:210px;align-items:flex-start}
+.zz-row.left{justify-content:flex-start}
+.zz-row.right{justify-content:flex-end}
+.zz-card{
+  width:48%;background:var(--white);border-radius:var(--r2);
+  padding:26px 24px;border:1px solid var(--border);
+  box-shadow:0 2px 12px rgba(12,24,36,.05);
+  position:relative;z-index:2;
+  transition:transform .22s,box-shadow .22s,border-color .2s;
+}
+.zz-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(12,24,36,.09);border-color:rgba(26,111,196,.3)}
+.zz-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.zz-num{
+  flex-shrink:0;width:34px;height:34px;border-radius:50%;
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;
+}
+.zz-card h3{font-size:1.4rem;color:var(--ink);line-height:1.25}
+.zz-card p{font-size:1.1rem;color:var(--muted);line-height:1.78;margin-bottom:10px}
+.zz-card p:last-child{margin-bottom:0}
+/* bullet list inside zz-card */
+.zz-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.zz-item{display:flex;gap:9px;align-items:flex-start;font-size:1rem;color:var(--muted);line-height:1.65}
+.zz-dot{flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-top:.55em}
+/* result badge inside card */
+.zz-result{
+  display:flex;flex-direction:column;gap:6px;
+  margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border);
+}
+.zz-res-item{display:flex;align-items:center;gap:8px;font-size:1rem;color:var(--muted)}
+.zz-res-item::before{content:'✔';color:#22c55e;font-size:1rem;flex-shrink:0}
+/* arrow SVG overlay */
+.zz-arrow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.zz-path{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.zz-arrowhead{fill:var(--blue)}
+@media(max-width:720px){
+  .zz-row{min-height:auto;margin-bottom:14px}
+  .zz-card{width:100%}
+  .zz-arrow{display:none}
+}
+
+/* ── COLLABORATION ──────────────────────────────────────── */
+.collab{background:var(--white);padding:90px 5% 80px}
+.collab-inner{margin:0 auto}
+.collab-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;margin-top:48px;align-items:start;
+}
+@media(max-width:720px){.collab-grid{grid-template-columns:1fr;gap:24px}}
+.collab-roles{display:flex;flex-direction:column;gap:14px}
+.collab-role{
+  display:flex;gap:14px;align-items:flex-start;
+  border:1px solid var(--border);border-radius:var(--r2);
+  padding:20px;background:var(--white);
+  transition:border-color .2s,background .2s;
+}
+.collab-role:hover{border-color:var(--blue);background:var(--off)}
+.collab-role-icon{
+  flex-shrink:0;width:40px;height:40px;border-radius:10px;
+  background:var(--blue-dim);
+  display:flex;align-items:center;justify-content:center;
+}
+.collab-role-icon svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:1.9;stroke-linecap:round}
+.collab-role-name{font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.collab-role-desc{font-size:1.1rem;color:var(--muted);line-height:1.65}
+.collab-aside{
+  background:var(--ink);border-radius:var(--r2);padding:32px;
+  display:flex;flex-direction:column;gap:20px;
+}
+.collab-aside-title{font-size:1.3rem;color:#fff;margin-bottom:4px}
+.collab-aside p{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.78}
+.collab-aside strong{color:#fff}
+.collab-sep{height:1px;background:rgba(255,255,255,.08)}
+.collab-warn{
+  display:flex;gap:12px;align-items:flex-start;
+  background:rgba(249,115,22,.08);
+  border:1px solid rgba(249,115,22,.2);
+  border-radius:var(--r);padding:16px;
+}
+.collab-warn-icon{
+  flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  background:rgba(249,115,22,.15);
+  display:flex;align-items:center;justify-content:center;
+}
+.collab-warn-icon svg{width:16px;height:16px;stroke:#fb923c;fill:none;stroke-width:2;stroke-linecap:round}
+.collab-warn p{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.7}
+.collab-warn strong{color:#fb923c}
+
+/* CTA */
+.cta-strip{background:var(--blue);padding:52px var(--pad);text-align:center}
+.cta-strip h2{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;margin-bottom:14px}
+.cta-strip p{font-size:1rem;color:rgba(255,255,255,.78);max-width:40%;margin:0 auto 28px;line-height:1.8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
+.cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,.07);
+  padding:36px 5%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-logo span{color:#8e8e8e}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:1rem;color:var(--gray400);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:1rem;color:var(--gray400)}
+
+/* ── REVEAL ─────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html#hero" onclick="scrollTo(0,0)">
+    <div class="logo-icon">
+      <img src="avtel-systems-white.png">
+    </div>
+    <!--AVTEL <span>Systems</span>-->
+  </a>
+
+  <div class="mobile-nav-controls">
+    <button type="button" id="langToggle" class="lang-switch" onclick="toggleLang()">EN</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
+    <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
+    <li><a href="projektablauf.html" onclick="closeMenu()" data-lang="de" class="active">Projektablauf</a><a href="projektablauf.html" onclick="closeMenu()" data-lang="en">Project Workflow</a></li>
+    <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
+    <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
+    <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
+    <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button></li>
+    <li><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="de" class="active">Kontakt</a><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Projektablauf</div>
+    <h1>Projektablauf BOS-Objektfunkanlagen</h1>
+    <p class="page-hero-sub">Strukturierter technischer Ablauf – von der ersten Bewertung der Funkversorgung bis zur Abnahme und dem Betrieb der Anlage. Planung und Umsetzung nach DIN 14024, BDBOS und AS Bayern.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">DIN 14024</span>
+      <span class="hero-tag">BDBOS</span>
+      <span class="hero-tag">AS Bayern</span>
+      <span class="hero-tag">TMO / DMO</span>
+      <span class="hero-tag">TETRA 380–400 MHz</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHASE OVERVIEW STRIP ── -->
+<div class="phase-overview reveal">
+  <div class="phase-overview-inner">
+    <h2>Projektphasen im Überblick</h2>
+    <p class="sub">Ein typisches BOS-Projekt umfasst sieben aufeinander aufbauende Phasen – von der Ausgangsbewertung bis zum laufenden Betrieb.</p>
+    <div class="phase-strip" id="phaseStrip">
+      <div class="phase-step" data-index="0">
+        <div class="phase-circle">1</div>
+        <div class="phase-step-label">Projektstart &amp; Ausgangssituation</div>
+      </div>
+      <div class="phase-step" data-index="1">
+        <div class="phase-circle">2</div>
+        <div class="phase-step-label">Erforderlichkeits­prüfung</div>
+      </div>
+      <div class="phase-step" data-index="2">
+        <div class="phase-circle">3</div>
+        <div class="phase-step-label">Konzept &amp; Abstimmung</div>
+      </div>
+      <div class="phase-step" data-index="3">
+        <div class="phase-circle">4</div>
+        <div class="phase-step-label">Planung &amp; HF-Auslegung</div>
+      </div>
+      <div class="phase-step" data-index="4">
+        <div class="phase-circle">5</div>
+        <div class="phase-step-label">Installation</div>
+      </div>
+      <div class="phase-step" data-index="5">
+        <div class="phase-circle">6</div>
+        <div class="phase-step-label">Messung &amp; Nachweis</div>
+      </div>
+      <div class="phase-step" data-index="6">
+        <div class="phase-circle">7</div>
+        <div class="phase-step-label">Abnahme &amp; Betrieb</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ZIGZAG PHASES ── -->
+<section class="zz-section reveal">
+  <div class="zz-inner">
+    <div class="section-label">Phasen im Detail</div>
+    <h2 class="section-title">Detaillierter Projektablauf</h2>
+    <p class="section-lead" style="margin-bottom:0">Jede Phase baut auf der vorherigen auf. Eine frühzeitige Einbindung des BOS-/HF-Spezialisten ist entscheidend, da Abstimmungen und Verfahren mehrere Monate dauern können.</p>
+
+    <div class="zz-wrap" id="zzWrap">
+
+      <!-- ROW 1 — LEFT -->
+      <div class="zz-row left" id="zzr1">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">1</div>
+            <h3>Projektstart &amp; Ausgangssituation</h3>
+          </div>
+          <p>Ein BOS-Projekt entsteht in der Regel im Rahmen eines Bauvorhabens. Auslöser sind häufig Anforderungen aus dem Brandschutzkonzept, Forderungen der Feuerwehr oder unklare Funkversorgung.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Neubau, Umbau oder Erweiterung</div>
+            <div class="zz-item"><div class="zz-dot"></div>Tiefgaragen, Industrie- oder Bürogebäude</div>
+            <div class="zz-item"><div class="zz-dot"></div>Anforderungen aus Brandschutzkonzept oder Feuerwehr</div>
+            <div class="zz-item"><div class="zz-dot"></div>Hinweise der AS Bayern</div>
+          </div>
+          <p style="margin-top:12px;font-size:.85rem;color:var(--blue);font-weight:600">BOS frühzeitig als eigenständigen Planungsprozess betrachten – nicht als nachträgliche Installation.</p>
+        </div>
+        <svg class="zz-arrow" id="zza1" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp1"/>
+          <polygon class="zz-arrowhead" id="zzh1"/>
+        </svg>
+      </div>
+
+      <!-- ROW 2 — RIGHT -->
+      <div class="zz-row right" id="zzr2">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">2</div>
+            <h3>Erforderlichkeitsprüfung</h3>
+          </div>
+          <p>Bewertung, ob eine BOS-Objektfunkanlage notwendig ist. Messung der Funkversorgung an typisch kritischen Bereichen.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>TMO-Funkfeldmessung im Gebäude</div>
+            <div class="zz-item"><div class="zz-dot"></div>DMO-Messung (z. B. FIZ-Szenario)</div>
+            <div class="zz-item"><div class="zz-dot"></div>Bewertung von Signalstärke und Signalqualität</div>
+            <div class="zz-item"><div class="zz-dot"></div>Dokumentation kritischer Bereiche im Grundriss</div>
+          </div>
+          <div class="zz-result">
+            <div class="zz-res-item">Ausreichende Versorgung → keine BOS-Anlage erforderlich</div>
+            <div class="zz-res-item">Unzureichende Versorgung → Planung notwendig</div>
+          </div>
+        </div>
+        <svg class="zz-arrow" id="zza2" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp2"/>
+          <polygon class="zz-arrowhead" id="zzh2"/>
+        </svg>
+      </div>
+
+      <!-- ROW 3 — LEFT -->
+      <div class="zz-row left" id="zzr3">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">3</div>
+            <h3>Konzept, Abstimmung &amp; Anzeigeverfahren</h3>
+          </div>
+          <p>Konzeptgespräch mit allen Projektbeteiligten. Das Anzeigeverfahren bei der AS Bayern ist ein zentraler Bestandteil – frühzeitiger Start ist entscheidend, da die Bearbeitung mehrere Monate dauern kann.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Anforderungen der BOS, Betriebsart (TMO / DMO / Kombination)</div>
+            <div class="zz-item"><div class="zz-dot"></div>Versorgungsziele und projektspezifische Randbedingungen</div>
+            <div class="zz-item"><div class="zz-dot"></div>Technische Abstimmung der Objektversorgung mit AS Bayern</div>
+            <div class="zz-item"><div class="zz-dot"></div>Vorbereitung und Einreichung der Unterlagen</div>
+            <div class="zz-item"><div class="zz-dot"></div>Frequenz- und Kanalabstimmung</div>
+          </div>
+        </div>
+        <svg class="zz-arrow" id="zza3" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp3"/>
+          <polygon class="zz-arrowhead" id="zzh3"/>
+        </svg>
+      </div>
+
+      <!-- ROW 4 — RIGHT -->
+      <div class="zz-row right" id="zzr4">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">4</div>
+            <h3>Planung &amp; HF-Auslegung</h3>
+          </div>
+          <p>Entwicklung eines belastbaren Versorgungskonzeptes auf Basis der Messergebnisse. Erweiterte HF-Planung für realistische Bewertung der Funkversorgung.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Auswahl der Systemarchitektur und aktiver Komponenten</div>
+            <div class="zz-item"><div class="zz-dot"></div>Festlegung der Antennenstandorte</div>
+            <div class="zz-item"><div class="zz-dot"></div>Planung der Kabel- und Trassenführung</div>
+            <div class="zz-item"><div class="zz-dot"></div>Linkbudget und Pegelplanung im Gebäude</div>
+            <div class="zz-item"><div class="zz-dot"></div>Berücksichtigung realer Dämpfungen (Wände, Decken, Fassaden)</div>
+            <div class="zz-item"><div class="zz-dot"></div>Abstimmung mit TGA, Elektro und Brandschutz</div>
+          </div>
+        </div>
+        <svg class="zz-arrow" id="zza4" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp4"/>
+          <polygon class="zz-arrowhead" id="zzh4"/>
+        </svg>
+      </div>
+
+      <!-- ROW 5 — LEFT -->
+      <div class="zz-row left" id="zzr5">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">5</div>
+            <h3>Installation</h3>
+          </div>
+          <p>Technische Umsetzung gemäß Planung. Vollständige Dokumentation und Kennzeichnung aller Komponenten.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Installation von Kabeln und Antennen</div>
+            <div class="zz-item"><div class="zz-dot"></div>Montage aktiver Komponenten (Repeater etc.)</div>
+            <div class="zz-item"><div class="zz-dot"></div>Aufbau der Stromversorgung</div>
+            <div class="zz-item"><div class="zz-dot"></div>Dokumentation und Kennzeichnung</div>
+          </div>
+        </div>
+        <svg class="zz-arrow" id="zza5" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp5"/>
+          <polygon class="zz-arrowhead" id="zzh5"/>
+        </svg>
+      </div>
+
+      <!-- ROW 6 — RIGHT -->
+      <div class="zz-row right" id="zzr6">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">6</div>
+            <h3>Messung &amp; Nachweis</h3>
+          </div>
+          <p>Technische Prüfung nach Fertigstellung zum Nachweis der flächendeckenden Versorgung gemäß DIN 14024.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Funkfeldmessung im gesamten Gebäude</div>
+            <div class="zz-item"><div class="zz-dot"></div>TMO- und DMO-Prüfungen</div>
+            <div class="zz-item"><div class="zz-dot"></div>Bewertung der Kommunikationsqualität</div>
+          </div>
+          <div class="zz-result">
+            <div class="zz-res-item">Nachweis der flächendeckenden Versorgung</div>
+            <div class="zz-res-item">Erfüllung der Anforderungen von Feuerwehr und AS Bayern</div>
+          </div>
+        </div>
+        <svg class="zz-arrow" id="zza6" viewBox="0 0 1000 260" preserveAspectRatio="none">
+          <path class="zz-path" id="zzp6"/>
+          <polygon class="zz-arrowhead" id="zzh6"/>
+        </svg>
+      </div>
+
+      <!-- ROW 7 — LEFT — last, no outgoing arrow -->
+      <div class="zz-row left" id="zzr7">
+        <div class="zz-card">
+          <div class="zz-head">
+            <div class="zz-num">7</div>
+            <h3>Abnahme &amp; Betrieb</h3>
+          </div>
+          <p>Übergabe der vollständigen Dokumentation, formelle Abnahme durch die zuständigen Stellen und Inbetriebnahme der Anlage.</p>
+          <div class="zz-list">
+            <div class="zz-item"><div class="zz-dot"></div>Übergabe der Dokumentation</div>
+            <div class="zz-item"><div class="zz-dot"></div>Abnahme durch zuständige Stellen</div>
+            <div class="zz-item"><div class="zz-dot"></div>Inbetriebnahme der Anlage</div>
+            <div class="zz-item"><div class="zz-dot"></div>Wartung und Nachmessungen</div>
+          </div>
+        </div>
+        <!-- no outgoing arrow on last row -->
+      </div>
+
+    </div><!-- /zz-wrap -->
+  </div>
+</section>
+
+<!-- ── COLLABORATION ── -->
+<section class="collab reveal">
+  <div class="collab-inner">
+    <div class="section-label">Zusammenarbeit</div>
+    <h2 class="section-title">Zusammenarbeit im Projekt</h2>
+    <p class="section-lead">Ein BOS-Projekt erfordert die koordinierte Zusammenarbeit mehrerer Beteiligter – der BOS-/HF-Spezialist spielt dabei eine zentrale Rolle.</p>
+
+    <div class="collab-grid">
+      <div class="collab-roles">
+        <div class="collab-role">
+          <div class="collab-role-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div>
+            <div class="collab-role-name">Fachplaner (TGA)</div>
+            <div class="collab-role-desc">Koordination mit Gewerken, Integration der BOS-Trassen in die Gesamtplanung.</div>
+          </div>
+        </div>
+        <div class="collab-role">
+          <div class="collab-role-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <div class="collab-role-name">Ausführende Fachfirma</div>
+            <div class="collab-role-desc">Installation von Kabeln, Antennen und aktiven Komponenten gemäß Planungsunterlagen.</div>
+          </div>
+        </div>
+        <div class="collab-role" style="border-color:rgba(26,111,196,.35);background:var(--off)">
+          <div class="collab-role-icon" style="background:var(--blue);border-radius:10px">
+            <svg viewBox="0 0 24 24" style="stroke:#fff"><path d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+          </div>
+          <div>
+            <div class="collab-role-name" style="color:var(--blue)">BOS-/HF-Spezialist · AVTEL Systems</div>
+            <div class="collab-role-desc">Messungen, Planung, HF-Auslegung, Dokumentation und Unterstützung beim Anzeigeverfahren. Zentraler technischer Ansprechpartner.</div>
+          </div>
+        </div>
+        <div class="collab-role">
+          <div class="collab-role-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div>
+            <div class="collab-role-name">Feuerwehr</div>
+            <div class="collab-role-desc">Festlegung der Versorgungsanforderungen, Abnahme der Anlage.</div>
+          </div>
+        </div>
+        <div class="collab-role">
+          <div class="collab-role-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="collab-role-name">AS Bayern</div>
+            <div class="collab-role-desc">Anzeigeverfahren, Frequenz- und Kanalabstimmung, begleitende Behörde.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="collab-aside">
+        <div>
+          <div class="collab-aside-title">Rolle des BOS-/HF-Spezialisten</div>
+          <p>AVTEL Systems unterstützt Sie in allen technischen Phasen des Projekts – von der ersten Messung bis zur Abnahmedokumentation.</p>
+        </div>
+        <div class="collab-sep"></div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#6db3f7;margin-top:.6em"></div>
+            <p>Messdaten, HF-Angaben und technische Dokumentation für das Anzeigeverfahren</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#6db3f7;margin-top:.6em"></div>
+            <p>Linkbudget, Pegelplanung und Auslegung der Funkversorgung</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#6db3f7;margin-top:.6em"></div>
+            <p>Abnahme- und Nachweismessungen nach DIN 14024</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#6db3f7;margin-top:.6em"></div>
+            <p>Unterstützung bei Abstimmung mit Feuerwehr und AS Bayern</p>
+          </div>
+        </div>
+        <div class="collab-sep"></div>
+        <div class="collab-warn">
+          <div class="collab-warn-icon">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <p><strong>Frühzeitig einbinden:</strong> Das Anzeigeverfahren bei der AS Bayern kann mehrere Monate dauern. Eine frühe Einbindung des BOS-/HF-Spezialisten ist entscheidend für den Projekterfolg.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-strip">
+  <h2>Anfrage senden</h2>
+  <p>Haben Sie Fragen zum Projektablauf oder benötigen Sie Unterstützung bei Ihrem BOS-Projekt? Ich melde mich kurzfristig zurück.</p>
+  <a href="index.html#contact" class="cta-btn">👉 Kontakt aufnehmen</a>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div>
+    <div class="footer-logo">AVTEL <span>Systems</span></div>
+    <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html" data-lang="de" class="active">Impressum</a>
+    <a href="impressum.html" data-lang="en">Legal notice</a>
+    <a href="policy.html" data-lang="de" class="active">Datenschutz</a>
+    <a href="policy.html" data-lang="en">Privacy policy</a>
+  </div>
+</footer>
+
+<script>
+    /* ── LANGUAGE ── */
+let currentLang = 'de';
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === l);
+    el.style.display = el.dataset.lang === l ? '' : 'none';
+  });
+  const toggle = document.getElementById('langToggle');
+  if (toggle) {
+    toggle.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+  const togglefull = document.getElementById('langToggleFull');
+  if (togglefull) {
+    togglefull.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+}
+function toggleLang() {
+  setLang(currentLang === 'de' ? 'en' : 'de');
+}
+// init
+setLang('de');
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('navLinks').classList.remove('open');
+}
+/* ── NAV ── */
+let lang='de';
+function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
+function toggleMenu(){document.getElementById('navList').classList.toggle('open')}
+function closeMenu(){document.getElementById('navList').classList.remove('open')}
+
+/* ── REVEAL ── */
+const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ── PHASE STRIP: animate circles one-by-one on scroll ── */
+(function(){
+  const strip = document.getElementById('phaseStrip');
+  if(!strip) return;
+  const steps = strip.querySelectorAll('.phase-step');
+  const obs = new IntersectionObserver(entries=>{
+    if(!entries[0].isIntersecting) return;
+    steps.forEach((s,i)=>{
+      setTimeout(()=>s.classList.add('active'), i*120);
+    });
+    obs.unobserve(strip);
+  },{threshold:.3});
+  obs.observe(strip);
+})();
+
+/* ══════════════════════════════════════════════════════════
+   ZIGZAG ARROWS
+   ─────────────────────────────────────────────────────────
+   • L-shaped path: horizontal arm + 90° turn downward.
+   • LEFT  rows: exit right edge of card (x≈480) → H 720 → V 260
+   • RIGHT rows: exit left  edge of card (x≈520) → H 280 → V 260
+   • getTotalLength() gives exact dasharray → perfect sync.
+   • Arrowhead opacity transition-delay = path draw duration.
+══════════════════════════════════════════════════════════ */
+(function(){
+  const DUR = 0.62;
+
+  const configs = [
+    {row:'zzr1',path:'zzp1',head:'zzh1',side:'left', xS:480,xA:720},
+    {row:'zzr2',path:'zzp2',head:'zzh2',side:'right',xS:520,xA:280},
+    {row:'zzr3',path:'zzp3',head:'zzh3',side:'left', xS:480,xA:720},
+    {row:'zzr4',path:'zzp4',head:'zzh4',side:'right',xS:520,xA:280},
+    {row:'zzr5',path:'zzp5',head:'zzh5',side:'left', xS:480,xA:720},
+    {row:'zzr6',path:'zzp6',head:'zzh6',side:'right',xS:520,xA:280},
+  ];
+
+  configs.forEach(cfg=>{
+    const rowEl  = document.getElementById(cfg.row);
+    const pathEl = document.getElementById(cfg.path);
+    const headEl = document.getElementById(cfg.head);
+    if(!rowEl||!pathEl||!headEl) return;
+
+    // Set L-path
+    pathEl.setAttribute('d',`M${cfg.xS},130 H${cfg.xA} V255`);
+    // Arrowhead tip
+    const tx=cfg.xA;
+    headEl.setAttribute('points',`${tx},260 ${tx-14},236 ${tx+14},236`);
+
+    // Measure & set dash
+    const len=Math.ceil(pathEl.getTotalLength())+4;
+    pathEl.style.strokeDasharray  = len;
+    pathEl.style.strokeDashoffset = len;
+    pathEl.style.transition = `stroke-dashoffset ${DUR}s cubic-bezier(.4,0,.2,1)`;
+    headEl.style.opacity   = '0';
+    headEl.style.transition= `opacity 0.01s step-end ${DUR}s`;
+
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        pathEl.style.strokeDashoffset='0';
+        headEl.style.opacity='1';
+        obs.unobserve(rowEl);
+      });
+    },{threshold:0.42});
+    obs.observe(rowEl);
+  });
+})();
+</script>
+</body>
+</html>

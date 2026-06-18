@@ -218,14 +218,18 @@ nav{
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s}
 .cta-btn:hover{opacity:.92;transform:translateY(-1px)}
 
-/* FOOTER */
-footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.footer-logo{font-size:.97rem;color:#fff}
-.footer-logo em{color:#6db3f7;font-style:normal}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
-.footer-links{display:flex;gap:18px}
-.footer-links a{font-size:.8rem;color:rgba(255,255,255,.35);transition:color .2s}
+/* ── FOOTER ── */
+footer{
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,.07);
+  padding:36px 5%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-logo span{color:#8e8e8e}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:1rem;color:var(--gray400);transition:color .2s}
 .footer-links a:hover{color:#fff}
+.footer-copy{font-size:1rem;color:var(--gray400)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
@@ -253,7 +257,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
     <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
-    <li><a href="index.html#projects" onclick="closeMenu()" data-lang="de" class="active">Projekterfahrung</a><a href="index.html#projects" onclick="closeMenu()" data-lang="en">Projects</a></li>
+    <li><a href="projektablauf.html" onclick="closeMenu()" data-lang="de" class="active">Projektablauf</a><a href="projektablauf.html" onclick="closeMenu()" data-lang="en">Project Workflow</a></li>
     <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
     <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
     <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
