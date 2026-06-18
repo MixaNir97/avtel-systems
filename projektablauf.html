@@ -156,7 +156,7 @@ nav{
 }
 .phase-step{
   display:flex;flex-direction:column;align-items:center;
-  text-align:center;position:relative;padding:0 6px;
+  text-align:center;position:relative;padding:0 6px 20px 0;
 }
 /* connecting line between steps */
 .phase-step:not(:last-child)::after{
@@ -702,8 +702,7 @@ function closeMenu(){
 /* ── NAV ── */
 let lang='de';
 function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
-function toggleMenu(){document.getElementById('navList').classList.toggle('open')}
-function closeMenu(){document.getElementById('navList').classList.remove('open')}
+
 
 /* ── REVEAL ── */
 const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
