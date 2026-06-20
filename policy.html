@@ -40,6 +40,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
+  display:none;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -51,6 +52,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
+  display:none;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -62,6 +64,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
+  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -182,7 +185,7 @@ footer{
 <body>
 <!-- NAV -->
 <nav>
-  <a class="logo" href="index.html#hero" onclick="scrollTo(0,0)">
+  <a class="logo" href="/" onclick="scrollTo(0,0)">
     <div class="logo-icon">
       <img src="avtel-systems-white.png">
     </div>
@@ -196,17 +199,51 @@ footer{
     </div>
   </div>
 
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#hero" onclick="closeMenu()" data-lang="de" class="active">Startseite</a><a href="index.html#hero" onclick="closeMenu()" data-lang="en">Home</a></li>
-    <li><a href="leistungen.html" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a><a href="leistungen.html" onclick="closeMenu()" data-lang="en">Services</a></li>
-    <li><a href="projektablauf.html" onclick="closeMenu()" data-lang="de" class="active">Projektablauf</a><a href="projektablauf.html" onclick="closeMenu()" data-lang="en">Project Workflow</a></li>
-    <li><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="de" class="active">Für wen</a><a href="index.html#fuerwen" onclick="closeMenu()" data-lang="en">For whom</a></li>
-    <li><a href="index.html#ueber" onclick="closeMenu()" data-lang="de" class="active">Über mich</a><a href="index.html#ueber" onclick="closeMenu()" data-lang="en">About me</a></li>
-    <li><a href="index.html#quali" onclick="closeMenu()" data-lang="de" class="active">Qualifikationen</a><a href="index.html#quali" onclick="closeMenu()" data-lang="en">Qualifications</a></li>
-    <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
-    <li><button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button></li>
-    <li><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="de" class="active">Kontakt</a><a href="index.html#contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a></li>
-  </ul>
+ <ul class="nav-links" id="navLinks">
+
+  <li>
+    <a href="/" onclick="closeMenu()" data-lang="de">Startseite</a>
+    <a href="/" onclick="closeMenu()" data-lang="en">Home</a>
+  </li>
+
+  <li>
+    <a href="/leistungen" onclick="closeMenu()" data-lang="de">Leistungen</a>
+    <a href="/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
+  </li>
+
+  <li>
+    <a href="/projektablauf" onclick="closeMenu()" data-lang="de">Projektablauf</a>
+    <a href="/projektablauf" onclick="closeMenu()" data-lang="en">Project Workflow</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=fuerwen" onclick="closeMenu()" data-lang="de">Für wen</a>
+    <a href="/?scroll=fuerwen" onclick="closeMenu()" data-lang="en">For whom</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="de">Über mich</a>
+    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="en">About me</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="de">Qualifikationen</a>
+    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="en">Qualifications</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=faq" onclick="closeMenu()" data-lang="de">FAQ</a>
+  </li>
+
+  <li>
+    <button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button>
+  </li>
+
+  <li>
+    <a href="/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+  </li>
+
+</ul>
 </nav>
 
 <div class="container">
