@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wartung und technische Zustandsprüfung digitaler BOS-Objektfunkanlagen nach DIN 14024-1 durch AVTEL Systems.">
+<title>Wartung von BOS-Objektfunkanlagen – AVTEL Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c1824;--ink2:#142336;
+  --blue:#1a6fc4;--blue2:#2381e0;--blue-dim:rgba(26,111,196,.11);
+  --white:#fff;--off:#f4f7fb;--off2:#eaeff7;
+  --muted:#64748b;--border:#dde4f0;
+  --r:10px;--r2:16px;
+  --max:1100px;--pad:clamp(20px,5vw,64px);
+  --navy:#0b1f3a;
+  --navy2:#102646;
+  --accent:#1a6fc4;
+  --accent2:#2381e0;
+  --orange:#e8620a;
+  --white:#fff;
+  --gray50:#f7f9fc;
+  --gray100:#eef1f6;
+  --gray200:#d8deea;
+  --gray400:#8a97ae;
+  --gray600:#4a5568;
+  --gray800:#20252e;
+  --text:#1a2233;
+  --r:10px;
+  --r2:16px;
+}
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Inter',sans-serif;line-height:1.22;font-weight:400}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+
+/* ── LANG SWITCHER ── */
+.lang-switch{
+  display:none;
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch-full{
+  display:none;
+  background:none;
+  border:1px solid rgba(255,255,255,.97);
+  color:rgba(255,255,255,.97);
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-switch:hover{
+  display:none;
+  background:var(--accent2);
+  border-color:var(--accent2);
+  color:#fff;
+}
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(11,31,58,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:90px;
+}
+.logo{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.15rem;color:#fff;
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-icon{
+  width:80px;height:80px;
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{
+  color:var(--gray200);font-size:1.3rem;font-weight:500;
+  transition:color .2s;padding:4px 0;
+}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{
+  background:var(--accent);color:#fff !important;
+  padding:8px 18px;border-radius:8px;font-weight:600;
+  transition:background .2s;
+  max-height:10px;
+}
+.nav-links .nav-cta:hover{background:var(--accent2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:0;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-nav-controls{display:none;gap:12px;align-items:center}
+
+/* PAGE HERO */
+.page-hero{background:var(--ink);padding:90px 5% 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 90% 30%,rgba(26,111,196,.2) 0%,transparent 65%),radial-gradient(ellipse 30% 50% at 5% 80%,rgba(26,111,196,.08) 0%,transparent 60%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1;max-width:100%;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6db3f7;margin-bottom:18px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#6db3f7;animation:dot 2s infinite}
+@keyframes dot{0%,100%{opacity:1}50%{opacity:.3}}
+.page-hero h1{font-size:clamp(1.5rem,4vw,3.3rem);color:#fff;margin-bottom:20px;max-width:100%}
+.page-hero p{font-size:1.2rem;color:var(--gray200);max-width:80%;line-height:1.8;margin-bottom:32px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tag{font-size:1rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(109,179,247,.12);border:1px solid rgba(109,179,247,.25);color:#6db3f7}
+
+.btn-primary,.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:var(--r);font-weight:600;transition:all .2s;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.85);border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.7);color:#fff}
+.hero-checks{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:1rem;color:var(--gray200)}
+.hero-checks span{display:flex;align-items:center;gap:6px}
+.hero-checks span::before{content:'✔';color:#4ade80}
+.hero-visual{position:relative;z-index:1;width:min(380px,34vw);height:auto;object-fit:contain}
+
+.maintenance{padding:80px 5%;background:var(--gray50)}
+.maintenance-inner{max-width:1000px;margin:0 auto}
+.section-eyebrow{font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-title{font-size:clamp(1.7rem,3vw,2.5rem);color:var(--navy);margin-bottom:16px;letter-spacing:-.02em}
+.maintenance-intro{font-size:1.3rem;color:black;line-height:1.8;max-width:850px}
+.maintenance-details{
+  margin-top:34px;padding:32px;background:var(--white);
+  border:1px solid var(--gray200);border-radius:var(--r2);
+}
+.maintenance-details h3{font-size:1.55rem;color:var(--navy);margin-bottom:20px}
+.maintenance-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;font-size:1.2rem;}
+.maintenance-list li{position:relative;padding-left:28px;color:var(--gray600);line-height:1.65;font-size:1.1rem;}
+.maintenance-list li::before{
+  content:'✓';position:absolute;left:0;top:0;font-size:1.2rem;
+  color:var(--accent);font-weight:700;
+}
+.maintenance-note{margin-top:24px;color:var(--gray600);line-height:1.8;font-size:1.1rem}
+.maintenance-note p+p{margin-top:10px}
+.maintenance-cta{margin-top:28px}
+
+footer{
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,.07);
+  padding:36px 5%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-logo span{color:#8e8e8e}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:1.1rem;color:var(--gray400);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:1.1rem;color:var(--gray400)}
+
+@media(max-width:1000px){
+  .hero-visual{width:min(300px,30vw)}
+}
+@media(max-width:900px){
+  .nav-links{
+    display:none;position:fixed;top:90px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:stretch;
+    padding:16px 5% 24px;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;font-size:1.35rem;border-bottom:1px solid rgba(255,255,255,.06)}
+  .lang-switch-full{visibility:collapse}
+  .nav-links .nav-cta{text-align:center;margin-top:8px;border-bottom:none}
+  .hamburger{display:flex}
+  .mobile-nav-controls{display:flex}
+  .hero{min-height:auto;padding:70px 5% 60px}
+  .hero-inner{max-width:100%}
+  .hero-visual{display:none}
+  .hero-sub{font-size:1.2rem}
+  .maintenance{padding:64px 5%}
+}
+@media(max-width:600px){
+  .maintenance-details{padding:24px 20px}
+  .maintenance-list{grid-template-columns:1fr}
+  footer{align-items:flex-start}
+  .footer-links{gap:12px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/" onclick="scrollTo(0,0)">
+    <div class="logo-icon">
+      <img src="avtel-systems-white.png">
+    </div>
+    <!--AVTEL <span>Systems</span>-->
+  </a>
+
+  <div class="mobile-nav-controls">
+    <button type="button" id="langToggle" class="lang-switch" onclick="toggleLang()">EN</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+
+  <li>
+    <a href="/" onclick="closeMenu()" data-lang="de">Startseite</a>
+    <a href="/" onclick="closeMenu()" data-lang="en">Home</a>
+  </li>
+
+  <li>
+    <a href="/leistungen" onclick="closeMenu()" data-lang="de">Leistungen</a>
+    <a href="/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
+  </li>
+
+  <li>
+      <a href="/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
+      <a href="/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="de">Referenzen</a>
+    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="en">References</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="de">Über mich</a>
+    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="en">About me</a>
+  </li>
+
+  <li>
+    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="de">Qualifikationen</a>
+    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="en">Qualifications</a>
+  </li>
+
+  <li>
+    <button type="button" id="langToggleFull" class="lang-switch-full" onclick="toggleLang()">EN</button>
+  </li>
+
+  <li>
+    <a href="/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+  </li>
+
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1 data-lang="de" class="active">Wartung von BOS-Objektfunkanlagen</h1>
+    <h1 data-lang="en">Maintenance of BOS In-Building Radio Systems</h1>
+    <p class="hero-sub" data-lang="de" class="active">Regelmäßige Wartung nach DIN 14024-1</p>
+    <p class="hero-sub" data-lang="en">Regular Maintenance in Accordance with DIN 14024-1</p>
+  </div>
+</section>
+
+<main>
+  <section class="maintenance" id="leistungsumfang">
+    <div class="maintenance-inner">
+      <p class="maintenance-intro" data-lang="de" class="active">AVTEL Systems führt Wartungen und technische Zustandsprüfungen digitaler BOS-Objektfunkanlagen durch. Grundlage sind DIN 14024-1:2021-12, die objektspezifischen Anforderungen sowie die Vorgaben der Anlagenhersteller.</p>
+      <p class="maintenance-intro" data-lang="en">AVTEL Systems provides maintenance and technical condition assessments for digital BOS in-building radio systems. The work is based on DIN 14024-1:2021-12, the requirements specific to each site, and the system manufacturers' specifications.</p>
+
+      <div class="maintenance-details">
+        <h3 data-lang="de" class="active">Leistungsumfang</h3>
+        <h3 data-lang="en">Scope of services</h3>
+        <ul class="maintenance-list" data-lang="de" class="active">
+          <li>Sichtprüfung von Systemtechnik, HF-Verbindungen, Verteilern und Antennen</li>
+          <li>Prüfung von Betriebszuständen, Bedien- und Meldefunktionen</li>
+          <li>Anwendbare HF-Wartungsmessungen gemäß DIN 14024-1, Anhang C (M-11)</li>
+          <li>Messungen an Referenzpunkten und Prüfung der Außenwirkung</li>
+          <li>Kontrolle redundanter HF-Hauptlinien, soweit vorhanden</li>
+          <li>Fehlerdiagnose und Dokumentation festgestellter Abweichungen</li>
+          <li>Erstellung des Wartungsprotokolls und Eintrag in das Betriebsbuch</li>
+        </ul>
+        <ul class="maintenance-list" data-lang="en">
+          <li>Visual inspection of system equipment, RF connections, distributors, and antennas</li>
+          <li>Testing of operating states, controls, and alarm functions</li>
+          <li>Applicable RF maintenance measurements in accordance with DIN 14024-1, Annex C (M-11)</li>
+          <li>Measurements at reference points and assessment of external effects</li>
+          <li>Inspection of redundant RF main lines, where present</li>
+          <li>Fault diagnosis and documentation of identified deviations</li>
+          <li>Preparation of the maintenance report and entry in the system logbook</li>
+        </ul>
+        <div class="maintenance-note" data-lang="de" class="active">
+          <p>Der konkrete Wartungsumfang wird anhand der vorhandenen Anlagentechnik, der Bestandsunterlagen und der geltenden Anforderungen festgelegt.</p>
+          <p>Erforderliche Reparaturen, Ersatzteile und zusätzliche Prüfungen werden gesondert vereinbart.</p>
+        </div>
+        <div class="maintenance-note" data-lang="en">
+          <p>The specific maintenance scope is determined based on the installed system technology, available system documentation, and applicable requirements.</p>
+          <p>Any necessary repairs, replacement parts, and additional tests are agreed separately.</p>
+        </div>
+        <div class="maintenance-cta">
+          <a href="index.html#contact" class="btn-primary">
+            <span data-lang="de" class="active">Wartung Ihrer BOS-Objektfunkanlage anfragen</span>
+            <span data-lang="en">Request maintenance for your BOS radio system</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">AVTEL <span>Systems</span></div>
+    <div class="footer-copy">© 2026 Aleksei Shcherbakov · AVTEL Systems</div>
+  </div>
+  <div class="footer-links">
+    <a href="impressum.html" data-lang="de" class="active">Impressum</a>
+    <a href="impressum.html" data-lang="en">Legal notice</a>
+    <a href="policy.html" data-lang="de" class="active">Datenschutz</a>
+    <a href="policy.html" data-lang="en">Privacy policy</a>
+  </div>
+</footer>
+
+<script>
+let currentLang = 'de';
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(element => {
+    const active = element.dataset.lang === lang;
+    element.classList.toggle('active', active);
+    element.style.display = active ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-switch, .lang-switch-full').forEach(button => {
+    button.textContent = lang === 'de' ? 'EN' : 'DE';
+  });
+}
+function toggleLang() {
+  setLang(currentLang === 'de' ? 'en' : 'de');
+}
+function toggleMenu() {
+  const menu = document.getElementById('navLinks');
+  const button = document.querySelector('.hamburger');
+  const isOpen = menu.classList.toggle('open');
+  button.setAttribute('aria-expanded', String(isOpen));
+  button.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+}
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+  });
+});
+setLang('de');
+</script>
+</body>
+</html>

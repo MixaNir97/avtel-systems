@@ -250,7 +250,7 @@ footer{
     <!--AVTEL <span>Systems</span>-->
   </a>
 
-  <div class="mobile-nav-controls" visible="false">
+  <div class="mobile-nav-controls">
     <button type="button" id="langToggle" class="lang-switch" onclick="toggleLang()">EN</button>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -270,13 +270,13 @@ footer{
   </li>
 
   <li>
-    <a href="/projektablauf" onclick="closeMenu()" data-lang="de">Projektablauf</a>
-    <a href="/projektablauf" onclick="closeMenu()" data-lang="en">Project Workflow</a>
+      <a href="/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
+      <a href="/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
   </li>
 
   <li>
-    <a href="/?scroll=fuerwen" onclick="closeMenu()" data-lang="de">Für wen</a>
-    <a href="/?scroll=fuerwen" onclick="closeMenu()" data-lang="en">For whom</a>
+    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="de">Referenzen</a>
+    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="en">References</a>
   </li>
 
   <li>
@@ -287,10 +287,6 @@ footer{
   <li>
     <a href="/?scroll=quali" onclick="closeMenu()" data-lang="de">Qualifikationen</a>
     <a href="/?scroll=quali" onclick="closeMenu()" data-lang="en">Qualifications</a>
-  </li>
-
-  <li>
-    <a href="/?scroll=faq" onclick="closeMenu()" data-lang="de">FAQ</a>
   </li>
 
   <li>
@@ -452,7 +448,7 @@ footer{
     <div class="section-label">Dokumentation</div>
     <h2 class="section-title">3. Messdurchführung und Ergebnis</h2>
     <p class="section-lead">Alle Messungen werden mit spezialisiertem und kalibriertem Funkmessgerät durchgeführt.</p>
-    <p class="section-lead">ADie Ergebnisse werden in einem strukturierten und nachvollziehbaren Messbericht dokumentiert.</p>
+    <p class="section-lead">Die Ergebnisse werden in einem strukturierten und nachvollziehbaren Messbericht dokumentiert.</p>
     <div class="s3-grid">
       <div>
         <p style="font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:14px">Messbericht enthält</p>
@@ -512,7 +508,7 @@ footer{
       <div class="s4-card">
         <div class="s4-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
         <h3>Lage des Objekts</h3>
-        <p>Anfahrt und Einsatzgebiet in Bayern – kurzfristige Termine möglich.</p>
+        <p>Anfahrt und Projekteinsätze deutschlandweit – kurzfristige Termine möglich.</p>
       </div>
     </div>
   </div>
@@ -530,7 +526,7 @@ footer{
 <footer>
   <div>
     <div class="footer-logo">AVTEL <span>Systems</span></div>
-    <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+    <div class="footer-copy">© 2026 Aleksei Shcherbakov · AVTEL Systems</div>
   </div>
   <div class="footer-links">
     <a href="impressum.html" data-lang="de" class="active">Impressum</a>

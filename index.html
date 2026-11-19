@@ -197,7 +197,7 @@ nav{
 
 /* abstract antenna SVG illustration */
 .hero-visual{
-  width:min(420px,40vw);opacity:1;pointer-events:none;width:700px;height:400px;
+  width:min(420px,40vw);opacity:1;pointer-events:none;width:800px;height:600px;
 }
 @media(max-width:900px){.hero-visual{display:none}}
 @media(max-width:900px){
@@ -288,6 +288,17 @@ nav{
   transition:transform .22s,box-shadow .22s;
 }
 .srv-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(11,31,58,.09)}
+.srv-card-link{
+  display:flex;flex-direction:column;
+  color:inherit;text-decoration:none;
+}
+.srv-card-link:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.srv-card-cta{
+  display:flex;align-items:center;gap:8px;
+  margin-top:auto;padding-top:18px;
+  color:var(--accent);font-weight:600;
+}
+.srv-card-link:hover .srv-card-cta{color:var(--accent2)}
 .srv-icon{
   width:50px;height:50px;border-radius:12px;
   background:rgba(26,111,196,.1);
@@ -321,7 +332,7 @@ nav{
 .proj-body{padding:22px}
 .proj-tag{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6db3f7;margin-bottom:8px}
 .proj-body h3{font-size:1.4rem;color:#fff;margin-bottom:6px}
-.proj-body p{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.7}
+.proj-body p{font-size:1.1rem;color:#fff;line-height:1.7}
 
 /* ── FÜR WEN ── */
 .fuerwen{padding:90px 5%;background:var(--white)}
@@ -555,8 +566,13 @@ footer{
     </li>
 
     <li>
-      <a href="/projektablauf" onclick="closeMenu()" data-lang="de" class="active">Projektablauf</a>
-      <a href="/projektablauf" onclick="closeMenu()" data-lang="en">Project Workflow</a>
+      <a href="/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
+      <a href="/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
+    </li>
+
+    <li>
+      <a href="#" onclick="scrollToSection('projects'); closeMenu(); return false;" data-lang="de" class="active">Referenzen</a>
+      <a href="#" onclick="scrollToSection('projects'); closeMenu(); return false;" data-lang="en">References</a>
     </li>
 
     <li>
@@ -572,10 +588,6 @@ footer{
     <li>
       <a href="#" onclick="scrollToSection('quali'); closeMenu(); return false;" data-lang="de" class="active">Qualifikationen</a>
       <a href="#" onclick="scrollToSection('quali'); closeMenu(); return false;" data-lang="en">Qualifications</a>
-    </li>
-
-    <li>
-      <a href="#" onclick="scrollToSection('faq'); closeMenu(); return false;">FAQ</a>
     </li>
 
     <li>
@@ -595,15 +607,25 @@ footer{
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div class="hero-badge">
-      <span data-lang="de" class="active">BOS-Gebäudefunk · Bayern</span>
-      <span data-lang="en">BOS In-Building Radio · Bavaria</span>
+      <span data-lang="de" class="active">BOS-Gebäudefunk</span>
+      <span data-lang="en">BOS In-Building Radio</span>
     </div>
 
-    <h1 data-lang="de" class="active">Funkfeldmessungen und Planung von BOS‑Gebäudefunkanlagen</h1>
-    <h1 data-lang="en">Radio Field Measurements and Planning of BOS In-Building Radio Systems</h1>
+    <div class="hero-badge">
+      <span data-lang="de" class="active">MOBILFUNK</span>
+      <span data-lang="en">MOBILE NETWORKS</span>
+    </div>
 
-    <p class="hero-sub" data-lang="de" class="active">Funkfeldmessungen und technische Bewertung von BOS-Funklösungen in Gebäuden – normgerecht und mit professioneller Messtechnik.</p>
-    <p class="hero-sub" data-lang="en">Radio field measurements and technical assessment of BOS radio solutions in buildings – standards-compliant and with professional measurement technology.</p>
+    <div class="hero-badge">
+      <span data-lang="de" class="active">DEUTSCHLANDWEIT</span>
+      <span data-lang="en">THROUGHOUT GERMANY</span>
+    </div>
+
+    <h1 data-lang="de" class="active">BOS-Objektfunk und Mobilfunk – Funkfeldmessungen & HF-Messtechnik</h1>
+    <h1 data-lang="en">BOS In-Building Radio and Mobile Networks – Radio Coverage Measurements & RF Testing</h1>
+
+    <p class="hero-sub" data-lang="de" class="active">Messungen, technische Bewertung und HF-Analyse für BOS-Gebäudefunkanlagen sowie Mobilfunk- und Inhouse-Antennensysteme.</p>
+    <p class="hero-sub" data-lang="en">Measurement services, technical assessments, and RF analysis for BOS in-building radio systems, mobile network installations, and indoor antenna systems.</p>
 
     <div class="hero-btns">
       <a href="#" onclick="scrollToSection('contact'); closeMenu(); return false;" class="btn-primary">👉 <span data-lang="de" class="active">Anfrage senden</span><span data-lang="en">Send inquiry</span></a>
@@ -611,18 +633,20 @@ footer{
     </div>
 
     <div class="hero-checks">
-      <span data-lang="de" class="active">Dipl.-Ing. Nachrichtentechnik</span>
-      <span data-lang="en">Dipl.-Ing. Communications Engineering</span>
+      <span data-lang="de" class="active">Hochschulabschluss Nachrichtentechnik (ZAB-bewertet)</span>
+      <span data-lang="en">University Degree in Communications Engineering (ZAB-assessed)</span>
       <span data-lang="de" class="active">BOS-Schulung nach DIN 14024</span>
-      <span data-lang="en">BOS training per DIN 14024</span>
+      <span data-lang="en">BOS Training in accordance with DIN 14024</span>
+      <span data-lang="de" class="active">Mobilfunk- und HF-Messtechnik</span>
+      <span data-lang="en">Mobile Network and RF Testing</span>
       <span data-lang="de" class="active">27 Jahre Erfahrung in Funktechnik</span>
-      <span data-lang="en">27 years experience in radio engineering</span>
-      <span data-lang="de" class="active">Einsatz in Bayern · kurzfristige Termine</span>
-      <span data-lang="en">Based in Bavaria · short-notice appointments</span>
+      <span data-lang="en">27 Years of Experience in Radio Communications</span>
+      <span data-lang="de" class="active">Deutschlandweit im Einsatz . kurzfristige Termine möglich</span>
+      <span data-lang="en">Available Throughout Germany · Short-Notice Appointments Possible</span>
     </div>
   </div>
 
-  <img src="antenna_new.png" class="hero-visual" alt="Abstract antenna illustration">
+  <img src="New_hero_img.png" class="hero-visual" alt="Abstract antenna illustration">
 </section>
 
 <!-- ══════════════════════════════════════
@@ -696,9 +720,21 @@ footer{
       <p data-lang="de" class="active">Bewertung bestehender Funk- und Antennensysteme als Grundlage für die Umstellung von analogen auf digitale BOS-Funklösungen (TETRA). Analyse und Entwicklung geeigneter technischer Lösungen unter Berücksichtigung der bestehenden Infrastruktur.</p>
       <p data-lang="en">Assessment of existing radio and antenna systems as a basis for the transition from analogue to digital BOS radio solutions (TETRA). Analysis and development of suitable technical solutions taking the existing infrastructure into account.</p>
     </div>
-
     <!-- Card 4 -->
     <div class="srv-card">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="13" height="18" rx="2"/><path d="M6 7h7v5H6z"/><path d="m6.5 10 1.5-1 1.5 2 1.5-1.5 1 .5"/><circle cx="7" cy="16" r=".75"/><circle cx="12" cy="16" r=".75"/><path d="M16 13h2l2-2V8"/><path d="M18.5 6a3 3 0 014 0M19.5 8a1.5 1.5 0 012 0"/></svg>
+      </div>
+      <h3 data-lang="de" class="active">Mobilfunkanlagen - HF-Messtechnik</h3>
+      <h3 data-lang="en">Mobile Network Installations – RF Testing</h3>
+      <p data-lang="de" class="active">Durchführung von DTF-, Return-Loss-, VSWR- und PIM-Messungen an Mobilfunkanlagen und Inhouse-Antennensystemen. </p>
+      <p data-lang="en">Conducting DTF, Return Loss, VSWR, and PIM measurements on mobile network installations and indoor antenna systems.</p>
+      <p data-lang="de" class="active">Fehlerlokalisierung an HF-Kabeln, Steckverbindungen und passiven Verteilnetzen sowie technische Bewertung und Messdokumentation.</p>
+      <p data-lang="en">Fault localization in RF cables, connectors, and passive distribution networks, as well as technical assessments and measurement documentation.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <a class="srv-card srv-card-link" href="\projektablauf">
       <div class="srv-icon">
         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
       </div>
@@ -706,16 +742,44 @@ footer{
       <h3 data-lang="en">Project Support</h3>
       <p data-lang="de" class="active">Technische Unterstützung während des Projekts, einschließlich Durchführung von Messungen, Erstellung von Messberichten und Projektdokumentation. Mitwirkung bei Abstimmung mit Behörden und Berücksichtigung der Anforderungen von BDBOS.</p>
       <p data-lang="en">Technical support during the project, including carrying out measurements, creating measurement reports and project documentation. Participation in coordination with authorities and consideration of BDBOS requirements.</p>
-    </div>
+      <span class="srv-card-cta">
+        <span data-lang="de" class="active">Mehr erfahren</span>
+        <span data-lang="en">Learn more</span>
+        <span aria-hidden="true">→</span>
+      </span>
+    </a>
+
+    <!-- Card 6 -->
+    <a class="srv-card srv-card-link" href="\wartung">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 21h13V9L8 6 3 9v12Z"/>
+          <path d="M8 6V3m-2 2h4"/>
+          <path d="M6 12h2m2 0h2M6 15h2m2 0h2M7 21v-3h3v3"/>
+          <path d="M16 5a4 4 0 010 6m2-8a7 7 0 010 10"/>
+          <circle cx="19" cy="18" r="3.5"/>
+          <path d="m17.5 18 1 1 2-2"/>
+        </svg>
+      </div>
+      <h3 data-lang="de" class="active">Wartung von BOS-Objektfunkanlagen</h3>
+      <h3 data-lang="en">Maintenance of BOS In-Building Radio Systems</h3>
+      <p data-lang="de" class="active">Jährliche Wartung und technische Zustandsprüfung digitaler BOS-Objektfunkanlagen nach DIN 14024-1. Funktionsprüfungen, HF-Wartungsmessungen, Fehlerdiagnose sowie Erstellung von Wartungsprotokollen und Dokumentation im Betriebsbuch.</p>
+      <p data-lang="en">Annual maintenance and technical condition assessments of digital BOS in-building radio systems in accordance with DIN 14024-1. Functional testing, RF maintenance measurements, fault diagnosis, and preparation of maintenance reports and documentation in the system logbook.</p>
+      <span class="srv-card-cta">
+        <span data-lang="de" class="active">Mehr erfahren</span>
+        <span data-lang="en">Learn more</span>
+        <span aria-hidden="true">→</span>
+      </span>
+    </a>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════
-     PROJEKTERFAHRUNG
+     Referenzen
 ══════════════════════════════════════ -->
 <section class="projects scroll-section" id="projects">
-  <div class="section-eyebrow" data-lang="de" class="active">Projekterfahrung</div>
-  <div class="section-eyebrow" data-lang="en">Project experience</div>
+  <div class="section-eyebrow" data-lang="de" class="active">Referenzen</div>
+  <div class="section-eyebrow" data-lang="en">References</div>
   <h2 class="section-title" data-lang="de" class="active">Ausgewählte Projekte</h2>
   <h2 class="section-title" data-lang="en">Selected projects</h2>
   <p class="section-sub" data-lang="de" class="active">Beispiele aus der praktischen Arbeit im Bereich BOS-Gebäudefunk und Funkfeldmessungen.</p>
@@ -724,64 +788,49 @@ footer{
   <div class="projects-grid">
     <div class="proj-card">
       <div class="proj-thumb">
-        <svg viewBox="0 0 200 120" fill="none">
-          <rect x="20" y="20" width="160" height="80" rx="4" stroke="rgba(109,179,247,.4)" stroke-width="1.5"/>
-          <line x1="20" y1="44" x2="180" y2="44" stroke="rgba(255,255,255,.1)"/>
-          <rect x="32" y="54" width="40" height="8" rx="1" fill="rgba(109,179,247,.2)"/>
-          <rect x="80" y="54" width="30" height="8" rx="1" fill="rgba(109,179,247,.15)"/>
-          <path d="M130 60 Q145 40 160 60" stroke="rgba(109,179,247,.5)" stroke-width="1.5" fill="none"/>
-          <circle cx="145" cy="40" r="4" fill="rgba(109,179,247,.7)"/>
-        </svg>
+        <img src="References_1.jpg" class="photo-img" alt="Abstract antenna illustration">
       </div>
       <div class="proj-body">
-        <div class="proj-tag" data-lang="de" class="active">Erforderlichkeitsmessung</div>
-        <div class="proj-tag" data-lang="en">Necessity measurement</div>
-        <h3 data-lang="de" class="active">Verwaltungsgebäude München</h3>
-        <h3 data-lang="en">Administrative building Munich</h3>
-        <p data-lang="de" class="active">Funkfeldmessung zur Beurteilung der BOS-Versorgung, TMO-Messung im TETRA-Band 380–400 MHz.</p>
+        <div class="proj-tag" data-lang="de" class="active">BOS-Objektfunk – Neubau Denisstraße, München</div>
+        <div class="proj-tag" data-lang="en">BOS In-Building Radio Communications – New Construction Project, Denisstraße, Munich</div>
+        <p data-lang="de" class="active">Im Auftrag der ZECH Bau wurden Erforderlichkeits- und Funkfeldmessungen im TMO- und DMO-Betrieb über sechs Geschosse durchgeführt.</p>
         <p data-lang="en">Radio field measurement to assess BOS coverage, TMO measurement in the TETRA band 380–400 MHz.</p>
+        <p data-lang="de" class="active">Insgesamt wurden rund 300 Messpunkte dokumentiert und ausgewertet. Die Ergebnisse wurden in einem technischen Messbericht gemäß DIN 14024 zusammengefasst.</p>
+        <p data-lang="en">A total of approximately 300 measurement points were documented and evaluated. The results were compiled in a technical measurement report in accordance with DIN 14024.</p>
       </div>
     </div>
 
     <div class="proj-card">
       <div class="proj-thumb">
         <svg viewBox="0 0 200 120" fill="none">
-          <rect x="10" y="30" width="180" height="70" rx="3" stroke="rgba(109,179,247,.35)" stroke-width="1.5"/>
-          <rect x="20" y="15" width="25" height="15" rx="1" fill="rgba(109,179,247,.15)" stroke="rgba(109,179,247,.3)" stroke-width="1"/>
-          <rect x="70" y="10" width="25" height="20" rx="1" fill="rgba(109,179,247,.1)" stroke="rgba(109,179,247,.25)" stroke-width="1"/>
-          <path d="M32 30 L32 15" stroke="rgba(109,179,247,.35)" stroke-width="1.5"/>
-          <path d="M82 30 L82 10" stroke="rgba(109,179,247,.3)" stroke-width="1.5"/>
-          <line x1="15" y1="65" x2="185" y2="65" stroke="rgba(109,179,247,.15)" stroke-width="1" stroke-dasharray="5 4"/>
+          <img src="References_2.jpg" class="photo-img" alt="Abstract antenna illustration">
         </svg>
       </div>
       <div class="proj-body">
-        <div class="proj-tag" data-lang="de" class="active">Planung & Simulation</div>
-        <div class="proj-tag" data-lang="en">Planning & Simulation</div>
-        <h3 data-lang="de" class="active">Krankenhaus Nürnberg</h3>
-        <h3 data-lang="en">Hospital Nuremberg</h3>
-        <p data-lang="de" class="active">iBwave-Planung für TETRA-Inhouse-Anlage, Auslegung der Antennenverteilung über 6 Stockwerke.</p>
-        <p data-lang="en">iBwave planning for TETRA in-house system, design of antenna distribution over 6 floors.</p>
+        <div class="proj-tag" data-lang="de" class="active">Mobilfunkanlage – Stadion, Leverkusen</div>
+        <div class="proj-tag" data-lang="en">Mobile Network Installation – Stadium, Leverkusen</div>
+        <p data-lang="de" class="active">Im Rahmen eines Mobilfunkprojekts in einem Stadion in Leverkusen wurden DTF- und Return-Loss-Messungen an Antennen- und HF-Kabelsystemen mit dem Rohde & Schwarz ZVH4 Cable & Antenna Analyzer durchgeführt.</p>
+        <p data-lang="en">As part of a mobile network project at a stadium in Leverkusen, DTF and Return Loss measurements were carried out on antenna and RF cable systems using the Rohde & Schwarz ZVH4 Cable & Antenna Analyzer.</p>
+        <p data-lang="de" class="active">Während der Messungen wurden Fehler in der HF-Kabelinfrastruktur lokalisiert und behoben. Anschließend erfolgten Kontrollmessungen zur Überprüfung der betroffenen Kabelstrecken.</p>
+        <p data-lang="en">During the measurements, faults in the RF cable infrastructure were identified and rectified. Follow-up measurements were then performed to verify the affected cable runs.</p>
+        <p data-lang="de" class="active">Die Messergebnisse dienten als Grundlage für die Erstellung des abschließenden Messberichts.</p>
+        <p data-lang="en">The measurement results served as the basis for preparing the final measurement report.</p>
       </div>
     </div>
 
     <div class="proj-card">
       <div class="proj-thumb">
-        <svg viewBox="0 0 200 120" fill="none">
-          <rect x="30" y="10" width="140" height="100" rx="4" stroke="rgba(109,179,247,.4)" stroke-width="1.5"/>
-          <rect x="42" y="22" width="116" height="12" rx="2" fill="rgba(109,179,247,.2)" stroke="rgba(109,179,247,.35)" stroke-width=".8"/>
-          <rect x="42" y="40" width="116" height="12" rx="2" fill="rgba(109,179,247,.15)" stroke="rgba(109,179,247,.25)" stroke-width=".8"/>
-          <rect x="42" y="58" width="116" height="12" rx="2" fill="rgba(109,179,247,.1)" stroke="rgba(109,179,247,.2)" stroke-width=".8"/>
-          <circle cx="148" cy="28" r="3" fill="rgba(109,179,247,.9)"/>
-          <circle cx="140" cy="28" r="3" fill="rgba(109,179,247,.5)"/>
-        </svg>
+        <img src="References_3.png" class="photo-img" alt="Abstract antenna illustration">
       </div>
       <div class="proj-body">
-        <div class="proj-tag" data-lang="de" class="active">Abnahmemessung</div>
-        <div class="proj-tag" data-lang="en">Acceptance measurement</div>
-        <h3 data-lang="de" class="active">Einkaufszentrum Augsburg</h3>
-        <h3 data-lang="en">Shopping centre Augsburg</h3>
-        <p data-lang="de" class="active">Abnahmemessung (TMO/DMO) nach DIN 14024 für neu errichtete BOS-Gebäudefunkanlage.</p>
-        <p data-lang="en">Acceptance measurement (TMO/DMO) to DIN 14024 for a newly erected BOS in-building radio system.</p>
+        <div class="proj-tag" data-lang="de" class="active">Mobilfunk-Inhouse-Anlage – Bad Friedrichshall</div>
+        <div class="proj-tag" data-lang="en">In-Building Mobile Network System – Bad Friedrichshall</div>
+        <p data-lang="de" class="active">Im Rahmen eines Mobilfunkprojekts wurden PIM-Messungen mit dem Anritsu PIM Master MW82119B an einer umfangreichen Indoor-Mobilfunkanlage durchgeführt. Die Messarbeiten erstreckten sich über einen Gebäudekomplex mit 17 technischen Betriebsräumen.</p>
+        <p data-lang="en">As part of a mobile network project, PIM measurements were performed on an extensive indoor mobile network installation using the Anritsu PIM Master MW82119B. The measurement work covered a building complex comprising 17 technical equipment rooms.</p>
+        <p data-lang="de" class="active">Dabei wurden erhöhte PIM-Werte, fehlerhafte HF-Steckverbindungen sowie mögliche Störquellen im Antennen- und Verteilnetz festgestellt. Einige Steckverbindungen konnten bereits während der Messungen nachgebessert werden. Durch gezielte Versuchs- und Vergleichsmessungen an Innenraumantennen konnten Ursachen der auffälligen PIM-Messwerte identifiziert werden.</p>
+        <p data-lang="en">Elevated PIM levels, faulty RF connectors, and potential sources of interference within the antenna and distribution network were identified. Some connector issues were rectified during the measurement process. Targeted test and comparative measurements on indoor antennas helped identify the causes of the abnormal PIM readings.</p>
+        <p data-lang="de" class="active">Die Messergebnisse bildeten eine Grundlage für die technische Bewertung der Anlage und den abschließenden Messbericht.</p>
+        <p data-lang="en">The measurement results provided the basis for the technical assessment of the installation and the preparation of the final measurement report.</p>
       </div>
     </div>
   </div>
@@ -827,19 +876,24 @@ footer{
       <p data-lang="de" class="active">Technische Unterstützung bei Funkmessungen, Inbetriebnahme und Dokumentation von BOS-Gebäudefunkanlagen.</p>
       <p data-lang="en">Technical support for radio measurements, commissioning, and documentation of BOS in-building radio systems.</p>
     </div>
-    <div class="fw-card">
+    <a class="fw-card" href="\wartung">
       <div class="fw-icon">🏢</div>
       <h3 data-lang="de" class="active">Facility Manager & Betreiber</h3>
       <h3 data-lang="en">Facility managers & operators</h3>
       <p data-lang="de" class="active">Für wiederkehrende Prüf- und Nachmessungen sowie die technische Bewertung bestehender Anlagen im laufenden Betrieb.</p>
       <p data-lang="en">For recurring inspections, follow-up measurements, and technical evaluation of existing systems during ongoing operation.</p>
-    </div>
+      <span class="srv-card-cta">
+        <span data-lang="de" class="active">Wartung von BOS-Objektfunkanlagen</span>
+        <span data-lang="en">Maintenance of BOS In-Building Radio Systems</span>
+        <span aria-hidden="true">→</span>
+      </span>
+    </a>
     <div class="fw-card">
       <div class="fw-icon">📍</div>
       <h3 data-lang="de" class="active">Einsatzgebiet</h3>
       <h3 data-lang="en">Service Area</h3>
-      <p data-lang="de" class="active">Bayern · kurzfristige Unterstützung vor Ort möglich</p>
-      <p data-lang="en">Bavaria · Short-notice on-site support available</p>
+      <p data-lang="de" class="active">Bayern und deutschlandweit · kurzfristige Von-Ort-Termine möglich</p>
+      <p data-lang="en">Throughout Bavaria and Germany · Short-notice on-site appointments available.</p>
     </div>
   </div>
 </section>
@@ -886,8 +940,8 @@ footer{
     <p data-lang="de" class="active">Als externer HF-Spezialist unterstütze ich Planungsbüros, Errichter und Systemintegratoren sowohl bei einzelnen Messungen als auch projektbegleitend – insbesondere bei technischen Fragestellungen und vor Ort im Projekt.</p>
     <p data-lang="en">As an external RF specialist, I support engineering consultancies, installation companies, and system integrators with both individual measurement campaigns and ongoing project support—especially for technical challenges and on-site project implementation.</p>
 
-    <p data-lang="de" class="active">Ich arbeite unabhängig, flexibel und bin kurzfristig für Vor-Ort-Termine in Bayern verfügbar.</p>
-    <p data-lang="en">I work independently and flexibly and am available for short-notice on-site assignments throughout Bavaria.</p>
+    <p data-lang="de" class="active">Als unabhängiger HF-Spezialist bin ich deutschlandweit tätig. Mein Standort ist München, kurzfristige Vor-Ort-Termine sind nach Vereinbarung möglich.</p>
+    <p data-lang="en">As an independent HF specialist, I operate throughout Germany. My base is in Munich, and short-notice on-site appointments are available by arrangement.</p>
   </div>
 </section>
 
@@ -1033,8 +1087,8 @@ footer{
     <div class="faq-item">
       <div class="faq-q" data-lang="de" class="active" onclick="toggleFaq(this)">In welchen Regionen sind Sie tätig?</div>
       <div class="faq-q" data-lang="en" onclick="toggleFaq(this)">In which regions do you operate?</div>
-      <div class="faq-a" data-lang="de" class="active">Mein Haupteinsatzgebiet ist Bayern. Kurzfristige Vor-Ort-Termine sind in der Regel innerhalb weniger Tage möglich. Für Projekte außerhalb Bayerns bitte ich um Anfrage – ich prüfe gerne die Machbarkeit.</div>
-      <div class="faq-a" data-lang="en">My main area of operation is Bavaria. Short-notice on-site appointments are generally possible within a few days. For projects outside Bavaria, please send an enquiry – I am happy to assess feasibility.</div>
+      <div class="faq-a" data-lang="de" class="active">Mein Unternehmensstandort ist München. Ich übernehme Messungen und technische Projekteinsätze in ganz Deutschland. Kurzfristige Termine sind nach Absprache möglich.</div>
+      <div class="faq-a" data-lang="en">My business is based in Munich. I provide measurement services and technical project support throughout Germany. Short-notice appointments are available by prior arrangement.</div>
     </div>
 
     <div class="faq-item">
@@ -1069,8 +1123,8 @@ footer{
   <div class="section-eyebrow" data-lang="en">Contact</div>
   <h2 class="section-title" data-lang="de" class="active">👉 Kontakt</h2>
   <h2 class="section-title" data-lang="en">👉 Contact</h2>
-  <p class="section-sub" data-lang="de" class="active">Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Senden Sie eine Anfrage – ich melde mich kurzfristig bei Ihnen zurück.<br><br>⚡ Rückmeldung in der Regel innerhalb von 24 Stunden · Schnelle Verfügbarkeit für Vor-Ort-Termine in Bayern</p>
-  <p class="section-sub" data-lang="en">Do you have questions or need support for your project? Send an enquiry – I will get back to you promptly.<br><br>⚡ Response usually within 24 hours · Fast availability for on-site appointments in Bavaria</p>
+  <p class="section-sub" data-lang="de" class="active">Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Senden Sie eine Anfrage – ich melde mich kurzfristig bei Ihnen zurück.<br><br>⚡ Rückmeldung in der Regel innerhalb von 24 Stunden · Kurzfristige Vor-Ort-Termine in Bayern und deutschlandweit möglich</p>
+  <p class="section-sub" data-lang="en">Do you have questions or need support for your project? Send an enquiry – I will get back to you promptly.<br><br>⚡ Response usually within 24 hours · Short-notice on-site appointments available in Bavaria and throughout Germany.</p>
 
   <div class="contact-inner">
     <div class="contact-details">
@@ -1191,7 +1245,7 @@ footer{
 <footer>
   <div>
     <div class="footer-logo">AVTEL <span>Systems</span></div>
-    <div class="footer-copy">© 2025 Aleksei Shcherbakov · AVTEL Systems</div>
+    <div class="footer-copy">© 2026 Aleksei Shcherbakov · AVTEL Systems</div>
   </div>
   <div class="footer-links">
     <a href="impressum.html" data-lang="de" class="active">Impressum</a>
