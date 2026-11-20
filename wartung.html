@@ -133,12 +133,37 @@ nav{
 .hero-visual{position:relative;z-index:1;width:min(380px,34vw);height:auto;object-fit:contain}
 
 .maintenance{padding:80px 5%;background:var(--gray50)}
-.maintenance-inner{max-width:1000px;margin:0 auto}
+.maintenance-inner{max-width:1120px;margin:0 auto}
 .section-eyebrow{font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .section-title{font-size:clamp(1.7rem,3vw,2.5rem);color:var(--navy);margin-bottom:16px;letter-spacing:-.02em}
-.maintenance-intro{font-size:1.3rem;color:black;line-height:1.8;max-width:850px}
+.maintenance-intro-wrap{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(32px,5vw,64px);align-items:center;
+}
+.maintenance-intro-content{max-width:480px}
+.maintenance-intro-heading{
+  font-size:clamp(1.7rem,3vw,2.35rem);color:var(--navy);
+  margin-bottom:18px;letter-spacing:-.02em;
+}
+.maintenance-intro{font-size:1.1rem;color:var(--gray600);line-height:1.85}
+.maintenance-highlights{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.maintenance-highlight{
+  padding:8px 13px;background:var(--white);border:1px solid var(--gray200);
+  border-radius:100px;color:var(--navy);font-size:.9rem;font-weight:600;
+}
+.maintenance-photo-wrap{
+  position:relative;height:clamp(380px,42vw,520px);
+  margin:0;overflow:hidden;border:1px solid var(--gray200);
+  border-radius:var(--r2);background:var(--navy);
+}
+.maintenance-photo{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.maintenance-photo-caption{
+  position:absolute;left:18px;right:18px;bottom:18px;
+  padding:13px 16px;border-radius:var(--r);
+  background:rgba(11,31,58,.88);color:#fff;font-size:.95rem;font-weight:600;
+}
 .maintenance-details{
-  margin-top:34px;padding:32px;background:var(--white);
+  margin-top:64px;padding:32px;background:var(--white);
   border:1px solid var(--gray200);border-radius:var(--r2);
 }
 .maintenance-details h3{font-size:1.55rem;color:var(--navy);margin-bottom:20px}
@@ -184,6 +209,9 @@ footer{
   .hero-visual{display:none}
   .hero-sub{font-size:1.2rem}
   .maintenance{padding:64px 5%}
+  .maintenance-intro-wrap{grid-template-columns:1fr;gap:32px}
+  .maintenance-intro-content{max-width:100%}
+  .maintenance-photo-wrap{height:clamp(340px,75vw,480px)}
 }
 @media(max-width:600px){
   .maintenance-details{padding:24px 20px}
@@ -197,7 +225,7 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="/" onclick="scrollTo(0,0)">
+  <a class="logo" href="/avtel-systems/" onclick="scrollTo(0,0)">
     <div class="logo-icon">
       <img src="avtel-systems-white.png">
     </div>
@@ -214,33 +242,33 @@ footer{
   <ul class="nav-links" id="navLinks">
 
   <li>
-    <a href="/" onclick="closeMenu()" data-lang="de">Startseite</a>
-    <a href="/" onclick="closeMenu()" data-lang="en">Home</a>
+    <a href="/avtel-systems/" onclick="closeMenu()" data-lang="de">Startseite</a>
+    <a href="/avtel-systems/" onclick="closeMenu()" data-lang="en">Home</a>
   </li>
 
   <li>
-    <a href="/leistungen" onclick="closeMenu()" data-lang="de">Leistungen</a>
-    <a href="/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
+    <a href="/avtel-systems/leistungen" onclick="closeMenu()" data-lang="de">Leistungen</a>
+    <a href="/avtel-systems/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
   </li>
 
   <li>
-      <a href="/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
-      <a href="/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
+      <a href="/avtel-systems/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
+      <a href="/avtel-systems/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
   </li>
 
   <li>
-    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="de">Referenzen</a>
-    <a href="/?scroll=projects" onclick="closeMenu()" data-lang="en">References</a>
+    <a href="/avtel-systems/?scroll=projects" onclick="closeMenu()" data-lang="de">Referenzen</a>
+    <a href="/avtel-systems/?scroll=projects" onclick="closeMenu()" data-lang="en">References</a>
   </li>
 
   <li>
-    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="de">Über mich</a>
-    <a href="/?scroll=ueber" onclick="closeMenu()" data-lang="en">About me</a>
+    <a href="/avtel-systems/?scroll=ueber" onclick="closeMenu()" data-lang="de">Über mich</a>
+    <a href="/avtel-systems/?scroll=ueber" onclick="closeMenu()" data-lang="en">About me</a>
   </li>
 
   <li>
-    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="de">Qualifikationen</a>
-    <a href="/?scroll=quali" onclick="closeMenu()" data-lang="en">Qualifications</a>
+    <a href="/avtel-systems/?scroll=quali" onclick="closeMenu()" data-lang="de">Qualifikationen</a>
+    <a href="/avtel-systems/?scroll=quali" onclick="closeMenu()" data-lang="en">Qualifications</a>
   </li>
 
   <li>
@@ -248,7 +276,7 @@ footer{
   </li>
 
   <li>
-    <a href="/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
   </li>
 
 </ul>
@@ -267,8 +295,29 @@ footer{
 <main>
   <section class="maintenance" id="leistungsumfang">
     <div class="maintenance-inner">
-      <p class="maintenance-intro" data-lang="de" class="active">AVTEL Systems führt Wartungen und technische Zustandsprüfungen digitaler BOS-Objektfunkanlagen durch. Grundlage sind DIN 14024-1:2021-12, die objektspezifischen Anforderungen sowie die Vorgaben der Anlagenhersteller.</p>
-      <p class="maintenance-intro" data-lang="en">AVTEL Systems provides maintenance and technical condition assessments for digital BOS in-building radio systems. The work is based on DIN 14024-1:2021-12, the requirements specific to each site, and the system manufacturers' specifications.</p>
+      <div class="maintenance-intro-wrap">
+        <div class="maintenance-intro-content">
+          <div class="section-eyebrow" data-lang="de" class="active">Wartung nach DIN 14024-1</div>
+          <div class="section-eyebrow" data-lang="en">Maintenance to DIN 14024-1</div>
+          <h2 class="maintenance-intro-heading" data-lang="de" class="active">Zuverlässiger Betrieb beginnt mit regelmäßiger Prüfung.</h2>
+          <h2 class="maintenance-intro-heading" data-lang="en">Reliable operation starts with regular inspections.</h2>
+          <p class="maintenance-intro" data-lang="de" class="active">AVTEL Systems führt Wartungen und technische Zustandsprüfungen digitaler BOS-Objektfunkanlagen durch. Grundlage sind DIN 14024-1:2021-12, die objektspezifischen Anforderungen sowie die Vorgaben der Anlagenhersteller.</p>
+          <p class="maintenance-intro" data-lang="en">AVTEL Systems provides maintenance and technical condition assessments for digital BOS in-building radio systems. The work is based on DIN 14024-1:2021-12, the requirements specific to each site, and the system manufacturers' specifications.</p>
+          <div class="maintenance-highlights">
+            <span class="maintenance-highlight" data-lang="de" class="active">Normgerechte Prüfung</span>
+            <span class="maintenance-highlight" data-lang="en">Standards-based inspection</span>
+            <span class="maintenance-highlight" data-lang="de" class="active">HF-Wartungsmessungen</span>
+            <span class="maintenance-highlight" data-lang="en">RF maintenance measurements</span>
+            <span class="maintenance-highlight" data-lang="de" class="active">Dokumentation</span>
+            <span class="maintenance-highlight" data-lang="en">Documentation</span>
+          </div>
+        </div>
+        <figure class="maintenance-photo-wrap">
+          <img class="maintenance-photo" src="References_3.png" alt="Funktechniker bei der Prüfung einer BOS-Objektfunkanlage">
+          <figcaption class="maintenance-photo-caption" data-lang="de" class="active">Technische Prüfung direkt an der Anlage</figcaption>
+          <figcaption class="maintenance-photo-caption" data-lang="en">Technical inspection carried out at the system</figcaption>
+        </figure>
+      </div>
 
       <div class="maintenance-details">
         <h3 data-lang="de" class="active">Leistungsumfang</h3>

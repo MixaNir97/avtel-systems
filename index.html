@@ -322,11 +322,20 @@ nav{
   border:1px solid rgba(255,255,255,.08);
   border-radius:var(--r2);overflow:hidden;
   transition:border-color .2s,transform .2s;
+  max-width:550px;
 }
 .proj-card:hover{border-color:rgba(26,111,196,.5);transform:translateY(-3px)}
 .proj-thumb{
   aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#0f2a4a 0%,#0b1f3a 100%);
+}
+.proj-thumb img{
+  border-radius:var(--r2);overflow:hidden;
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,#c8dcf0 0%,#dce8f5 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;border:1px solid var(--gray200);
+  max-width:500px;
 }
 .proj-thumb svg{width:55%;height:55%;opacity:.35}
 .proj-body{padding:22px}
@@ -541,7 +550,7 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="/" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+  <a class="logo" href="/avtel-systems/" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
     <div class="logo-icon">
       <img src="avtel-systems-white.png" alt="AVTEL Systems">
     </div>
@@ -556,18 +565,18 @@ footer{
 
   <ul class="nav-links" id="navLinks">
     <li>
-      <a href="/" onclick="scrollToSection('hero'); closeMenu(); return false;" data-lang="de" class="active">Startseite</a>
-      <a href="/" onclick="scrollToSection('hero'); closeMenu(); return false;" data-lang="en">Home</a>
+      <a href="/avtel-systems/" onclick="scrollToSection('hero'); closeMenu(); return false;" data-lang="de" class="active">Startseite</a>
+      <a href="/avtel-systems/" onclick="scrollToSection('hero'); closeMenu(); return false;" data-lang="en">Home</a>
     </li>
 
     <li>
-      <a href="/leistungen" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a>
-      <a href="/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
+      <a href="/avtel-systems/leistungen" onclick="closeMenu()" data-lang="de" class="active">Leistungen</a>
+      <a href="/avtel-systems/leistungen" onclick="closeMenu()" data-lang="en">Services</a>
     </li>
 
     <li>
-      <a href="/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
-      <a href="/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
+      <a href="/avtel-systems/wartung" onclick="closeMenu()" data-lang="de" class="active">BOS-Wartung</a>
+      <a href="/avtel-systems/wartung" onclick="closeMenu()" data-lang="en">BOS-Maintenance</a>
     </li>
 
     <li>
@@ -750,7 +759,7 @@ footer{
     </a>
 
     <!-- Card 6 -->
-    <a class="srv-card srv-card-link" href="\wartung">
+    <a class="srv-card srv-card-link" href="/avtel-systems/wartung">
       <div class="srv-icon">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 21h13V9L8 6 3 9v12Z"/>
@@ -802,9 +811,7 @@ footer{
 
     <div class="proj-card">
       <div class="proj-thumb">
-        <svg viewBox="0 0 200 120" fill="none">
-          <img src="References_2.jpg" class="photo-img" alt="Abstract antenna illustration">
-        </svg>
+        <img src="References_2.jpg" class="photo-img" alt="Abstract antenna illustration">
       </div>
       <div class="proj-body">
         <div class="proj-tag" data-lang="de" class="active">Mobilfunkanlage – Stadion, Leverkusen</div>
@@ -876,7 +883,7 @@ footer{
       <p data-lang="de" class="active">Technische Unterstützung bei Funkmessungen, Inbetriebnahme und Dokumentation von BOS-Gebäudefunkanlagen.</p>
       <p data-lang="en">Technical support for radio measurements, commissioning, and documentation of BOS in-building radio systems.</p>
     </div>
-    <a class="fw-card" href="\wartung">
+    <a class="fw-card" href="/avtel-systems/wartung">
       <div class="fw-icon">🏢</div>
       <h3 data-lang="de" class="active">Facility Manager & Betreiber</h3>
       <h3 data-lang="en">Facility managers & operators</h3>
