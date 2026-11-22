@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leistungen – AVTEL Systems</title>
+<title>Leistungen – Services | AVTEL Systems</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,7 +40,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -52,7 +52,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -64,7 +64,6 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
-  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -294,7 +293,8 @@ footer{
   </li>
 
   <li>
-    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="de">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a>
   </li>
 
 </ul>
@@ -538,8 +538,52 @@ footer{
 <script>
     /* ── LANGUAGE ── */
 let currentLang = 'de';
+const translations = {
+"Leistungen":"Services","Funkmessungen und Bewertung von BOS-Objektfunkanlagen":"Radio measurements and assessment of BOS in-building radio systems",
+"Fundierte Messungen und technische Bewertung als Grundlage für Planung, Umsetzung und Nachweis gemäß DIN 14024.":"Reliable measurements and technical assessments as a basis for planning, implementation, and verification in accordance with DIN 14024.",
+"Grundlage":"Basis","1. Aufgabe einer BOS-Objektfunkanlage":"1. Purpose of a BOS In-Building Radio System",
+"Eine digitale BOS-Objektfunkanlage gewährleistet die zuverlässige Funkversorgung (TETRA 380–400 MHz) innerhalb von Gebäuden, wenn die Freiflächenversorgung keine vollständige und stabile Kommunikation ermöglicht.":"A digital BOS in-building radio system ensures reliable radio coverage (TETRA 380–400 MHz) inside buildings when outdoor coverage does not provide complete, stable communication.",
+"Verpflichtung":"Requirement","Ist keine Vollversorgung gegeben, ist die Installation einer eigenen BOS-Objektfunkanlage erforderlich.":"If full coverage is not available, installation of a dedicated BOS in-building radio system is required.",
+"Der Objektbetreiber ist hierzu verpflichtet, sofern dies durch Bauordnung, Feuerwehr oder Brandschutzkonzept gefordert wird.":"The property operator is required to provide this when mandated by building regulations, fire services, or the fire protection concept.",
+"Normgrundlage":"Standards","Messungen und Planungen erfolgen unter Berücksichtigung der Anforderungen nach":"Measurements and planning are carried out in accordance with",
+"Die Ergebnisse bilden eine belastbare Grundlage für alle weiteren Projektschritte – von der Planung bis zur Abnahme.":"The results provide a reliable basis for all subsequent project stages, from planning to acceptance.",
+"Funkfeldmessungen":"Radio coverage measurements","bilden die Grundlage für eine fundierte Entscheidung sowie für die weitere Planung und Umsetzung – unter Berücksichtigung der Anforderungen nach DIN 14024.":"provide the basis for an informed decision and for further planning and implementation, in accordance with DIN 14024.",
+"Messablauf":"Measurement process","2. Ablauf der Messungen":"2. Measurement Process",
+"Die Durchführung der Funkmessungen erfolgt in mehreren aufeinander abgestimmten Schritten.":"Radio measurements are carried out through several coordinated steps.",
+"Voranalyse der Bestands- und Planungsunterlagen":"Preliminary review of existing and planning documents",
+"Strukturierte Analyse der vom Auftraggeber bereitgestellten Unterlagen (Baupläne, Brandschutzkonzept, Bestandsdokumentation, vorhandene Funk- oder Antennenanlagen). Ziel: technische Vorbereitung der Messkampagne und Definition geeigneter Messpunkte.":"Structured review of documents provided by the client (building plans, fire protection concept, existing documentation, and current radio or antenna systems). Goal: technical preparation of the measurement campaign and definition of suitable measurement points.",
+"Erforderlichkeitsmessung":"Coverage requirement assessment",
+"Prüfung, ob zuverlässige BOS-Kommunikation im Gebäude ohne zusätzliche Anlage möglich ist. Beinhaltet Versorgungsmessung (TMO) und Durchdringungsprüfung (DMO – FIZ-Szenario). Ergebnis: klare Entscheidungsgrundlage.":"Verification of whether reliable BOS communication is possible inside the building without additional infrastructure. Includes coverage measurement (TMO) and penetration testing (DMO – FIZ scenario). Result: a clear decision basis.",
+"Planungs- und Projektmessungen":"Planning and project measurements",
+"Erhebung detaillierter Messdaten für Planung und Anmeldung: Umfeldmessung, Panorama-Messung gemäß BDBOS inkl. Fotodokumentation, Gebäudemessung mit Plan-Eintrag. Durchführung nach DIN 14024.":"Collection of detailed measurement data for planning and notification: environmental measurement, panoramic measurement in accordance with BDBOS including photo documentation, and building measurement with plan markings. Performed according to DIN 14024.",
+"Messungen im Bestand (analog → digital)":"Existing-system measurements (analogue → digital)",
+"Technische Bewertung vorhandener Kabel- und Antennenstrukturen: HF-Einspeisemessung, Schleifendämpfung, DTF / RTL, Entkopplung. Diese Analyse ermöglicht eine fundierte Bewertung bestehender Systeme sowie eine zielgerichtete Planung der Umstellung auf digitale BOS-Funklösungen (TETRA).":"Technical assessment of existing cable and antenna structures: RF feed measurement, loop loss, DTF/RTL, and isolation. This enables an informed assessment of existing systems and targeted planning for conversion to digital BOS radio solutions (TETRA).",
+"Abnahmemessung":"Acceptance measurement",
+"Nachweis der flächendeckenden und zuverlässigen Funkversorgung nach Installation der Anlage. TMO- und DMO-Messung gemäß DIN 14024 mit vollständiger Messdokumentation.":"Verification of complete and reliable radio coverage after system installation. TMO and DMO measurements in accordance with DIN 14024 with complete measurement documentation.",
+"Dach- und Außenversorgungsmessung":"Roof and outdoor coverage measurement",
+"Dachmessungen zur Bewertung der Außensignalversorgung (TMO). Ermittlung des optimalen Antennenstandorts unter Berücksichtigung von Feldstärke, Signalqualität, Störeinflüssen, Ausbreitungsbedingungen und baulichen Gegebenheiten.":"Roof measurements for assessing outdoor signal coverage (TMO). Identification of the optimum antenna location based on field strength, signal quality, interference, propagation conditions, and building conditions.",
+"Festlegung von Antennentyp, Richtcharakteristik, Montageort und Ausrichtung. Bestimmung geeigneter Befestigungs- und Montagesysteme unter Berücksichtigung statischer Anforderungen, Leitungsführung, Blitzschutz und Potentialausgleich.":"Selection of antenna type, radiation pattern, mounting location, and orientation. Determination of suitable mounting systems based on structural requirements, cable routing, lightning protection, and equipotential bonding.",
+"Dokumentation":"Documentation","3. Messdurchführung und Ergebnis":"3. Measurement Execution and Results",
+"Alle Messungen werden mit spezialisiertem und kalibriertem Funkmessgerät durchgeführt.":"All measurements are performed with specialised, calibrated radio test equipment.",
+"Die Ergebnisse werden in einem strukturierten und nachvollziehbaren Messbericht dokumentiert.":"The results are documented in a structured and traceable measurement report.",
+"Messbericht enthält":"Measurement report includes","Beschreibung des Objekts und der Messmethodik":"Description of the building and measurement method",
+"Tabellarische und grafische Auswertung":"Tabular and graphical evaluation","Eintrag der Messwerte in Grundrisspläne":"Entry of measurement values in floor plans","Fotodokumentation (falls erforderlich)":"Photo documentation (if required)",
+"Technische Bewertung sowie klare und umsetzbare Empfehlung":"Technical assessment and clear, actionable recommendation","Technische Lösungen":"Technical solutions",
+"Die Messergebnisse bilden eine belastbare Grundlage für die Planung, Dimensionierung und Umsetzung der BOS-Objektfunkanlage – gemäß den Anforderungen nach DIN 14024.":"The measurement results provide a reliable basis for planning, sizing, and implementing the BOS in-building radio system in accordance with DIN 14024.",
+"Auswahl der Systemarchitektur":"System architecture selection","Dimensionierung der benötigten Komponenten":"Sizing of required components","Festlegung der Installationsstandorte":"Definition of installation locations",
+"Planung der Kabeltrassen unter Berücksichtigung von Dämpfungsverlusten, baulichen Gegebenheiten und normativen Anforderungen":"Cable route planning considering signal losses, building conditions, and regulatory requirements",
+"Abrechnung":"Pricing","4. Kosten und Abrechnung":"4. Costs and Billing",
+"Die Kosten der Mess- und Prüfdienstleistungen werden individuell und projektbezogen kalkuliert. Maßgeblich sind insbesondere:":"The cost of measurement and testing services is calculated individually for each project. Key factors include:",
+"Objektgröße":"Building size","Gesamtfläche und Anzahl der zu messenden Bereiche und Stockwerke.":"Total floor area and number of areas and floors to be measured.",
+"Bauliche Komplexität":"Structural complexity","Gebäudestruktur, Materialien und besondere bauliche Gegebenheiten.":"Building structure, materials, and special structural conditions.",
+"Messumfang":"Measurement scope","Art und Anzahl der erforderlichen Messungen (Erforderlichkeit, Planung, Abnahme).":"Type and number of required measurements (coverage assessment, planning, acceptance).",
+"Lage des Objekts":"Location","Anfahrt und Projekteinsätze deutschlandweit – kurzfristige Termine möglich.":"Travel and project assignments throughout Germany – short-notice appointments available.",
+"Anfrage senden":"Send enquiry","Haben Sie Fragen oder benötigen Sie Unterstützung bei Ihrem Projekt? Senden Sie eine Anfrage – ich melde mich kurzfristig bei Ihnen zurück.":"Do you have questions or need support for your project? Send an enquiry and I will get back to you shortly."
+};
+const originalText = new WeakMap();
 function setLang(l) {
   currentLang = l;
+  localStorage.setItem('avtel-lang', l);
   document.documentElement.lang = l;
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.dataset.lang === l);
@@ -553,12 +597,20 @@ function setLang(l) {
   if (togglefull) {
     togglefull.textContent = l === 'de' ? 'EN' : 'DE';
   }
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const text = node.nodeValue.trim();
+    if (!text) continue;
+    if (!originalText.has(node)) originalText.set(node, text);
+    node.nodeValue = l === 'en' && translations[text] ? translations[text] : originalText.get(node);
+  }
 }
 function toggleLang() {
   setLang(currentLang === 'de' ? 'en' : 'de');
 }
 // init
-setLang('de');
+setLang(localStorage.getItem('avtel-lang') || 'de');
 
 /* ── MOBILE MENU ── */
 function toggleMenu(){
@@ -567,10 +619,6 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('navLinks').classList.remove('open');
 }
-/* ── NAV ── */
-let lang='de';
-function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
-
 /* ── REVEAL ── */
 const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));

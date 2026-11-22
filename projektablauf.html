@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projektablauf – AVTEL Systems</title>
+<title>Projektablauf – Project Workflow | AVTEL Systems</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,7 +40,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -52,7 +52,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -64,7 +64,6 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
-  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -357,7 +356,8 @@ footer{
   </li>
 
   <li>
-    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="de">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a>
   </li>
 
 </ul>
@@ -703,8 +703,45 @@ footer{
 <script>
     /* ── LANGUAGE ── */
 let currentLang = 'de';
+const translations = {
+"Projektablauf":"Project workflow","Projektablauf BOS-Objektfunkanlagen":"BOS in-building radio project workflow",
+"Strukturierter technischer Ablauf – von der ersten Bewertung der Funkversorgung bis zur Abnahme und dem Betrieb der Anlage. Planung und Umsetzung nach DIN 14024, BDBOS und AS Bayern.":"A structured technical process from the initial coverage assessment through acceptance and operation of the system. Planning and implementation in accordance with DIN 14024, BDBOS, and AS Bayern.",
+"Projektphasen im Überblick":"Project phases overview","Ein typisches BOS-Projekt umfasst sieben aufeinander aufbauende Phasen – von der Ausgangsbewertung bis zum laufenden Betrieb.":"A typical BOS project comprises seven consecutive phases, from the initial assessment through ongoing operation.",
+"Projektstart & Ausgangssituation":"Project start & initial situation","Erforderlichkeitsprüfung":"Coverage requirement assessment","Konzept & Abstimmung":"Concept & coordination","Planung & HF-Auslegung":"Planning & RF design","Installation":"Installation","Messung & Nachweis":"Measurement & verification","Abnahme & Betrieb":"Acceptance & operation",
+"Erforderlichkeits­prüfung":"Coverage requirement assessment","Anfrage senden":"Send enquiry","Kontakt aufnehmen":"Get in touch","👉 Kontakt aufnehmen":"👉 Get in touch",
+"Phasen im Detail":"Phases in detail","Detaillierter Projektablauf":"Detailed project workflow","Jede Phase baut auf der vorherigen auf. Eine frühzeitige Einbindung des BOS-/HF-Spezialisten ist entscheidend, da Abstimmungen und Verfahren mehrere Monate dauern können.":"Each phase builds on the previous one. Early involvement of the BOS/RF specialist is essential, as coordination and approval procedures can take several months.",
+"Projektstart &amp; Ausgangssituation":"Project start & initial situation","Ein BOS-Projekt entsteht in der Regel im Rahmen eines Bauvorhabens. Auslöser sind häufig Anforderungen aus dem Brandschutzkonzept, Forderungen der Feuerwehr oder unklare Funkversorgung.":"A BOS project is generally initiated as part of a construction project. Typical triggers include requirements in the fire protection concept, fire service requirements, or unclear radio coverage.",
+"Neubau, Umbau oder Erweiterung":"New build, alteration, or expansion","Tiefgaragen, Industrie- oder Bürogebäude":"Underground garages, industrial buildings, or offices","Anforderungen aus Brandschutzkonzept oder Feuerwehr":"Requirements from the fire protection concept or fire service","Hinweise der AS Bayern":"Requirements from AS Bayern",
+"BOS frühzeitig als eigenständigen Planungsprozess betrachten – nicht als nachträgliche Installation.":"Consider BOS an independent planning process from the outset – not as a late installation.",
+"Bewertung, ob eine BOS-Objektfunkanlage notwendig ist. Messung der Funkversorgung an typisch kritischen Bereichen.":"Assessment of whether a BOS in-building radio system is necessary. Coverage measurements in typically critical areas.",
+"TMO-Funkfeldmessung im Gebäude":"In-building TMO coverage measurement","DMO-Messung (z. B. FIZ-Szenario)":"DMO measurement (e.g. FIZ scenario)","Bewertung von Signalstärke und Signalqualität":"Assessment of signal strength and quality","Dokumentation kritischer Bereiche im Grundriss":"Documentation of critical areas in the floor plan",
+"Ausreichende Versorgung → keine BOS-Anlage erforderlich":"Sufficient coverage → no BOS system required","Unzureichende Versorgung → Planung notwendig":"Insufficient coverage → planning required",
+"Konzept, Abstimmung & Anzeigeverfahren":"Concept, coordination & approval procedure","Konzeptgespräch mit allen Projektbeteiligten. Das Anzeigeverfahren bei der AS Bayern ist ein zentraler Bestandteil – frühzeitiger Start ist entscheidend, da die Bearbeitung mehrere Monate dauern kann.":"Coordination meeting with all project participants. The notification procedure with AS Bayern is a key stage – early initiation is essential because processing can take several months.",
+"Anforderungen der BOS, Betriebsart (TMO / DMO / Kombination)":"BOS requirements and operating mode (TMO / DMO / combination)","Versorgungsziele und projektspezifische Randbedingungen":"Coverage targets and project-specific conditions","Technische Abstimmung der Objektversorgung mit AS Bayern":"Technical coordination of building coverage with AS Bayern","Vorbereitung und Einreichung der Unterlagen":"Preparation and submission of documents","Frequenz- und Kanalabstimmung":"Frequency and channel coordination",
+"Planung & HF-Auslegung":"Planning & RF design","Entwicklung eines belastbaren Versorgungskonzeptes auf Basis der Messergebnisse. Erweiterte HF-Planung für realistische Bewertung der Funkversorgung.":"Development of a reliable coverage concept based on measurement results. Advanced RF planning for realistic assessment of radio coverage.",
+"Auswahl der Systemarchitektur und aktiver Komponenten":"Selection of system architecture and active components","Festlegung der Antennenstandorte":"Definition of antenna locations","Planung der Kabel- und Trassenführung":"Planning of cables and routes","Linkbudget und Pegelplanung im Gebäude":"Link budget and level planning inside the building","Berücksichtigung realer Dämpfungen (Wände, Decken, Fassaden)":"Consideration of real attenuation (walls, ceilings, façades)","Abstimmung mit TGA, Elektro und Brandschutz":"Coordination with MEP, electrical, and fire protection disciplines",
+"Technische Umsetzung gemäß Planung. Vollständige Dokumentation und Kennzeichnung aller Komponenten.":"Technical implementation according to the plan. Complete documentation and labelling of all components.",
+"Installation von Kabeln und Antennen":"Installation of cables and antennas","Montage aktiver Komponenten (Repeater etc.)":"Installation of active components (repeaters, etc.)","Aufbau der Stromversorgung":"Setup of power supply","Dokumentation und Kennzeichnung":"Documentation and labelling",
+"Messung & Nachweis":"Measurement & verification","Technische Prüfung nach Fertigstellung zum Nachweis der flächendeckenden Versorgung gemäß DIN 14024.":"Technical verification after completion to demonstrate area-wide coverage in accordance with DIN 14024.",
+"Funkfeldmessung im gesamten Gebäude":"Radio coverage measurement throughout the building","TMO- und DMO-Prüfungen":"TMO and DMO tests","Bewertung der Kommunikationsqualität":"Assessment of communication quality","Nachweis der flächendeckenden Versorgung":"Verification of area-wide coverage","Erfüllung der Anforderungen von Feuerwehr und AS Bayern":"Fulfilment of fire service and AS Bayern requirements",
+"Abnahme & Betrieb":"Acceptance & operation","Übergabe der vollständigen Dokumentation, formelle Abnahme durch die zuständigen Stellen und Inbetriebnahme der Anlage.":"Hand-over of complete documentation, formal acceptance by the responsible authorities, and commissioning of the system.",
+"Übergabe der Dokumentation":"Hand-over of documentation","Abnahme durch zuständige Stellen":"Acceptance by responsible authorities","Inbetriebnahme der Anlage":"System commissioning","Wartung und Nachmessungen":"Maintenance and repeat measurements",
+"Zusammenarbeit":"Collaboration","Zusammenarbeit im Projekt":"Project collaboration","Ein BOS-Projekt erfordert die koordinierte Zusammenarbeit mehrerer Beteiligter – der BOS-/HF-Spezialist spielt dabei eine zentrale Rolle.":"A BOS project requires coordinated cooperation among several participants – the BOS/RF specialist plays a central role.",
+"Fachplaner (TGA)":"Technical planner (MEP)","Koordination mit Gewerken, Integration der BOS-Trassen in die Gesamtplanung.":"Coordination with trades and integration of BOS routes into the overall plan.",
+"Ausführende Fachfirma":"Installing contractor","Installation von Kabeln, Antennen und aktiven Komponenten gemäß Planungsunterlagen.":"Installation of cables, antennas, and active components according to planning documents.",
+"BOS-/HF-Spezialist · AVTEL Systems":"BOS/RF specialist · AVTEL Systems","Messungen, Planung, HF-Auslegung, Dokumentation und Unterstützung beim Anzeigeverfahren. Zentraler technischer Ansprechpartner.":"Measurements, planning, RF design, documentation, and support with the notification procedure. Central technical contact.",
+"Feuerwehr":"Fire service","Festlegung der Versorgungsanforderungen, Abnahme der Anlage.":"Definition of coverage requirements and acceptance of the system.",
+"AS Bayern":"AS Bayern","Anzeigeverfahren, Frequenz- und Kanalabstimmung, begleitende Behörde.":"Notification procedure, frequency and channel coordination, responsible authority.",
+"Rolle des BOS-/HF-Spezialisten":"Role of the BOS/RF specialist","AVTEL Systems unterstützt Sie in allen technischen Phasen des Projekts – von der ersten Messung bis zur Abnahmedokumentation.":"AVTEL Systems supports you through every technical project phase – from the initial measurement to acceptance documentation.",
+"Messdaten, HF-Angaben und technische Dokumentation für das Anzeigeverfahren":"Measurement data, RF parameters, and technical documentation for the notification procedure","Linkbudget, Pegelplanung und Auslegung der Funkversorgung":"Link budget, level planning, and radio coverage design","Abnahme- und Nachweismessungen nach DIN 14024":"Acceptance and verification measurements according to DIN 14024","Unterstützung bei Abstimmung mit Feuerwehr und AS Bayern":"Support with coordination between the fire service and AS Bayern",
+"Frühzeitig einbinden:":"Involve early:","Das Anzeigeverfahren bei der AS Bayern kann mehrere Monate dauern. Eine frühe Einbindung des BOS-/HF-Spezialisten ist entscheidend für den Projekterfolg.":"The notification procedure with AS Bayern can take several months. Early involvement of the BOS/RF specialist is essential to project success.",
+"Haben Sie Fragen zum Projektablauf oder benötigen Sie Unterstützung bei Ihrem BOS-Projekt? Ich melde mich kurzfristig zurück.":"Do you have questions about the project workflow or need support with your BOS project? I will get back to you shortly.",
+"Kontakt aufnehmen":"Get in touch"
+};
+const originalText = new WeakMap();
 function setLang(l) {
   currentLang = l;
+  localStorage.setItem('avtel-lang', l);
   document.documentElement.lang = l;
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.dataset.lang === l);
@@ -718,12 +755,20 @@ function setLang(l) {
   if (togglefull) {
     togglefull.textContent = l === 'de' ? 'EN' : 'DE';
   }
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const text = node.nodeValue.trim();
+    if (!text) continue;
+    if (!originalText.has(node)) originalText.set(node, text);
+    node.nodeValue = l === 'en' && translations[text] ? translations[text] : originalText.get(node);
+  }
 }
 function toggleLang() {
   setLang(currentLang === 'de' ? 'en' : 'de');
 }
 // init
-setLang('de');
+setLang(localStorage.getItem('avtel-lang') || 'de');
 
 /* ── MOBILE MENU ── */
 function toggleMenu(){
@@ -732,10 +777,6 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('navLinks').classList.remove('open');
 }
-/* ── NAV ── */
-let lang='de';
-function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
-
 
 /* ── REVEAL ── */
 const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});

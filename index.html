@@ -40,7 +40,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -52,7 +52,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -64,7 +64,6 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
-  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -124,7 +123,7 @@ nav{
 /* ── HERO ── */
 .hero{
   background:var(--navy);
-  min-height:92.5vh;
+  min-height:93.5vh;
   display:flex;align-items:center;justify-content:space-between;
   padding:90px 5% 80px;
   position:relative;overflow:hidden;
@@ -368,9 +367,17 @@ nav{
 .ueber-photo{
   border-radius:var(--r2);overflow:hidden;
   aspect-ratio:3/4;
+  width:100%;
+  max-width:600px;
+  justify-self:center;
   background:linear-gradient(160deg,#c8dcf0 0%,#dce8f5 100%);
   display:flex;align-items:center;justify-content:center;
   position:relative;border:1px solid var(--gray200);
+}
+.ueber-photo-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 .ueber-photo svg{width:50%;height:50%;opacity:.3}
 .ueber-photo .photo-badge{
@@ -637,7 +644,7 @@ footer{
 
     <div class="hero-btns">
       <a href="#" onclick="scrollToSection('contact'); closeMenu(); return false;" class="btn-primary">👉 <span data-lang="de" class="active">Anfrage senden</span><span data-lang="en">Send inquiry</span></a>
-      <a href="#" onclick="scrollToSection('services'); closeMenu(); return false;" class="btn-ghost">👉 <span data-lang="de" class="active">Funkfeldmessungen ansehen</span><span data-lang="en">View services</span></a>
+      <a href="#" onclick="scrollToSection('services'); closeMenu(); return false;" class="btn-ghost">👉 <span data-lang="de" class="active">Leistungen ansehen</span><span data-lang="en">View services</span></a>
     </div>
 
     <div class="hero-checks">
@@ -645,8 +652,8 @@ footer{
       <span data-lang="en">University Degree in Communications Engineering (ZAB-assessed)</span>
       <span data-lang="de" class="active">BOS-Schulung nach DIN 14024</span>
       <span data-lang="en">BOS Training in accordance with DIN 14024</span>
-      <span data-lang="de" class="active">Mobilfunk- und HF-Messtechnik</span>
-      <span data-lang="en">Mobile Network and RF Testing</span>
+      <span data-lang="de" class="active">Eigene BOS- und HF-Messtechnik</span>
+      <span data-lang="en">Own BOS and RF Testing Equipment</span>
       <span data-lang="de" class="active">27 Jahre Erfahrung in Funktechnik</span>
       <span data-lang="en">27 Years of Experience in Radio Communications</span>
       <span data-lang="de" class="active">Deutschlandweit im Einsatz . kurzfristige Termine möglich</span>
@@ -663,20 +670,20 @@ footer{
 <section class="about scroll-section" id="about-intro">
   <div class="about-text">
     <h2>Aleksei Shcherbakov – AVTEL Systems</h2>
-    <p class="subtitle" data-lang="de" class="active">Ihr Ansprechpartner für Funkfeldmessungen</p>
-    <p class="subtitle" data-lang="en">Your contact for radio field measurements</p>
+    <p class="subtitle" data-lang="de" class="active">Ihr Ansprechpartner für BOS-Objektfunk, Mobilfunk und HF-Messtechnik</p>
+    <p class="subtitle" data-lang="en">Your Expert Contact for BOS In-Building Radio, Mobile Networks & RF Testing</p>
 
-    <p data-lang="de" class="active">Ihr Ansprechpartner für Funkfeldmessungen und technische Bewertung der Funkversorgung in Gebäuden.</p>
-    <p data-lang="en">Your contact for radio field measurements and technical assessment of radio coverage in buildings. Support for analysis, planning and implementation of radio solutions – especially for BOS applications in TETRA digital radio (380–400 MHz).</p>
+    <p data-lang="de" class="active">Funkfeldmessungen und technische Bewertung von BOS-Objektfunkanlagen sowie Mobilfunk- und Inhouse-Antennensystemen.</p>
+    <p data-lang="en">Radio coverage measurements and technical assessments of BOS in-building radio systems, as well as mobile network and indoor antenna systems.</p>
 
-    <p data-lang="de" class="active">Unterstützung bei Analyse, Planung und Umsetzung von Funklösungen – insbesondere für BOS-Anwendungen im TETRA-Digitalfunk (380–400 MHz).</p>
-    <p data-lang="en">Measurements and evaluations are carried out in accordance with standards (e.g. DIN 14024) and provide a solid basis for planning and further project steps.</p>
+    <p data-lang="de" class="active">Eigenständige Durchführung von Messungen, technischer Analyse und Planung - insbesondere für BOS-Anwendungen im TETRA-Digitalfunk sowie Mobilfunksysteme (4G/5G).</p>
+    <p data-lang="en">Independent execution of measurements, technical analysis, and planning – particularly for BOS applications using TETRA digital radio technology and mobile network systems (4G/5G).</p>
 
-    <p data-lang="de" class="active">Messungen und Auswertungen erfolgen normgerecht (z. B. nach DIN 14024) und bilden eine belastbare Grundlage für Planung und weitere Projektschritte.</p>
-    <p data-lang="en">Measurements and evaluations are carried out in accordance with standards (e.g. DIN 14024) and provide a solid basis for planning and further project steps.</p>
+    <p data-lang="de" class="active">Messungen mit eigener professioneller Messtechnik, einschließlich TMO/DMO, DTF und Return Loss sowie projektbezogener PIM-Messtechnik. Fachgerechte Auswertung und technische Dokumentation der Ergebnisse.</p>
+    <p data-lang="en">Measurements performed using my own professional test equipment, including TMO/DMO, DTF, and Return Loss measurements, as well as project-specific PIM testing. Professional evaluation and technical documentation of the results.</p>
 
-    <p data-lang="de" class="active">Fundiert durch über 27 Jahre praktische Erfahrung in der Funk- und Kommunikationstechnik.</p>
-    <p data-lang="en">Backed by over 27 years of practical experience in radio and communications engineering.</p>
+    <p data-lang="de" class="active">Technische Objektbegehungen, Projektkoordination und Wartung von BOS-Objektfunkanlagen. Über 27 Jahre praktische Erfahrung in der Funk- und Kommunikationstechnik. Standort München-deutschlandweit im Einsatz.</p>
+    <p data-lang="en">Technical site inspections, project coordination, and maintenance of BOS in-building radio systems. Over 27 years of hands-on experience in radio and communications engineering. Based in Munich, operating throughout Germany.</p>
   </div>
   <div class="about-photo">
     <img src="me_with_tool.jpg" class="about-photo-img" alt="Abstract antenna illustration">
@@ -746,10 +753,10 @@ footer{
       <div class="srv-icon">
         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
       </div>
-      <h3 data-lang="de" class="active">Projektunterstützung</h3>
-      <h3 data-lang="en">Project Support</h3>
-      <p data-lang="de" class="active">Technische Unterstützung während des Projekts, einschließlich Durchführung von Messungen, Erstellung von Messberichten und Projektdokumentation. Mitwirkung bei Abstimmung mit Behörden und Berücksichtigung der Anforderungen von BDBOS.</p>
-      <p data-lang="en">Technical support during the project, including carrying out measurements, creating measurement reports and project documentation. Participation in coordination with authorities and consideration of BDBOS requirements.</p>
+      <h3 data-lang="de" class="active">Technische Objektbegehungen & Bestandsaufnahmen</h3>
+      <h3 data-lang="en">Technical Site Inspections & Existing Conditions Surveys</h3>
+      <p data-lang="de" class="active">Eigenständige Objektbegehungen für Fachplaner, Errichter und Gebäudebetreiber. Prüfung von Bestandsunterlagen, Ermittlung möglicher Standorte für BOS-Systemtechnik und Antennen sowie Aufnahme von Kabelwegen, Durchführungen und Anschlussmöglichkeiten. Fotodokumentation, Planmarkierungen und Begehungsbericht als Grundlage für die weitere Planung.</p>
+      <p data-lang="en">Independent site inspections for specialist planners, installation contractors, and building operators. Review of existing technical documentation, identification of potential locations for BOS system equipment and antennas, and assessment of cable routes, penetrations, and connection options. Photo documentation, annotated floor plans, and site inspection reports to support further project planning.</p>
       <span class="srv-card-cta">
         <span data-lang="de" class="active">Mehr erfahren</span>
         <span data-lang="en">Learn more</span>
@@ -850,44 +857,56 @@ footer{
   <div class="section-eyebrow" data-lang="en">Target groups</div>
   <h2 class="section-title" data-lang="de" class="active">Für wen sind meine Leistungen?</h2>
   <h2 class="section-title" data-lang="en">Who are my services for?</h2>
-  <p class="section-sub" data-lang="de" class="active">Ich unterstütze Auftraggeber, Planer und Fachfirmen bei der Sicherstellung einer zuverlässigen und normgerechten BOS-Funkversorgung in Gebäuden.</p>
-  <p class="section-sub" data-lang="en">I support clients, planners, and specialist contractors in ensuring reliable and standards-compliant public safety radio coverage (BOS radio) within buildings.</p>
+  <p class="section-sub" data-lang="de" class="active">AVTEL Systems führt Messungen, technische Objektbegehungen, Planungs- und Wartungsarbeiten für Auftraggeber aus den Bereichen BOS-Objektfunk, Mobilfunk und Gebäudetechnik durch.</p>
+  <p class="section-sub" data-lang="en">AVTEL Systems conducts measurements, technical site inspections, planning, and maintenance work for clients in the fields of BOS indoor radio, mobile networks, and building technology.</p>
+
+
+Planungsbüros & Ingenieurbüros
+
+Errichter & Systemintegratoren
+
+Facility Manager & Gebäudebetreiber
+
+Mobilfunk-Integratoren & Generalunternehmer
+
+Einsatzgebiet: Standort München · Bayern und deutschlandweit · kurzfristige Vor-Ort-Termine nach Vereinbarung.
+
 
   <div class="fuerwen-grid">
     <div class="fw-card">
       <div class="fw-icon">🏛️</div>
       <h3 data-lang="de" class="active">Behörden & öffentliche Auftraggeber</h3>
       <h3 data-lang="en">Authorities & public clients</h3>
-      <p data-lang="de" class="active">Feuerwehr, Polizei und Rettungsdienste sowie öffentliche Auftraggeber, die eine zuverlässige und normgerechte BOS-Funkversorgung sicherstellen müssen.</p>
-      <p data-lang="en">Fire departments, police, emergency medical services, and public authorities that need to ensure reliable and standards-compliant BOS radio coverage.</p>
+      <p data-lang="de" class="active">Funkfeldmessungen und technische Bewertung der BOS-Funkversorgung in öffentlichen Gebäuden, Feuerwehr-, Polizei- und Rettungsdienststandorten.</p>
+      <p data-lang="en">Radio coverage measurements and technical assessments of BOS radio coverage in public buildings, fire stations, police facilities, and emergency services locations.</p>
     </div>
     <div class="fw-card">
       <div class="fw-icon">🏗️</div>
       <h3 data-lang="de" class="active">Bauherren & Projektentwickler</h3>
       <h3 data-lang="en">Developers & project owners</h3>
-      <p data-lang="de" class="active">Bei Neubauten und Modernisierungen, bei denen eine BOS-Gebäudefunkanlage nachzuweisen oder nachzurüsten ist.</p>
-      <p data-lang="en">For new constructions and modernisations where a BOS in-building radio system must be demonstrated or retrofitted.</p>
+      <p data-lang="de" class="active">BOS-Erforderlichkeitsmessungen, technische Objektbegehungen und Bewertung der Funkversorgung bei Neubauten, Erweiterungen und Modernisierungen.</p>
+      <p data-lang="en">BOS radio coverage requirement assessments, technical site inspections, and evaluation of radio coverage for new buildings, extensions, and modernization projects.</p>
     </div>
     <div class="fw-card">
       <div class="fw-icon">📐</div>
       <h3 data-lang="de" class="active">Planungsbüros & Ingenieurbüros</h3>
       <h3 data-lang="en">Planning & engineering offices</h3>
-      <p data-lang="de" class="active">Als externer Spezialist für Funkmessungen und technische Bewertung, wenn intern kein spezifisches HF- oder BOS-Fachwissen vorhanden ist.</p>
-      <p data-lang="en">As an external specialist for radio measurements and technical assessments when in-house RF or BOS expertise is not available.</p>
+      <p data-lang="de" class="active">Eigenständige Durchführung von Funkfeldmessungen, technischen Bestandsaufnahmen und HF-Analysen einschließlich Messberichten als Grundlage für die weitere Fachplanung.</p>
+      <p data-lang="en">Independent execution of radio coverage measurements, technical surveys of existing installations, and RF analyses, including measurement reports to support further specialist planning.</p>
     </div>
     <div class="fw-card">
       <div class="fw-icon">🔧</div>
       <h3 data-lang="de" class="active">Errichter & Systemintegratoren</h3>
       <h3 data-lang="en">Installation Companies & System Integrators</h3>
-      <p data-lang="de" class="active">Technische Unterstützung bei Funkmessungen, Inbetriebnahme und Dokumentation von BOS-Gebäudefunkanlagen.</p>
-      <p data-lang="en">Technical support for radio measurements, commissioning, and documentation of BOS in-building radio systems.</p>
+      <p data-lang="de" class="active">Übernahme abgegrenzter Leistungspakete als Nachunternehmer: Funkfeldmessungen, HF-Prüfungen, Fehlerdiagnose, technische Dokumentation sowie Tätigkeiten bei Inbetriebnahme und Abnahme.</p>
+      <p data-lang="en">Execution of defined work packages as a subcontractor: radio coverage measurements, RF testing, fault diagnosis, technical documentation, and support during commissioning and acceptance testing.</p>
     </div>
     <a class="fw-card" href="/avtel-systems/wartung">
       <div class="fw-icon">🏢</div>
-      <h3 data-lang="de" class="active">Facility Manager & Betreiber</h3>
-      <h3 data-lang="en">Facility managers & operators</h3>
-      <p data-lang="de" class="active">Für wiederkehrende Prüf- und Nachmessungen sowie die technische Bewertung bestehender Anlagen im laufenden Betrieb.</p>
-      <p data-lang="en">For recurring inspections, follow-up measurements, and technical evaluation of existing systems during ongoing operation.</p>
+      <h3 data-lang="de" class="active">Facility Manager & Gebäudebetreiber</h3>
+      <h3 data-lang="en">Facility Managers & Building Operators</h3>
+      <p data-lang="de" class="active">Regelmäßige Wartung von BOS-Objektfunkanlagen, technische Zustandsprüfungen, Fehlersuche und Nachmessungen an bestehenden Funk- und Antennensystemen.</p>
+      <p data-lang="en">Regular maintenance of BOS in-building radio systems, technical condition assessments, fault diagnosis, and follow-up measurements on existing radio and antenna systems.</p>
       <span class="srv-card-cta">
         <span data-lang="de" class="active">Wartung von BOS-Objektfunkanlagen</span>
         <span data-lang="en">Maintenance of BOS In-Building Radio Systems</span>
@@ -895,11 +914,22 @@ footer{
       </span>
     </a>
     <div class="fw-card">
+      <div class="fw-icon">📱</div>
+      <h3 data-lang="de" class="active">Mobilfunk-Integratoren & Generalunternehmer</h3>
+      <h3 data-lang="en">Mobile Network Integrators & General Contractors</h3>
+      <p data-lang="de" class="active">DTF-, Return-Loss-, VSWR- und PIM-Messungen an Mobilfunk- und Inhouse-Antennensystemen. Technische Objektbegehungen, Fehlerlokalisierung und Qualitätssicherung bei Ausbau und Modernisierung.</p>
+      <p data-lang="en">DTF, Return Loss, VSWR, and PIM measurements on mobile network and indoor antenna systems. Technical site inspections, fault localization, and quality assurance for network expansion and modernization projects.</p>
+    </div>
+    <div class="fw-card">
       <div class="fw-icon">📍</div>
       <h3 data-lang="de" class="active">Einsatzgebiet</h3>
       <h3 data-lang="en">Service Area</h3>
-      <p data-lang="de" class="active">Bayern und deutschlandweit · kurzfristige Von-Ort-Termine möglich</p>
-      <p data-lang="en">Throughout Bavaria and Germany · Short-notice on-site appointments available.</p>
+      <p data-lang="de" class="active">· Standort München ·</p>
+      <p data-lang="en">· Based in Munich ·</p>
+      <p data-lang="de" class="active">· Bayern und deutschlandweit ·</p>
+      <p data-lang="en">· Throughout Bavaria and Germany ·</p>
+      <p data-lang="de" class="active">· Kurzfristige Vor-Ort-Termine nach Vereinbarung ·</p>
+      <p data-lang="en">· Short-notice on-site appointments available ·</p>
     </div>
   </div>
 </section>
@@ -932,22 +962,22 @@ footer{
     <div class="section-eyebrow" data-lang="en">About me</div>
     <h2 data-lang="de" class="active">Aleksei Shcherbakov</h2>
     <h2 data-lang="en">Aleksei Shcherbakov</h2>
-    <p class="role">AVTEL Systems – <span data-lang="de" class="active">Funkfeldmessung & BOS-Gebäudefunk</span><span data-lang="en">Radio field measurement & BOS in-building radio</span></p>
+    <p class="role">AVTEL Systems – <span data-lang="de" class="active">BOS-Objektfunk, Mobilfunk & HF-Messtechnik</span><span data-lang="en">BOS In-Building Radio, Mobile Networks & RF Testing</span></p>
 
-    <p data-lang="de" class="active">Als Diplom-Ingenieur für Nachrichtentechnik mit über 27 Jahren Erfahrung in der Hochfrequenz- und Funktechnik unterstütze ich Projekte im Bereich BOS-Gebäudefunk – von der Messung bis zur technischen Bewertung und Planung.</p>
-    <p data-lang="en">As a graduate engineer in telecommunications engineering with more than 27 years of experience in radio frequency (RF) and wireless communications, I support BOS in-building radio projects—from field measurements to technical assessment and planning.</p>
+    <p data-lang="de" class="active">Ich bin Ingenieur für Nachrichtentechnik und verfüge über rund 30 Jahre praktische Erfahrung in der Funk-, Hochfrequenz- und Telekommunikationstechnik.</p>
+    <p data-lang="en">I am a communications engineer with approximately 30 years of hands-on experience in radio communications, radio frequency (RF), and telecommunications engineering.</p>
 
-    <p data-lang="de" class="active">Mein Fokus liegt auf Funkfeldmessungen und der Analyse der Funkversorgung in Gebäuden, insbesondere im TETRA-Digitalfunk (380–400 MHz) für Behörden und Organisationen mit Sicherheitsaufgaben (BOS).</p>
-    <p data-lang="en">My focus is on radio coverage measurements and the analysis of in-building radio performance, particularly for the TETRA digital radio network (380–400 MHz) used by public safety agencies and organizations (BOS).</p>
+    <p data-lang="de" class="active">27 Jahre lang habe ich ein eigenes Ingenieurunternehmen aufgebaut und geleitet. Mit einem Team von bis zu 35 Mitarbeitenden haben wir mehrere Hundert Projekte geplant und realisiert – von professionellen Funkkommunikationssystemen bis hin zu komplexen Telekommunikationsinfrastrukturen.</p>
+    <p data-lang="en">For 27 years, I built and managed my own engineering company. Together with a team of up to 35 employees, we planned and delivered several hundred projects, ranging from professional radio communication systems to complex telecommunications infrastructures.</p>
 
-    <p data-lang="de" class="active">Ich führe normgerechte Messungen gemäß DIN 14024 durch und erstelle nachvollziehbare, praxisorientierte Berichte, die als belastbare Grundlage für Planung, Abstimmung und Genehmigungsverfahren dienen.</p>
-    <p data-lang="en">I perform standards-compliant measurements in accordance with DIN 14024 and provide clear, practical reports that serve as a reliable basis for planning, coordination, and approval processes.</p>
+    <p data-lang="de" class="active">Heute konzentriere ich mich mit AVTEL Systems auf BOS-Objektfunkanlagen und Mobilfunk-Inhouse-Systeme. Ich führe Funkfeld- und HF-Messungen eigenständig durch und übernehme technische Objektbegehungen, Planung sowie Projektkoordination.</p>
+    <p data-lang="en">Today, through AVTEL Systems, I focus on BOS in-building radio systems and indoor mobile network installations. I independently carry out radio coverage and RF measurements, as well as technical site inspections, planning, and project coordination.</p>
 
-    <p data-lang="de" class="active">Als externer HF-Spezialist unterstütze ich Planungsbüros, Errichter und Systemintegratoren sowohl bei einzelnen Messungen als auch projektbegleitend – insbesondere bei technischen Fragestellungen und vor Ort im Projekt.</p>
-    <p data-lang="en">As an external RF specialist, I support engineering consultancies, installation companies, and system integrators with both individual measurement campaigns and ongoing project support—especially for technical challenges and on-site project implementation.</p>
+    <p data-lang="de" class="active">Zu meinem Leistungsangebot gehören außerdem die Wartung von BOS-Objektfunkanlagen und die technische Fehlerdiagnose. Für meine Messungen nutze ich eigene professionelle BOS- und HF-Messtechnik.</p>
+    <p data-lang="en">My range of services also includes maintenance of BOS in-building radio systems and technical fault diagnosis. I use my own professional BOS and RF test equipment to perform measurements.</p>
 
-    <p data-lang="de" class="active">Als unabhängiger HF-Spezialist bin ich deutschlandweit tätig. Mein Standort ist München, kurzfristige Vor-Ort-Termine sind nach Vereinbarung möglich.</p>
-    <p data-lang="en">As an independent HF specialist, I operate throughout Germany. My base is in Munich, and short-notice on-site appointments are available by arrangement.</p>
+    <p data-lang="de" class="active">Mein Standort ist München. Von hier aus übernehme ich eigenständige technische Aufträge und definierte Leistungspakete als Nachunternehmer deutschlandweit.</p>
+    <p data-lang="en">Based in Munich, I undertake independent technical assignments and defined subcontracting work packages throughout Germany.</p>
   </div>
 </section>
 
@@ -1266,6 +1296,7 @@ footer{
 let currentLang = 'de';
 function setLang(l) {
   currentLang = l;
+  localStorage.setItem('avtel-lang', l);
   document.documentElement.lang = l;
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.dataset.lang === l);
@@ -1284,7 +1315,7 @@ function toggleLang() {
   setLang(currentLang === 'de' ? 'en' : 'de');
 }
 // init
-setLang('de');
+setLang(localStorage.getItem('avtel-lang') || 'de');
 
 /* ── MOBILE MENU ── */
 function toggleMenu(){

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Wartung und technische Zustandsprüfung digitaler BOS-Objektfunkanlagen nach DIN 14024-1 durch AVTEL Systems.">
-<title>Wartung von BOS-Objektfunkanlagen – AVTEL Systems</title>
+<title>Wartung – Maintenance of BOS In-Building Radio Systems | AVTEL Systems</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -41,7 +41,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -53,7 +53,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -65,7 +65,6 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
-  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -276,7 +275,8 @@ footer{
   </li>
 
   <li>
-    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="de">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a>
   </li>
 
 </ul>
@@ -377,6 +377,7 @@ footer{
 let currentLang = 'de';
 function setLang(lang) {
   currentLang = lang;
+  localStorage.setItem('avtel-lang', lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-lang]').forEach(element => {
     const active = element.dataset.lang === lang;
@@ -403,7 +404,7 @@ document.querySelectorAll('#navLinks a').forEach(link => {
     document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
   });
 });
-setLang('de');
+setLang(localStorage.getItem('avtel-lang') || 'de');
 </script>
 </body>
 </html>

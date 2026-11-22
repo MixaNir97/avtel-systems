@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leistungen – AVTEL Systems</title>
+<title>Impressum – Legal Notice | AVTEL Systems</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,7 +40,7 @@ img{display:block;max-width:100%}
 
 /* ── LANG SWITCHER ── */
 .lang-switch{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -52,7 +52,7 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch-full{
-  display:none;
+  display:inline-flex;
   background:none;
   border:1px solid rgba(255,255,255,.97);
   color:rgba(255,255,255,.97);
@@ -64,7 +64,6 @@ img{display:block;max-width:100%}
   transition:all .2s;
 }
 .lang-switch:hover{
-  display:none;
   background:var(--accent2);
   border-color:var(--accent2);
   color:#fff;
@@ -236,7 +235,8 @@ footer{
   </li>
 
   <li>
-    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="de">Kontakt</a>
+    <a href="/avtel-systems/?scroll=contact" onclick="closeMenu()" class="nav-cta" data-lang="en">Contact</a>
   </li>
 
 </ul>
@@ -322,8 +322,34 @@ footer{
 <script>
     /* ── LANGUAGE ── */
 let currentLang = 'de';
+const originalText = new WeakMap();
+const translations = {
+"Impressum":"Legal Notice",
+"Angaben gemäß § 5 DDG":"Information pursuant to § 5 DDG",
+"Kontakt":"Contact",
+"Umsatzsteuer-ID":"VAT ID",
+"Steuernummer":"Tax number",
+"Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV":"Responsible for content pursuant to § 55 para. 2 RStV",
+"Haftung für Inhalte":"Liability for content",
+"Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.":"The content of our pages was created with great care. However, we cannot guarantee that the content is complete, accurate, or up to date. As a service provider, we are responsible for our own content on these pages under applicable general laws.",
+"Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.":"The content of our pages was created with great care.",
+"Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.":"However, we cannot guarantee that the content is complete, accurate, or up to date.",
+"Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.":"As a service provider, we are responsible for our own content on these pages under applicable general laws.",
+"Haftung für Links":"Liability for links",
+"Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.":"Our website contains links to third-party websites whose content we do not control.",
+"Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.":"Our website contains links to third-party websites whose content we do not control. We therefore cannot guarantee or accept responsibility for such external content. The respective provider is always responsible for the content of linked pages.",
+"Deshalb können wir für diese fremden Inhalte keine Gewähr übernehmen.":"We therefore cannot guarantee or accept responsibility for such external content.",
+"Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.":"The respective provider is always responsible for the content of linked pages.",
+"Urheberrecht":"Copyright",
+"Die Inhalte dieser Website unterliegen dem deutschen Urheberrecht.":"The content of this website is subject to German copyright law.",
+"Die Inhalte dieser Website unterliegen dem deutschen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.":"The content of this website is subject to German copyright law. Any use beyond the limits of copyright law requires prior written consent.",
+"Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.":"Any use beyond the limits of copyright law requires prior written consent.",
+"Verbraucherstreitbeilegung":"Consumer dispute resolution",
+"Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.":"We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+};
 function setLang(l) {
   currentLang = l;
+  localStorage.setItem('avtel-lang', l);
   document.documentElement.lang = l;
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.dataset.lang === l);
@@ -337,12 +363,20 @@ function setLang(l) {
   if (togglefull) {
     togglefull.textContent = l === 'de' ? 'EN' : 'DE';
   }
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const text = node.nodeValue.trim();
+    if (!text) continue;
+    if (!originalText.has(node)) originalText.set(node, text);
+    node.nodeValue = l === 'en' && translations[text] ? translations[text] : originalText.get(node);
+  }
 }
 function toggleLang() {
   setLang(currentLang === 'de' ? 'en' : 'de');
 }
 // init
-setLang('de');
+setLang(localStorage.getItem('avtel-lang') || 'de');
 
 /* ── MOBILE MENU ── */
 function toggleMenu(){
@@ -351,10 +385,6 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('navLinks').classList.remove('open');
 }
-/* ── NAV ── */
-let lang='de';
-function toggleLang(){lang=lang==='de'?'en':'de';document.getElementById('langDesk').textContent=lang==='de'?'EN':'DE';document.getElementById('langMob').textContent=lang==='de'?'EN':'DE'}
-
 /* ── REVEAL ── */
 const revObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}}),{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
